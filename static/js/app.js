@@ -502,6 +502,53 @@ function removeUploadFile(index) {
   renderUploadPreviews();
 }
 
+// Nén ảnh client-side bằng canvas giúp giảm 90% dung lượng, upload siêu tốc
+async function compressImageForUpload(file, maxDimension = 1400, quality = 0.82) {
+  if (!file || !file.type.startsWith('image/')) return file;
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > maxDimension || height > maxDimension) {
+          if (width > height) {
+            height = Math.round((height * maxDimension) / width);
+            width = maxDimension;
+          } else {
+            width = Math.round((width * maxDimension) / height);
+            height = maxDimension;
+          }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        canvas.toBlob(
+          (blob) => {
+            if (!blob || blob.size >= file.size) {
+              resolve(file);
+            } else {
+              const compressedFile = new File([blob], file.name.replace(/\.[^/.]+$/, '.jpg'), {
+                type: 'image/jpeg',
+                lastModified: Date.now()
+              });
+              resolve(compressedFile);
+            }
+          },
+          'image/jpeg',
+          quality
+        );
+      };
+      img.onerror = () => resolve(file);
+      img.src = e.target.result;
+    };
+    reader.onerror = () => resolve(file);
+    reader.readAsDataURL(file);
+  });
+}
+
 async function processUploadQueue() {
   const files = AppState.uploadQueue;
   if (!files || files.length === 0) {
@@ -515,18 +562,24 @@ async function processUploadQueue() {
   const btnAnalyze = document.getElementById('btn-upload-analyze');
 
   if (progress) progress.style.display = 'flex';
-  if (progressText) progressText.textContent = `Đang phân tích ${files.length} ảnh bằng AI...`;
   if (btnAnalyze) btnAnalyze.disabled = true;
 
-  const formData = new FormData();
-  files.forEach(file => formData.append('files', file));
-
-  const apiKey = AppState.apiKey || localStorage.getItem('tqc_gemini_api_key');
-  if (apiKey) {
-    formData.append('gemini_api_key', apiKey);
-  }
-
   try {
+    if (progressText) progressText.textContent = `⚡ Đang tối ưu hóa ${files.length} ảnh siêu tốc...`;
+    const optimizedFiles = await Promise.all(
+      files.map(f => compressImageForUpload(f))
+    );
+
+    if (progressText) progressText.textContent = `🚀 Đang tải lên và AI quét song song ${files.length} ảnh...`;
+
+    const formData = new FormData();
+    optimizedFiles.forEach(file => formData.append('files', file));
+
+    const apiKey = AppState.apiKey || localStorage.getItem('tqc_gemini_api_key');
+    if (apiKey) {
+      formData.append('gemini_api_key', apiKey);
+    }
+
     const res = await fetch('/api/upload-images', {
       method: 'POST',
       body: formData

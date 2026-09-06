@@ -215,10 +215,31 @@ class VisionService:
         if not self.ocr_engine:
             return {"success": False, "error": "RapidOCR engine is not installed", "generals": [], "tactics": []}
 
+        ocr_target = image_path
+        tmp_resized = None
         try:
-            res, _ = self.ocr_engine(image_path)
+            from PIL import Image
+            with Image.open(image_path) as im:
+                w, h = im.size
+                if max(w, h) > 1300:
+                    scale = 1300.0 / max(w, h)
+                    resized = im.resize((int(w * scale), int(h * scale)), Image.Resampling.BILINEAR)
+                    tmp_resized = f"{image_path}_ocr_opt.jpg"
+                    resized.convert("RGB").save(tmp_resized, "JPEG", quality=85)
+                    ocr_target = tmp_resized
+        except Exception:
+            ocr_target = image_path
+
+        try:
+            res, _ = self.ocr_engine(ocr_target)
         except Exception as e:
             return {"success": False, "error": f"Lỗi OCR: {str(e)}", "generals": [], "tactics": []}
+        finally:
+            if tmp_resized and os.path.exists(tmp_resized):
+                try:
+                    os.remove(tmp_resized)
+                except Exception:
+                    pass
 
         if not res:
             return {"success": True, "generals": [], "tactics": [], "source": "local_ocr"}
@@ -311,23 +332,29 @@ class VisionService:
 
     def recognize_with_gemini(self, image_path: str, api_key: str) -> Dict[str, Any]:
         """
-        Use Google Gemini 1.5/2.0 Flash Vision API.
-        Improved: gửi full list tướng+chiến pháp, prompt chi tiết hơn.
+        Use Google Gemini 2.0 / 1.5 Flash Vision API with optimized payloads.
         """
         if not api_key:
             return {"error": "API Key không được để trống", "generals": [], "tactics": []}
 
         try:
-            with open(image_path, "rb") as f:
-                image_bytes = f.read()
-                b64_image = base64.b64encode(image_bytes).decode("utf-8")
-
-            ext = os.path.splitext(image_path)[1].lower()
             mime_type = "image/jpeg"
-            if ext == ".png":
-                mime_type = "image/png"
-            elif ext == ".webp":
-                mime_type = "image/webp"
+            try:
+                from PIL import Image
+                import io
+                with Image.open(image_path) as im:
+                    w, h = im.size
+                    if max(w, h) > 1200:
+                        scale = 1200.0 / max(w, h)
+                        im = im.resize((int(w * scale), int(h * scale)), Image.Resampling.BILINEAR)
+                    buf = io.BytesIO()
+                    im.convert("RGB").save(buf, format="JPEG", quality=85)
+                    image_bytes = buf.getvalue()
+            except Exception:
+                with open(image_path, "rb") as f:
+                    image_bytes = f.read()
+
+            b64_image = base64.b64encode(image_bytes).decode("utf-8")
 
             # Send FULL lists — no truncation
             all_gen_names = ", ".join(self.general_names)
@@ -351,7 +378,6 @@ Quy tắc nhận diện:
 JSON format:
 {{"generals": ["Tên chuẩn 1", ...], "tactics": ["Tên chuẩn 1", ...]}}"""
 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
             headers = {"Content-Type": "application/json"}
             payload = {
                 "contents": [
@@ -364,12 +390,23 @@ JSON format:
                 ],
                 "generationConfig": {
                     "response_mime_type": "application/json",
-                    "temperature": 0.1  # Low temp for accurate extraction
+                    "temperature": 0.1
                 }
             }
 
-            resp = requests.post(url, headers=headers, json=payload, timeout=30)
-            if resp.status_code == 200:
+            models = ["gemini-2.0-flash", "gemini-1.5-flash"]
+            resp = None
+            for m in models:
+                try:
+                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={api_key}"
+                    r = requests.post(url, headers=headers, json=payload, timeout=20)
+                    if r.status_code == 200:
+                        resp = r
+                        break
+                except Exception:
+                    continue
+
+            if resp is not None and resp.status_code == 200:
                 data = resp.json()
                 text_out = data["candidates"][0]["content"]["parts"][0]["text"].strip()
                 if text_out.startswith("```json"):
@@ -387,6 +424,8 @@ JSON format:
                     "source": "gemini_vision"
                 }
             else:
-                return {"success": False, "error": f"Lỗi Gemini: {resp.status_code}", "generals": [], "tactics": []}
+                return {"success": False, "error": f"Lỗi Gemini Vision: {resp.status_code if resp else 'Không phản hồi'}", "generals": [], "tactics": []}
+        except Exception as e:
+            return {"success": False, "error": str(e), "generals": [], "tactics": []}
         except Exception as e:
             return {"success": False, "error": str(e), "generals": [], "tactics": []}

@@ -190,6 +190,8 @@ def get_starter_teams():
 # IMAGE UPLOAD & OCR
 # ─────────────────────────────────────────────
 
+from concurrent.futures import ThreadPoolExecutor
+
 @app.post("/api/upload-images")
 async def upload_images(
     files: List[UploadFile] = File(...),
@@ -199,6 +201,10 @@ async def upload_images(
     detected_tactics  = set()
     file_results = []
 
+    active_api_key = (gemini_api_key or os.getenv("GEMINI_API_KEY") or "").strip()
+
+    # Step 1: Rapidly save all uploaded files to disk
+    saved_files = []
     for file in files:
         file_id  = str(uuid.uuid4())[:8]
         filename = f"{file_id}_{file.filename}"
@@ -207,14 +213,26 @@ async def upload_images(
         with open(filepath, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        res = vision_service.recognize_image(filepath, gemini_api_key)
+        saved_files.append((file.filename, filepath))
+
+    # Step 2: Concurrent multi-threaded recognition across all images
+    def _recognize_single(item):
+        orig_name, fpath = item
+        res = vision_service.recognize_image(fpath, active_api_key)
+        return orig_name, res
+
+    max_workers = min(4, max(1, len(saved_files)))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(executor.map(_recognize_single, saved_files))
+
+    for orig_name, res in results:
         for g in res.get("generals", []):
             detected_generals.add(g)
         for t in res.get("tactics", []):
             detected_tactics.add(t)
 
         file_results.append({
-            "filename": file.filename,
+            "filename": orig_name,
             "detected_generals": res.get("generals", []),
             "detected_tactics": res.get("tactics", []),
             "source": res.get("source", "unknown"),
