@@ -394,7 +394,7 @@ JSON format:
                 }
             }
 
-            models = ["gemini-2.0-flash", "gemini-1.5-flash"]
+            models = ["gemini-3.6-flash", "gemini-3-flash-preview", "gemini-flash-latest"]
             resp = None
             for m in models:
                 try:

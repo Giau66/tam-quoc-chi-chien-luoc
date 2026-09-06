@@ -315,18 +315,23 @@ class AnalyzeTeamRequest(BaseModel):
     gemini_api_key: str
 
 def call_gemini_text(prompt: str, api_key: str, temperature: float = 0.7) -> str:
-    """Shared Gemini text API caller."""
+    """Shared Gemini text API caller with modern model fallbacks."""
     import requests as req_lib
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    models = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3-flash-preview", "gemini-1.5-flash"]
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": temperature, "maxOutputTokens": 1024}
     }
-    resp = req_lib.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=25)
-    if resp.status_code == 200:
-        data = resp.json()
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    raise Exception(f"Gemini API lỗi: {resp.status_code} — {resp.text[:200]}")
+    for m in models:
+        try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={api_key}"
+            resp = req_lib.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=25)
+            if resp.status_code == 200:
+                data = resp.json()
+                return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception:
+            continue
+    raise Exception("Gemini API lỗi: Không thể kết nối mô hình")
 
 @app.post("/api/ai-chat")
 def ai_chat(req: AIChatRequest):
