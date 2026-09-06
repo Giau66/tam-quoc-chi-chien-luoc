@@ -904,13 +904,13 @@ function renderTeamCard(evalRes) {
                 </div>
 
                 ${(slot.binh_thu && slot.binh_thu.length > 0) ? `
-                  <div class="slot-binh-thu-box" style="margin-top: 0.6rem; padding: 6px 8px; background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.25); border-radius: 6px;">
-                    <div style="font-size: 0.72rem; color: #fbbf24; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                  <div class="slot-binh-thu-box">
+                    <div class="binh-thu-label">
                       <span>📜 BINH THƯ CHUẨN:</span>
                     </div>
-                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    <div class="binh-thu-pills-row">
                       ${slot.binh_thu.map((bt, btIdx) => `
-                        <span class="binh-thu-pill" style="font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; background: ${btIdx === 0 ? 'rgba(217, 119, 6, 0.25)' : 'rgba(255, 255, 255, 0.05)'}; color: ${btIdx === 0 ? '#fde68a' : '#cbd5e1'}; border: 1px solid ${btIdx === 0 ? 'rgba(245, 158, 11, 0.4)' : 'rgba(255, 255, 255, 0.1)'}; font-weight: ${btIdx === 0 ? '700' : '500'};">
+                        <span class="binh-thu-pill ${btIdx === 0 ? 'main-tome' : 'sub-tome'}">
                           ${btIdx === 0 ? '★ ' : ''}${bt}
                         </span>
                       `).join('')}
@@ -1527,13 +1527,13 @@ function renderFactionTeamCard(team) {
                 </div>
 
                 ${(g.binh_thu && g.binh_thu.length > 0) ? `
-                  <div class="slot-binh-thu-box" style="margin-top: 0.6rem; padding: 6px 8px; background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.25); border-radius: 6px;">
-                    <div style="font-size: 0.72rem; color: #fbbf24; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                  <div class="slot-binh-thu-box">
+                    <div class="binh-thu-label">
                       <span>📜 BINH THƯ CHUẨN:</span>
                     </div>
-                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    <div class="binh-thu-pills-row">
                       ${g.binh_thu.map((bt, btIdx) => `
-                        <span class="binh-thu-pill" style="font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; background: ${btIdx === 0 ? 'rgba(217, 119, 6, 0.25)' : 'rgba(255, 255, 255, 0.05)'}; color: ${btIdx === 0 ? '#fde68a' : '#cbd5e1'}; border: 1px solid ${btIdx === 0 ? 'rgba(245, 158, 11, 0.4)' : 'rgba(255, 255, 255, 0.1)'}; font-weight: ${btIdx === 0 ? '700' : '500'};">
+                        <span class="binh-thu-pill ${btIdx === 0 ? 'main-tome' : 'sub-tome'}">
                           ${btIdx === 0 ? '★ ' : ''}${bt}
                         </span>
                       `).join('')}

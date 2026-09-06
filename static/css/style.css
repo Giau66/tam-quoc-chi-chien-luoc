@@ -1212,6 +1212,54 @@ body {
   margin-top: 0.5rem;
 }
 
+/* Binh Thư Styling */
+.slot-binh-thu-box {
+  margin-top: 0.65rem;
+  padding: 6px 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  border-radius: 6px;
+}
+
+.binh-thu-label {
+  font-size: 0.72rem;
+  color: #fbbf24;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.binh-thu-pills-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.binh-thu-pill {
+  font-size: 0.73rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.binh-thu-pill.main-tome {
+  background: rgba(217, 119, 6, 0.3);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  font-weight: 700;
+}
+
+.binh-thu-pill.sub-tome {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 /* Tactical Insights */
 .team-tactical-notes {
   background: rgba(10, 14, 22, 0.45);
