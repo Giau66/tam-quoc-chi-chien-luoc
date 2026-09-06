@@ -255,13 +255,13 @@ async def upload_images(
 
         saved_files.append((file.filename, filepath))
 
-    # Step 2: Concurrent multi-threaded recognition across all images
+    # Step 2: Recognition across images (Gemini API uses 4 parallel threads; local OCR uses 1 to prevent OOM/CPU lockup on cloud free tiers)
     def _recognize_single(item):
         orig_name, fpath = item
         res = vision_service.recognize_image(fpath, active_api_key)
         return orig_name, res
 
-    max_workers = min(4, max(1, len(saved_files)))
+    max_workers = min(4, max(1, len(saved_files))) if active_api_key else 1
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         results = list(executor.map(_recognize_single, saved_files))
 

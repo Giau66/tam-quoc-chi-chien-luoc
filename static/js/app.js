@@ -697,6 +697,12 @@ async function processUploadQueue() {
             <span style="color:#fbbf24;">(Mới thêm vào kho: +${totalAddedGen} tướng, +${totalAddedTac} chiến pháp).</span>
           </p>
 
+          ${(allDetectedGens.size === 0 && allDetectedTacs.size === 0) ? `
+            <div style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 12px; margin-bottom: 1rem; color: #fcd34d; font-size: 0.88rem; line-height: 1.5;">
+              💡 <strong>Gợi ý:</strong> Do web online Render có giới hạn tài nguyên CPU, bạn hãy nhập <strong>Google Gemini API Key</strong> ở khung phía trên (hoặc cài biến môi trường <code>GEMINI_API_KEY</code> trên Render Dashboard) để AI đọc ảnh chuẩn xác 100% và cực nhanh nhé!
+            </div>
+          ` : ''}
+
           ${(allDetectedGens.size > 0) ? `
             <div style="margin-bottom: 1rem;">
               <strong style="color:var(--gold-light); font-size:0.88rem;">🗡️ TƯỚNG NHẬN DIỆN ĐƯỢC:</strong>
