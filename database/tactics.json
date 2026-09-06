@@ -1,0 +1,1343 @@
+[
+  {
+    "id": "binh_vo_thuong_the",
+    "name": "Binh Vô Thường Thế",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lục Tốn",
+    "season": "PK"
+  },
+  {
+    "id": "bach_ky_kiep_doanh",
+    "name": "Bách Kỵ Kiếp Doanh",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hạ Hầu Uyên",
+    "season": "PK"
+  },
+  {
+    "id": "bach_nhi_binh",
+    "name": "Bạch Nhị Binh",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lỗ Túc",
+    "season": "PK"
+  },
+  {
+    "id": "giai_phien_ve",
+    "name": "Giải Phiền Vệ",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Tăng tốc độ và có thể gây ra sát thương hoặc hồi lính (Cần: Ngô-5 sao*3)",
+    "suitable_generals": "Hứa Du, SP Tuân Úc",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "ho_bao_ky",
+    "name": "Hổ Báo Kỵ",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tào Tháo",
+    "season": "PK"
+  },
+  {
+    "id": "ho_ve_quan",
+    "name": "Hổ Vệ Quân",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lữ Mông",
+    "season": "PK"
+  },
+  {
+    "id": "nhat_ky_duong_thien",
+    "name": "Nhất Kỵ Đương Thiên",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Phi",
+    "season": "PK"
+  },
+  {
+    "id": "quan_ho_ve",
+    "name": "Quân Hổ Vệ",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Mãn Sủng",
+    "season": "PK"
+  },
+  {
+    "id": "si_biet_tam_nhat",
+    "name": "Sĩ Biệt Tam Nhật",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tư Mã Ý",
+    "season": "PK"
+  },
+  {
+    "id": "thieu_dot_doanh_luy",
+    "name": "Thiêu Đốt Doanh Lũy",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho Lục Tốn",
+    "season": "PK"
+  },
+  {
+    "id": "thiet_ky_khu_tri",
+    "name": "Thiết Kỵ Khu Trì",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Khiến địch hạnh động chậm lại và có thể giảm Thống Soái (Cần: Mã Siêu, Mã Đằng, Bàng Đức)",
+    "suitable_generals": "Quách Gia, Chu Thái, Tào Tháo...",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "thuong_binh_phat_muu",
+    "name": "Thượng Binh Phạt Mưu",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Tào Chân",
+    "season": "PK18-Trận Đồng Quan"
+  },
+  {
+    "id": "than_thuong_thiet_chien",
+    "name": "Thần Thương Thiệt Chiến",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tào Tháo",
+    "season": "PK"
+  },
+  {
+    "id": "tay_luong_thiet_ky",
+    "name": "Tây Lương Thiết Kỵ",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Thái",
+    "season": "PK"
+  },
+  {
+    "id": "tuong_binh",
+    "name": "Tượng Binh",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lăng Thống",
+    "season": "PK"
+  },
+  {
+    "id": "tu_si_tien_phong",
+    "name": "Tử Sĩ Tiên Phong",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Khúc Nghĩa",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "duong_phong_thoi_quyet_binh_vo_thuong_the",
+    "name": "Đương Phong Thôi Quyết+Binh Vô Thường Thế",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tôn Quyền",
+    "season": "PK"
+  },
+  {
+    "id": "dai_kich_si",
+    "name": "Đại Kích Sĩ",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hoàng Nguyệt Anh",
+    "season": "PK"
+  },
+  {
+    "id": "dang_giap_binh",
+    "name": "Đằng Giáp Binh",
+    "type": "Binh chủng",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Tinh Thái",
+    "season": "PK"
+  },
+  {
+    "id": "dung_vo_than_thong",
+    "name": "Dụng Võ Thần Thông",
+    "type": "Bị động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tư Mã Ý",
+    "season": "PK"
+  },
+  {
+    "id": "ho_cu_ung_duong",
+    "name": "Hổ Cứ Ưng Dương",
+    "type": "Bị động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tôn Thượng Hương",
+    "season": "PK"
+  },
+  {
+    "id": "loa_y_huyet_chien",
+    "name": "Lõa Y Huyết Chiến",
+    "type": "Bị động",
+    "quality": "S",
+    "description": "Có Liên kích và Làm phản, còn giảm thống soái (Cần: Mã Siêu, Hứa Chử)",
+    "suitable_generals": "Hạ Hầu Uyên, Tôn Thượng Hương",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "thai_binh_dao_phap",
+    "name": "Thái Bình Đạo Pháp",
+    "type": "Bị động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trình Dục",
+    "season": "PK"
+  },
+  {
+    "id": "tuyet_dia_phan_kich",
+    "name": "Tuyệt Địa Phản Kích",
+    "type": "Bị động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Phi",
+    "season": "PK"
+  },
+  {
+    "id": "quan_dan_khich_le",
+    "name": "Quân Dân Khích Lệ",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Lữ Mông",
+    "season": "PK"
+  },
+  {
+    "id": "thao_thuyen_muon_ten",
+    "name": "Thảo Thuyền Mượn Tên",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Xóa hiệu ứng tiêu cực còn khôi phục binh lực (Cần: Chu Du, Gia Cát Lượng, Vũ Cấm)",
+    "suitable_generals": "Trình Phổ, Tào Tháo...",
+    "season": "PK6-Đại Chiến Xích Bích"
+  },
+  {
+    "id": "thinh_khi",
+    "name": "Thịnh Khí",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Thái",
+    "season": "PK"
+  },
+  {
+    "id": "thinh_khi_linh_dich",
+    "name": "Thịnh Khí Linh Địch",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hoàng Nguyệt Anh",
+    "season": "PK"
+  },
+  {
+    "id": "thinh_khi_lang_dich",
+    "name": "Thịnh Khí Lăng Địch",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Quan Ngân Bình",
+    "season": "PK"
+  },
+  {
+    "id": "tam_thoi_tranh_mui_nhon",
+    "name": "Tạm Thời Tránh Mũi Nhọn",
+    "type": "Chỉ huy",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Vương Nguyên Cơ",
+    "season": "PK"
+  },
+  {
+    "id": "anh_thanh_tu_thu",
+    "name": "Anh Thành Tự Thủ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Tiếp tục hồi lính (Cần: Tào Tháo, Từ Hoảng)",
+    "suitable_generals": "Gia Cát Lượng, Chu Du...",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "biet_minh_biet_ta",
+    "name": "Biết Mình Biết Ta",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Tăng buff khi đội quân thỏa mãn điều kiện riêng (Cần: Ngụy 5 sao, Thục 5 sao, Ngô 5 sao)",
+    "suitable_generals": "",
+    "season": "PK20-Khói Lửa Loạn Thế"
+  },
+  {
+    "id": "bach_ma_nghia_tong",
+    "name": "Bạch Mã Nghĩa Tòng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Thái",
+    "season": "PK"
+  },
+  {
+    "id": "chung_dong_van_ke",
+    "name": "Chúng Động Vạn Kế",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Phản kích và giảm sát thương của quân địch (Cần: Viên Thuật, Tôn Kiên, Tôn Sách)",
+    "suitable_generals": "Hạ Hầu Đôn",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "chinh_don_quan_ngu",
+    "name": "Chỉnh Đốn Quân Ngũ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Hoàng Phổ Tung",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "cho_doi_xuat_phat",
+    "name": "Chờ Đợi Xuất Phát",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Gia Cát Lượng",
+    "season": "PK"
+  },
+  {
+    "id": "cong_bat_duong_quyen",
+    "name": "Công Bất Đường Quyên",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Hoàng Nguyệt Anh",
+    "season": "PK20-Khói Lửa Loạn Thế"
+  },
+  {
+    "id": "cuong_nhu_ket_hop",
+    "name": "Cương Nhu Kết Hợp",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Điêu Thuyền",
+    "season": "PK"
+  },
+  {
+    "id": "cuong_cong",
+    "name": "Cường Công",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tôn Thượng Hương",
+    "season": "PK"
+  },
+  {
+    "id": "cuoi_ngua_nghin_dam",
+    "name": "Cưỡi Ngựa Nghìn Dặm",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Có thể nhận được hiệu quả Quán Sát, và tăng thuộc tính võ lực, còn có hiệu quả Phản Kích (Cần: Quan Vũ, Nhan Lương, Văn Xú)",
+    "suitable_generals": "Quan Vũ",
+    "season": "PK10-Trận Quan Độ"
+  },
+  {
+    "id": "cat_xuong_tri_doc",
+    "name": "Cắt Xương Trị Độc",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lục Tốn",
+    "season": "PK"
+  },
+  {
+    "id": "cu_thuy_doan_kieu",
+    "name": "Cứ Thủy Đoạn Kiều",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Gây ra trạng thái bỏ chạy, còn gây ra dame ổn, và khiến địch giảm dame, để bản thân nhận trạng thái Làm Phản (Cần: Trương Phi, Hạ Hầu Đôn, Nhạc Tiến)",
+    "suitable_generals": "Quan Ngân Bình",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "dung_gia_hang_dau",
+    "name": "Dũng Giả Hàng Đầu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lục Tốn",
+    "season": "PK"
+  },
+  {
+    "id": "duong_suc_doi_chien",
+    "name": "Dưỡng Sức Đợi Chiến",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Pháp Chính",
+    "season": "PK"
+  },
+  {
+    "id": "dan_huyen_luc_chien",
+    "name": "Dẫn Huyền Lực Chiến",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Có thể vào trạng thái tấn công nhóm và tăng Võ Lực (Cần: Văn Xú, Từ Hoảng)",
+    "suitable_generals": "Tôn Quyền, Thái Sử Từ...",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "doc_suc_tinh_ke",
+    "name": "Dốc Sức Tính Kế",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Trương Nhượng",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "gio_tap_mua_sa",
+    "name": "Gió Táp Mưa Sa",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Trương Lương",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "hoanh_qua_duoc_ma",
+    "name": "Hoành Qua Dược Mã",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hoàng Nguyệt Anh",
+    "season": "PK"
+  },
+  {
+    "id": "hoanh_tao_thien_quan",
+    "name": "Hoành Tảo Thiên Quân",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Quan Ngân Bình",
+    "season": "PK"
+  },
+  {
+    "id": "huyet_dao_tranh_gianh",
+    "name": "Huyết Đao Tranh Giành",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Tăng sát thương tấn công thường (Cần: Tôn Sách, Thái Sử Từ)",
+    "suitable_generals": "Mã Siêu, Tôn Quyền",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "huyet_dao_tranh_gianh_tran_muc_hoanh_mau",
+    "name": "Huyết Đao Tranh Giành+Trấn Mục Hoành Mâu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho Tôn Quyền",
+    "season": "PK"
+  },
+  {
+    "id": "hinh_co_quan_luoc",
+    "name": "Hình Cơ Quân Lược",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Viên Thuật",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "hop_quan_tu_chung",
+    "name": "Hợp Quân Tụ Chúng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Điêu Thuyền",
+    "season": "PK"
+  },
+  {
+    "id": "khi_lang_tam_quan",
+    "name": "Khí Lăng Tam Quân",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hạ Hầu Đôn",
+    "season": "PK"
+  },
+  {
+    "id": "khong_danh_ma_thang",
+    "name": "Không Đánh Mà Thắng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chữa trị khi cá thể võ lực cao nhất gây ra sát thương binh đao (Cần: Quan Vũ, Bàng Đức, Vu Cấm, Tào Nhân)",
+    "suitable_generals": "SP Tuân Úc, Lưu Bị, Tả Từ...",
+    "season": "PK14-Trận Tương Phàn"
+  },
+  {
+    "id": "khac_dich_che_thang",
+    "name": "Khắc Địch Chế Thắng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Tuấn",
+    "season": "PK"
+  },
+  {
+    "id": "kinh_thuat_chinh_yeu",
+    "name": "Kinh Thuật Chính Yếu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Thái Ung",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "kich_ky_noa_quy",
+    "name": "Kích Kỳ Nọa Quy",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Có hồi lính, giảm dame chịu hoặc gây dame binh đao (Cần: Hạ Hầu Uyên, Hoàng Trung, Pháp Chính)",
+    "suitable_generals": "Trương Phi",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "lam_nguy_cuu_chu",
+    "name": "Lâm Nguy Cứu Chủ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Sau khi tích lũy số lần tấn công thường tạo Trị Liệu (Cần: Tào Tháo, Mã Siêu)",
+    "suitable_generals": "",
+    "season": "PK18-Trận Đồng Quan"
+  },
+  {
+    "id": "lam_phong_quyet_dich",
+    "name": "Lâm Phong Quyết Địch",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Nhận trạng thái Liên Kích và Miễn Dịch Giao Binh Khí (Cần: Khương Duy, Đặng Ngải, Chung Hội)",
+    "suitable_generals": "Mã Siêu, Tôn Thượng Hương",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "linh_thanh_chau",
+    "name": "Lính Thanh Châu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Quan Ngân Bình",
+    "season": "PK"
+  },
+  {
+    "id": "linh_dan_duong",
+    "name": "Lính Đan Dương",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Giảm sát thương mưu lược phải chịu (Cần: Quần-5 sao*3)",
+    "suitable_generals": "Lưu Bị",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "lac_phuong",
+    "name": "Lạc Phượng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Quan Vũ",
+    "season": "PK"
+  },
+  {
+    "id": "lay_it_danh_nhieu",
+    "name": "Lấy Ít Đánh Nhiều",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Hoàng Trung",
+    "season": "PK"
+  },
+  {
+    "id": "lap_lo_danh_trao",
+    "name": "Lập Lờ Đánh Tráo",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho SP Điêu Thuyền",
+    "season": "PK"
+  },
+  {
+    "id": "lo_mang",
+    "name": "Lỗ Mãng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tôn Thượng Hương",
+    "season": "PK"
+  },
+  {
+    "id": "lua_chay_ngun_ngut",
+    "name": "Lửa Cháy Ngùn Ngụt",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho Tư Mã Ý",
+    "season": "PK"
+  },
+  {
+    "id": "lua_lan_khap_chon",
+    "name": "Lửa Lan Khắp Chốn",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Viên Thuật",
+    "season": "PK"
+  },
+  {
+    "id": "lua_duoi_gio_bay",
+    "name": "Lửa Đuổi Gió Bay",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Chu Du",
+    "season": "PK6-Đại Chiến Xích Bích"
+  },
+  {
+    "id": "me_hoac",
+    "name": "Mê Hoặc",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Hạ Hầu Đôn",
+    "season": "PK"
+  },
+  {
+    "id": "nguy_thu_tuong_gian",
+    "name": "Ngụy Thư Tương Gian",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho Hoàng Nguyệt Anh",
+    "season": "PK"
+  },
+  {
+    "id": "ngu_dich_binh_chuong",
+    "name": "Ngự Địch Bình Chướng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trình Dục",
+    "season": "PK"
+  },
+  {
+    "id": "nhanh_chan_tranh_dat",
+    "name": "Nhanh Chân Tranh Đất",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Quan Hưng",
+    "season": "PK10-Trận Quan Độ"
+  },
+  {
+    "id": "nhanh_tri_dong_nao",
+    "name": "Nhanh Trí Động Não",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho Giả Hủ",
+    "season": "PK"
+  },
+  {
+    "id": "nhan_loi_che_quyen",
+    "name": "Nhân Lợi Chế Quyền",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Gia Cát Khác",
+    "season": "PK15-Vân Khởi Long Tương"
+  },
+  {
+    "id": "nhat_luc_cu_thu",
+    "name": "Nhất Lực Cự Thủ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Nghiêm Nhan",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "nam_gai_nem_mat",
+    "name": "Nằm Gai Nếm Mật",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lăng Thống",
+    "season": "PK"
+  },
+  {
+    "id": "phi_hung_quan",
+    "name": "Phi Hùng Quân",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Tăng cường hiệu quả Trị Liệu, có thể gây ra sát thương mưu lược (Cần: Quần-5 sao*3)",
+    "suitable_generals": "Lưu Bị, Giả Hủ",
+    "season": "PK13-Chinh Chiến Bốn Mùa"
+  },
+  {
+    "id": "phong_tro_hoa_the",
+    "name": "Phong Trợ Hỏa Thế",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "pha_quan_uy_thang",
+    "name": "Phá Quân Uy Thắng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Vương Song",
+    "season": "PK6-Đại Chiến Xích Bích"
+  },
+  {
+    "id": "quyet_thuy_hoi_thanh",
+    "name": "Quyết Thủy Hội Thành",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Gây ra trạng thái phá hoại và thủy công, còn gây dame (Cần: Tuân Du, Tuân Úc,  Cao Thuận)",
+    "suitable_generals": "Bàng Thống, Lục Tốn...",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "quan_cam_pham",
+    "name": "Quân Cẩm Phàm",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Cam Ninh",
+    "season": "PK"
+  },
+  {
+    "id": "so_trang_chien_kich",
+    "name": "Sơ Trang Chiến Kích",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Khiến quân địch tấn công lẫn nhau (Cần: Điêu Thuyền, Lữ Bố, Đổng Trách)",
+    "suitable_generals": "Điêu Thuyền, Hoàng Nguyệt Anh",
+    "season": "PK18-Trận Đồng Quan"
+  },
+  {
+    "id": "so_bong_so_gio",
+    "name": "Sợ Bóng Sợ Gió",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "tam_lanh_song_gio",
+    "name": "Tam Lánh Sóng Gió",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lưu Bị",
+    "season": "PK"
+  },
+  {
+    "id": "tham_muu_vien_luoc",
+    "name": "Thâm Mưu Viễn Lược",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Lữ Mông",
+    "season": "PK"
+  },
+  {
+    "id": "tham_tang_nhuoc_hu",
+    "name": "Thâm Tàng Nhược Hư",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Điêu Thuyền",
+    "season": "PK"
+  },
+  {
+    "id": "thoi_phong_doan_nhan",
+    "name": "Thôi Phong Đoạn Nhẫn",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho SP Mã Siêu",
+    "season": "PK"
+  },
+  {
+    "id": "tha_linh_cuop_doat",
+    "name": "Thả Lính Cướp Đoạt",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho SP Viên Thiệu",
+    "season": "PK"
+  },
+  {
+    "id": "thoi_co_chien_thang",
+    "name": "Thời Cơ Chiến Thắng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Đóa Tư Đại Vương",
+    "season": "PK15-Vân Khởi Long Tương"
+  },
+  {
+    "id": "thua_thang_truong_khu",
+    "name": "Thừa Thắng Trường Khu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Cao Lãm",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "thua_dich_bat_ngu",
+    "name": "Thừa Địch Bất Ngu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp thay thế hiệu quả cho SP Hoàng Phổ Tung",
+    "season": "PK"
+  },
+  {
+    "id": "tien_thanh_ky_lu",
+    "name": "Tiên Thành Kỳ Lự",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Trâu Thị",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "toan_quan_dong_long",
+    "name": "Toàn Quân Đồng Lòng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Tạo ra trị liệu và gây sát thương cho quân địch (Cần: Lục Tốn/Gia Cát Lượng, Ngô 5 sao*2)",
+    "suitable_generals": "",
+    "season": "PK20-Khói Lửa Loạn Thế"
+  },
+  {
+    "id": "trung_dung_nghia_liet",
+    "name": "Trung Dũng Nghĩa Liệt",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Bàng Đức",
+    "season": "PK14-Trận Tương Phàn"
+  },
+  {
+    "id": "tran_vu_chi_thien",
+    "name": "Trân Vu Chí Thiện",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Dương Dị",
+    "season": "PK18-Trận Đồng Quan"
+  },
+  {
+    "id": "tri_ke",
+    "name": "Trí Kế",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "tran_muc_hoanh_mau",
+    "name": "Trấn Mục Hoành Mâu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Tôn Quyền",
+    "season": "PK"
+  },
+  {
+    "id": "tram_sa_quyet_thuy",
+    "name": "Trầm Sa Quyết Thủy",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Tuấn",
+    "season": "PK"
+  },
+  {
+    "id": "tuyet_ky_cap_dao",
+    "name": "Tuyệt Kỳ Cấp Đạo",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Gây ra dame binh đao và trạng thái cấm trị liệu (Cần: Trươmg Cáp, Vương Bình)",
+    "suitable_generals": "Trương Phi",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "tu_duy_sang_tao",
+    "name": "Tư Duy Sáng Tạo",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Mã Quân",
+    "season": "PK20-Khói Lửa Loạn Thế"
+  },
+  {
+    "id": "tam_lanh_cat_xuong",
+    "name": "Tạm Lánh Cắt Xương",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Gia Cát Lượng",
+    "season": "PK"
+  },
+  {
+    "id": "ti_thuc_kich_hu",
+    "name": "Tị Thực Kích Hư",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Viên Thuật",
+    "season": "PK"
+  },
+  {
+    "id": "toa_thu_co_thanh",
+    "name": "Tọa Thủ Cô Thành",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "toa_nhue",
+    "name": "Tỏa Nhuệ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lỗ Túc",
+    "season": "PK"
+  },
+  {
+    "id": "tu_dien_so_ca",
+    "name": "Tứ Diện Sở Ca",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Liêu",
+    "season": "PK"
+  },
+  {
+    "id": "uy_muu_vo_dich",
+    "name": "Uy Mưu Vô Địch",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Thư Thụ",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "vo_duong_phi_quan",
+    "name": "Vô Đương Phi Quân",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Thư Thụ",
+    "season": "PK"
+  },
+  {
+    "id": "vo_dich_can_truong",
+    "name": "Vô Địch Can Trường",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Nhận sát thương binh đao sẽ có Hội tâm có tăng dame (Cần: Hạ Hầu Đôn, Cao Thuận, Hạ Hầu Uyên)",
+    "suitable_generals": "Trương Phi",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "van_vo_song_toan",
+    "name": "Văn Võ Song Toàn",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "van_quan_doat_su",
+    "name": "Vạn Quân Đoạt Sư",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Hứa Chử",
+    "season": "PK18-Trận Đồng Quan"
+  },
+  {
+    "id": "van_tien_te_phap",
+    "name": "Vạn Tiễn Tế Pháp",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lữ Linh Ỷ",
+    "season": "PK"
+  },
+  {
+    "id": "van_tien_te_phat",
+    "name": "Vạn Tiễn Tề Phát",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Viên Thuật",
+    "season": "PK"
+  },
+  {
+    "id": "van_tru_quyet_toan",
+    "name": "Vận Trù Quyết Toán",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Tuân Du",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "xong_pha_khoi_lua",
+    "name": "Xong Pha Khói Lửa",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Tôn Kiên",
+    "season": "PK20-Khói Lửa Loạn Thế"
+  },
+  {
+    "id": "xe_dao_chuoc_dich",
+    "name": "Xế Đao Chước Địch",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Gây sát thương binh đao, nhận trạng thái chấn động (Cần: Ngụy Diên, Hoàng Trung, Tướng Cam 5 Sao Nước Thục*2)",
+    "suitable_generals": "SP Viên Thiệu",
+    "season": "PK15-Vân Khởi Long Tương"
+  },
+  {
+    "id": "ich_ki_kim_co",
+    "name": "Ích Kì Kim Cổ",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Đổng Bạch",
+    "season": "PK10-Trận Quan Độ"
+  },
+  {
+    "id": "doan_quan_dong_long",
+    "name": "Đoàn Quân Đồng Lòng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Giả Hủ",
+    "season": "PK"
+  },
+  {
+    "id": "doat_hon_hiep_phach",
+    "name": "Đoạt Hồn Hiệp Phách",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Chu Du",
+    "season": "PK"
+  },
+  {
+    "id": "danh_bai_quan_dich",
+    "name": "Đánh Bại Quân Địch",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Thái Sử Từ",
+    "season": "PK"
+  },
+  {
+    "id": "danh_vao_cho_dong",
+    "name": "Đánh Vào Chỗ Đông",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Gây sát thương và có thể hồi lính bản thân (Cần: -)",
+    "suitable_generals": "Quan Vũ, Triệu Vân...",
+    "season": "PK 4-Quần Hùng Chiếm Giữ"
+  },
+  {
+    "id": "danh_dau_thang_do",
+    "name": "Đánh Đâu Thắng Đó",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Viên Thuật",
+    "season": "PK"
+  },
+  {
+    "id": "dich_den_cuoi_cung",
+    "name": "Đích Đến Cuối Cùng",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Hồi phục binh lực và đưa ra sát thương binh đao và mưu lược (Cần: Vu Cát, Trương Chiêu, Tôn Sách)",
+    "suitable_generals": "Trình Phổ, SP Hoàng Phổ Tung",
+    "season": "PK12-Anh Hùng Tập Kết"
+  },
+  {
+    "id": "dong_long_hop_suc",
+    "name": "Đồng Lòng Hợp Sức",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Giả Hủ",
+    "season": "PK"
+  },
+  {
+    "id": "doc_hanh_pho_dau",
+    "name": "Độc Hành Phó Đấu",
+    "type": "Chủ động",
+    "quality": "S",
+    "description": "Chế giễu quân địch còn tăng cho bản thân thống soái (Cần: Tôn Kiên, Tôn Sách, Hoàng Cái)",
+    "suitable_generals": "Trình Phổ, Điêu Thuyền...",
+    "season": "PK6-Đại Chiến Xích Bích"
+  },
+  {
+    "id": "bat_mon_kim_toa_tran",
+    "name": "Bát Môn Kim Tỏa Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Gia Cát Lượng",
+    "season": "PK"
+  },
+  {
+    "id": "co_hinh_tran",
+    "name": "Cơ Hình Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ SP Viên Thiệu",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "huy_quan_ket_tran",
+    "name": "Huy Quân Kết Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Quan Vũ",
+    "season": "PK"
+  },
+  {
+    "id": "ham_tran_doanh",
+    "name": "Hãm Trận Doanh",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lưu Bị",
+    "season": "PK"
+  },
+  {
+    "id": "hinh_nhat_tran",
+    "name": "Hình Nhất Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Loại hình chiến pháp tự mang của 3 tướng giống nhau, sẽ nhận hiệu quả tăng thuộc tính, và giảm sát thương gây ra và sát thương chịu phải (Cần: 4 tướng trong 6 Công Tôn Toản, Viên Thiệu, Điền Phong, Nhan Lương, Văn Xú, Triệu Vân)",
+    "suitable_generals": "Mãn Sủng, Lỗ Túc...",
+    "season": "PK10-Trận Quan Độ"
+  },
+  {
+    "id": "ngu_lan_tran",
+    "name": "Ngư Lân Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Tinh Thái",
+    "season": "PK"
+  },
+  {
+    "id": "nhan_hanh_tran",
+    "name": "Nhạn Hành Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Đổng Trác",
+    "season": "PK"
+  },
+  {
+    "id": "nhan_hinh_tran",
+    "name": "Nhạn Hình Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Lô Trực",
+    "season": "PK"
+  },
+  {
+    "id": "phong_thi_tran",
+    "name": "Phong Thỉ Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lỗ Túc",
+    "season": "PK"
+  },
+  {
+    "id": "pha_tran_thoi_kien",
+    "name": "Phá Trận Thôi Kiên",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Viên Thuật",
+    "season": "PK"
+  },
+  {
+    "id": "tam_the_tran",
+    "name": "Tam Thế Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho SP Hoàng Phổ Tung",
+    "season": "PK"
+  },
+  {
+    "id": "tiem_long_tran",
+    "name": "Tiềm Long Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Khi phe võ tướng khác nhau, nhận tăng ích (Cần: Tào Tháo, Viên Thiệu, Viên Thuật, Tôn Sách, Lưu Bị (chọn 4 tướng))",
+    "suitable_generals": "Tả Từ, Trình Phổ...",
+    "season": "PK15-Vân Khởi Long Tương"
+  },
+  {
+    "id": "vo_phong_tran",
+    "name": "Võ Phong Trận",
+    "type": "Trận pháp",
+    "quality": "S",
+    "description": "Tướng chính thu hút dame còn giảm dame chịu, có hồi lính và tăng dame gây ra (Cần: 4 con tướng trong Tào Tháo,Hứa Chử, Từ Hoảng, Viên Thiệu, Cao Lãm, Trương Cáp)",
+    "suitable_generals": "Tả Từ, Trình Phổ, Thái Văn Cơ...",
+    "season": "PK9-Bắc Định Trung Nguyên"
+  },
+  {
+    "id": "bao_le_vo_nhan",
+    "name": "Bạo Lệ Vô Nhân",
+    "type": "Đột kích",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Trương Liêu",
+    "season": "PK"
+  },
+  {
+    "id": "mau_gianh_loi_the",
+    "name": "Mau Giành Lợi Thế",
+    "type": "Đột kích",
+    "quality": "S",
+    "description": "Chiến pháp kế thừa từ Vương Nguyên Cơ",
+    "season": "PK10-Trận Quan Độ"
+  },
+  {
+    "id": "quy_than_dinh_uy",
+    "name": "Quỷ Thần Đình Uy",
+    "type": "Đột kích",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lữ Bố",
+    "season": "PK"
+  },
+  {
+    "id": "duong_phong_thoi_quyet",
+    "name": "Đương Phong Thôi Quyết",
+    "type": "Đột kích",
+    "quality": "S",
+    "description": "Chiến pháp mạnh được khuyên dùng cho Lục Tốn",
+    "season": "PK"
+  },
+  {
+    "id": "muu_luoc_tung_hoanh",
+    "name": "Mưu Lược Tung Hoành",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây trạng thái sát thương liên tục cho quân địch (Tỉ lệ 45%)",
+    "season": "PK"
+  },
+  {
+    "id": "lu_giang_thuong_giap",
+    "name": "Lư Giang Thượng Giáp",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Tăng thuộc tính và gánh vác sát thương cho quân đồng minh (Tỉ lệ 35%)",
+    "season": "PK"
+  },
+  {
+    "id": "thi_chi_bat_di",
+    "name": "Thi Chí Bất Di",
+    "type": "Bị động",
+    "quality": "A",
+    "description": "Nhận hiệu ứng Đánh tập thể và tăng thuộc tính (Tỉ lệ 100%)",
+    "season": "PK"
+  },
+  {
+    "id": "than_thuong_su",
+    "name": "Thần Thượng Sứ",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây ra trạng thái Bỏ chạy cho quân địch (Tỉ lệ 50%)",
+    "season": "PK"
+  },
+  {
+    "id": "tu_lanh",
+    "name": "Tự Lành",
+    "type": "Bị động",
+    "quality": "A",
+    "description": "Tự động hồi phục lượng lớn lính mỗi hiệp, nhận trạng thái nghỉ ngơi (Tỉ lệ 100%)",
+    "season": "PK"
+  },
+  {
+    "id": "kieu_kien_than_hanh",
+    "name": "Kiêu Kiện Thần Hành",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Thêm trạng thái Giao binh khí và nhận trạng thái Ắt trúng (Tỉ lệ 25%)",
+    "season": "PK"
+  },
+  {
+    "id": "toa_chi_no_hap",
+    "name": "Tọa Chi Nộ Hạp",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Thêm trạng thái Yếu và gây sát thương binh đao có điều kiện (Tỉ lệ 25%)",
+    "season": "PK"
+  },
+  {
+    "id": "tai_khi_qua_nhan",
+    "name": "Tài Khí Quá Nhân",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Tăng sát thương mưu lược gây ra cho phe ta (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "phan_dot",
+    "name": "Phấn Đột",
+    "type": "Bị động",
+    "quality": "A",
+    "description": "Sau khi đánh thường tăng sát thương binh đao và có tỉ lệ Giao binh khí địch",
+    "season": "PK"
+  },
+  {
+    "id": "loan_cung_am_vu",
+    "name": "Loạn Cung Ẩm Vũ",
+    "type": "Đột kích",
+    "quality": "A",
+    "description": "Sau khi đánh thường giảm thuộc tính địch và thêm trạng thái Kế tận",
+    "season": "PK"
+  },
+  {
+    "id": "yeu_thuat",
+    "name": "Yêu Thuật",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Thêm trạng thái Bão cát và nhận hiệu ứng Chống đỡ (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "nhat_cu_tiem_diet",
+    "name": "Nhất Cử Tiệm Diệt",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây sát thương binh đao và gây Hỗn loạn có điều kiện (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "bat_nhuc_su_menh",
+    "name": "Bất Nhục Sứ Mệnh",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây sát thương binh đao và phong thêm trạng thái Chấn động (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "am_tang_huyen_co",
+    "name": "Ám Tàng Huyền Cơ",
+    "type": "Đột kích",
+    "quality": "A",
+    "description": "Sau khi đánh thường tạo sát thương binh đao và mưu lược (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "tra_hang",
+    "name": "Trá Hàng",
+    "type": "Chỉ huy",
+    "quality": "A",
+    "description": "Nhận trạng thái Hỗn loạn nhưng hồi phục lượng lính cực lớn mỗi hiệp (Tỉ lệ 100%)",
+    "season": "PK"
+  },
+  {
+    "id": "tinh_hoa",
+    "name": "Tịnh Hóa",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Tăng thuộc tính và xóa trạng thái tiêu cực cho quân ta (Tỉ lệ 30%)",
+    "season": "PK"
+  },
+  {
+    "id": "xua_duoi",
+    "name": "Xua Đuổi",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gỡ bỏ hiệu ứng tăng ích bên địch và tăng thuộc tính quân ta (Tỉ lệ 30%)",
+    "season": "PK"
+  },
+  {
+    "id": "y_the_cam_quyen",
+    "name": "Ỷ Thế Cầm Quyền",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây sát thương mưu lược và thêm trạng thái hỗn loạn (Tỉ lệ 35%)",
+    "season": "PK"
+  },
+  {
+    "id": "truyen_hich_tuyen_uy",
+    "name": "Truyền Hịch Tuyên Uy",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây sát thương mưu lược và giao binh khí (Tỉ lệ 35%)",
+    "season": "PK"
+  },
+  {
+    "id": "danh_vao_cho_dau",
+    "name": "Đánh Vào Chỗ Đau",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Gây sát thương binh đao và khôi phục binh lực (Tỉ lệ 35%)",
+    "season": "PK"
+  },
+  {
+    "id": "danh_vao_cho_hiem",
+    "name": "Đánh Vào Chỗ Hiểm",
+    "type": "Chủ động",
+    "quality": "A",
+    "description": "Tấn công điểm yếu của quân địch (Tỉ lệ 40%)",
+    "season": "PK"
+  },
+  {
+    "id": "dep_long_nguoi",
+    "name": "Đẹp Lòng Người",
+    "quality": "S",
+    "type": "Chủ động",
+    "rate": "35%",
+    "description": "Gây ra trạng thái hỗn loạn cho tướng địch ngẫu nhiên"
+  }
+]

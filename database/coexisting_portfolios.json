@@ -1,0 +1,532 @@
+[
+  {
+    "set_name": "Cùng tồn 1",
+    "description": "40 Lữ Điêu Lô, Hoàng Mã Thương, Pháp Quan Khiên, Ngũ Mưu Kỵ, Ngô Kỵ",
+    "teams": [
+      {
+        "team_name": "Hoàng Mã Thương\n19C",
+        "generals": [
+          {
+            "name": "SP Mã Siêu",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Thôi Phong Đoạn Nhẫn"
+          },
+          {
+            "name": "SP Hoàng Phổ Tung",
+            "tactic1": "Thảo Thuyền Mượn Tên",
+            "tactic2": "Uy Mưu Vô Địch"
+          },
+          {
+            "name": "Hứa Du",
+            "tactic1": "Lâm Nguy Cứu Chủ",
+            "tactic2": "Giải Phiền Vệ"
+          }
+        ]
+      },
+      {
+        "team_name": "40 Lữ Điêu Lô\n19C",
+        "generals": [
+          {
+            "name": "Lữ Bố",
+            "tactic1": "Huyết Đao Tranh Giành",
+            "tactic2": "Dẫn Huyền Lực Chiến"
+          },
+          {
+            "name": "SP Lô Trực",
+            "tactic1": "Tử Sĩ Tiên Phong",
+            "tactic2": "Nhạn Hành Trận"
+          },
+          {
+            "name": "SP Điêu Thuyền",
+            "tactic1": "Thâm Tàng Nhược Hư",
+            "tactic2": "Cương Nhu Kết Hợp"
+          }
+        ]
+      },
+      {
+        "team_name": "Tinh Thái Pháp Quan Khiên\n19C",
+        "generals": [
+          {
+            "name": "SP Quan Vũ",
+            "tactic1": "Lấy Ít Đánh Nhiều",
+            "tactic2": "Kích Kỳ Nọa Quy/ Gió Táp Mưa Sa"
+          },
+          {
+            "name": "SP Pháp Chính",
+            "tactic1": "Dưỡng Sức Đợi Chiến",
+            "tactic2": "Không Đánh Mà Thắng"
+          },
+          {
+            "name": "Trương Tinh Thái",
+            "tactic1": "Lính Đan Dương",
+            "tactic2": "Mê Hoặc"
+          }
+        ]
+      },
+      {
+        "team_name": "Ngũ Mưu Kỵ\n20C",
+        "generals": [
+          {
+            "name": "SP Tuân Úc",
+            "tactic1": "Phi Hùng Quân",
+            "tactic2": "Cắt Xương Trị Độc"
+          },
+          {
+            "name": "SP Quách Gia",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thượng Binh Phạt Mưu"
+          },
+          {
+            "name": "Giả Hủ",
+            "tactic1": "Nhanh Trí Động Não",
+            "tactic2": "Đồng Lòng Hợp Sức"
+          }
+        ]
+      },
+      {
+        "team_name": "Ngô Kỵ\n19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ"
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Hổ Cứ Ưng Dương/ Bách Kỵ Kiếp Doanh"
+          },
+          {
+            "name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Nằm Gai Nếm Mật/ Tị Thực Kích Hư"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_name": "Cùng tồn 2",
+    "description": "Thái Sư Cung, Ngô Nữ Kỵ, Pháp Quan Khiên, Đô Đốc Cung, Trương Quan Hoàng",
+    "teams": [
+      {
+        "team_name": "Thái Sư Cung\n18C",
+        "generals": [
+          {
+            "name": "SP Đổng Trác",
+            "tactic1": "Phi Hùng Quân",
+            "tactic2": "Thượng Binh Phạt Mưu"
+          },
+          {
+            "name": "SP Lô Trực",
+            "tactic1": "Cương Nhu Kết Hợp",
+            "tactic2": "Nhạn Hành Trận"
+          },
+          {
+            "name": "SP Điêu Thuyền",
+            "tactic1": "Thâm Tàng Nhược Hư",
+            "tactic2": "Đồng Lòng Hợp Sức"
+          }
+        ]
+      },
+      {
+        "team_name": "Ngô Nữ Kỵ\n18C",
+        "generals": [
+          {
+            "name": "Đại Kiều",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Thảo Thuyền Mượn Tên"
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Mau Giành Lợi Thế"
+          },
+          {
+            "name": "Tiểu Kiều",
+            "tactic1": "Hổ Báo Kỵ",
+            "tactic2": "Lâm Nguy Cứu Chủ"
+          }
+        ]
+      },
+      {
+        "team_name": "Mã Đại Pháp Quan Khiên\n19C",
+        "generals": [
+          {
+            "name": "SP Quan Vũ",
+            "tactic1": "Lấy Ít Đánh Nhiều",
+            "tactic2": "Kích Kỳ Nọa Quy"
+          },
+          {
+            "name": "SP Pháp Chính",
+            "tactic1": "Dưỡng Sức Đợi Chiến",
+            "tactic2": "Không Đánh Mà Thắng"
+          },
+          {
+            "name": "Mã Đại",
+            "tactic1": "Ngư Lân Trận",
+            "tactic2": "Đằng Giáp Binh"
+          }
+        ]
+      },
+      {
+        "team_name": "Đô Đốc Cung\n20C",
+        "generals": [
+          {
+            "name": "Chu Du",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thiêu Đốt Doanh Lũy"
+          },
+          {
+            "name": "Lục Tốn",
+            "tactic1": "Công Bất Đường Quyên",
+            "tactic2": "Vạn Quân Đoạt Sư"
+          },
+          {
+            "name": "SP Lữ Mông",
+            "tactic1": "Bạch Nhị Binh",
+            "tactic2": "Thảo Thuyền Mượn Tên"
+          }
+        ]
+      },
+      {
+        "team_name": "Trương Quan Hoàng \n16C",
+        "generals": [
+          {
+            "name": "Trương Phi",
+            "tactic1": "Gió Táp Mưa Sa",
+            "tactic2": "Lính Thanh Châu"
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "tactic1": "Huy Quân Kết Trận",
+            "tactic2": "Hoành Tảo Thiên Quân"
+          },
+          {
+            "name": "Hoàng Nguyệt Anh",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Phong Thỉ Trận"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_name": "Cùng tồn 3",
+    "description": "40 Lữ Đổng Điêu, Thục Trí Cung, Thái Úy Khiên, Bắc Phạt Thương, Quyền Kỵ",
+    "teams": [
+      {
+        "team_name": "Thục Trí Cung\n20C",
+        "generals": [
+          {
+            "name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Thiêu Đốt Doanh Lũy"
+          },
+          {
+            "name": "SP Pháp Chính",
+            "tactic1": "Nhanh Trí Động Não",
+            "tactic2": "Bạch Nhị Binh"
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Đồng Lòng Hợp Sức"
+          }
+        ]
+      },
+      {
+        "team_name": "40 Lữ Đổng Điêu\n19C",
+        "generals": [
+          {
+            "name": "Lữ Bố",
+            "tactic1": "Huyết Đao Tranh Giành",
+            "tactic2": "Dẫn Huyền Lực Chiến"
+          },
+          {
+            "name": "Đổng Trác/ SP Đổng Trác",
+            "tactic1": "Tử Sĩ Tiên Phong",
+            "tactic2": "Nhạn Hành Trận"
+          },
+          {
+            "name": "SP Điêu Thuyền",
+            "tactic1": "Thâm Tàng Nhược Hư",
+            "tactic2": "Cương Nhu Kết Hợp"
+          }
+        ]
+      },
+      {
+        "team_name": "Thái Úy Khiên\n19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "tactic1": "Lửa Cháy Ngùn Ngụt",
+            "tactic2": "Toàn Quân Đồng Lòng"
+          },
+          {
+            "name": "Tào Tháo",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Đằng Giáp Binh"
+          },
+          {
+            "name": "Mãn Sủng",
+            "tactic1": "Dưỡng Sức Đợi Chiến",
+            "tactic2": "Hình Nhất Trận"
+          }
+        ]
+      },
+      {
+        "team_name": "Bắc Phạt Thương\n18C",
+        "generals": [
+          {
+            "name": "SP Gia Cát Lượng",
+            "tactic1": "Thảo Thuyền Mượn Tên",
+            "tactic2": "Biết Mình Biết Ta"
+          },
+          {
+            "name": "Quan Hưng",
+            "tactic1": "Gió Táp Mưa Sa/ Văn Võ Song Toàn",
+            "tactic2": "Cưỡi Ngựa Nghìn Dặm"
+          },
+          {
+            "name": "Trương Bào",
+            "tactic1": "Không Đánh Mà Thắng",
+            "tactic2": "Nhân Lợi Chế Quyền"
+          }
+        ]
+      },
+      {
+        "team_name": "Quyền Kỵ\n18C",
+        "generals": [
+          {
+            "name": "Tôn Quyền",
+            "tactic1": "Nhất Kỵ Đương Thiên",
+            "tactic2": "Bách Kỵ Kiếp Doanh"
+          },
+          {
+            "name": "Lăng Thống",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Mau Giành Lợi Thế"
+          },
+          {
+            "name": "Chu Thái",
+            "tactic1": "Phong Thỉ Trận",
+            "tactic2": "Hổ Báo Kỵ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_name": "Cùng tồn 4",
+    "description": "Hạch Đạn Trương Cung, Bắc Phạt Khiên, Cam Ninh Ôn Hầu Cung, Ngũ Mưu Cung/Kỵ, Thái Úy Khiên",
+    "teams": [
+      {
+        "team_name": "Hạch Đạn Trương Phi Cung\n18C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "tactic1": "Tiềm Long Trận",
+            "tactic2": "Thịnh Khí Linh Địch"
+          },
+          {
+            "name": "Trương Phi",
+            "tactic1": "Gió Táp Mưa Sa/ Hoành Tảo Thiên Quân",
+            "tactic2": "Vô Địch Can Trường"
+          },
+          {
+            "name": "SP Chu Tuấn",
+            "tactic1": "Vô Đương Phi Quân",
+            "tactic2": "Thái Bình Đạo Pháp/ Thiêu Đốt Doanh Lũy"
+          }
+        ]
+      },
+      {
+        "team_name": "Bắc Phạt Khiên\n18C",
+        "generals": [
+          {
+            "name": "SP Gia Cát Lượng （Chính Lệnh-Khiên S)",
+            "tactic1": "Quân Hổ Vệ",
+            "tactic2": "Dưỡng Sức Đợi Chiến"
+          },
+          {
+            "name": "Quan Hưng/ Quan Vũ",
+            "tactic1": "Cưỡi Ngựa Nghìn Dặm",
+            "tactic2": "Văn Võ Song Toàn/ Tuyệt Kỳ Cấp Đạo"
+          },
+          {
+            "name": "Trương Bào",
+            "tactic1": "Xông Pha Khói Lửa",
+            "tactic2": "Không Đánh Mà Thắng"
+          }
+        ]
+      },
+      {
+        "team_name": "Ôn Hầu Quần Cung\n19C",
+        "generals": [
+          {
+            "name": "Cam Ninh",
+            "tactic1": "Thảo Thuyền Mượn Tên",
+            "tactic2": "Quân Cẩm Phàm"
+          },
+          {
+            "name": "Lữ Bố",
+            "tactic1": "Dẫn Huyền Lực Chiến",
+            "tactic2": "Huyết Đao Tranh Giành"
+          },
+          {
+            "name": "Hứa Du",
+            "tactic1": "Lâm Nguy Cứu Chủ",
+            "tactic2": "Nhạn Hành Trận"
+          }
+        ]
+      },
+      {
+        "team_name": "Ngũ Mưu Bạch Nhị Cung/\n\nHổ Báo Kỵ\n20C",
+        "generals": [
+          {
+            "name": "SP Tuân Úc",
+            "tactic1": "Nhanh Trí Động Não",
+            "tactic2": "Bạch Nhị Cung/ Tinh·Hổ Báo Kỵ"
+          },
+          {
+            "name": "SP Quách Gia",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Đương Phong Thôi Quyết"
+          },
+          {
+            "name": "Giả Hủ",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Thượng Binh Phạt Mưu"
+          }
+        ]
+      },
+      {
+        "team_name": "Thái Úy Khiên\n19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "tactic1": "Lửa Cháy Ngùn Ngụt",
+            "tactic2": "Toàn Quân Đồng Lòng"
+          },
+          {
+            "name": "Tào Tháo",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Đằng Giáp Binh"
+          },
+          {
+            "name": "Mãn Sủng",
+            "tactic1": "Dưỡng Sức Đợi Chiến",
+            "tactic2": "Hình Nhất Trận"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_name": "Cùng tồn 5",
+    "description": "Khảng Khái Cung, Lữ Quách Kiều Cung, Tuân Du Ngũ Mưu, Đào Viên Khiên, Liêu Kiều Thương",
+    "teams": [
+      {
+        "team_name": "Khảng Khái Cung\n19C",
+        "generals": [
+          {
+            "name": "Cam Ninh",
+            "tactic1": "Thảo Thuyền Mượn Tên",
+            "tactic2": "Quân Cẩm Phàm"
+          },
+          {
+            "name": "Thái Sử Từ",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Thôi Phong Đoạn Nhẫn"
+          },
+          {
+            "name": "SP Lữ Mông",
+            "tactic1": "Lâm Nguy Cứu Chủ",
+            "tactic2": "Nhạn Hành Trận"
+          }
+        ]
+      },
+      {
+        "team_name": "Lữ Quách Kiều Cung\n17C",
+        "generals": [
+          {
+            "name": "Lữ Bố",
+            "tactic1": "Loan Cung Ẩm Vũ",
+            "tactic2": "Phá Giáp"
+          },
+          {
+            "name": "Quách Gia",
+            "tactic1": "Tam Thế Trận",
+            "tactic2": "Lửa Lan Khắp Chốn"
+          },
+          {
+            "name": "Tiểu Kiều",
+            "tactic1": "Văn Võ Song Toàn",
+            "tactic2": "Bạch Mã Nghĩa Tòng"
+          }
+        ]
+      },
+      {
+        "team_name": "Liêu Kiều Thương\n18C",
+        "generals": [
+          {
+            "name": "Đại Kiều",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Độc Hành Phó Đấu"
+          },
+          {
+            "name": "Trương Liêu",
+            "tactic1": "Mau Giành Lợi Thế",
+            "tactic2": "Bạo Lệ Vô Nhân"
+          },
+          {
+            "name": "Tả Từ",
+            "tactic1": "Võ Phong Trận",
+            "tactic2": "Đại Kích Sĩ"
+          }
+        ]
+      },
+      {
+        "team_name": "Tuân Du Ngũ Mưu Kỵ\n19C",
+        "generals": [
+          {
+            "name": "SP Tuân Úc",
+            "tactic1": "Dốc Sức Tính Kế",
+            "tactic2": "Cắt Xương Trị Độc"
+          },
+          {
+            "name": "SP Quách Gia",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thượng Binh Phạt Mưu"
+          },
+          {
+            "name": "Tuân Du",
+            "tactic1": "Nhanh Trí Động Não",
+            "tactic2": "Thiêu Đốt Doanh Lũy/ Đồng Lòng Hợp Sức"
+          }
+        ]
+      },
+      {
+        "team_name": "Đào Viên Khiên\n20C",
+        "generals": [
+          {
+            "name": "Lưu Bị",
+            "tactic1": "Hãm Trận Doanh",
+            "tactic2": "Dưỡng Sức Đợi Chiến"
+          },
+          {
+            "name": "Quan Vũ",
+            "tactic1": "Huy Quân Kết Trận",
+            "tactic2": "Uy Mưu Vô Địch"
+          },
+          {
+            "name": "Trương Phi",
+            "tactic1": "Vô Địch Can Trường",
+            "tactic2": "Gió Táp Mưa Sa"
+          }
+        ]
+      }
+    ]
+  }
+]

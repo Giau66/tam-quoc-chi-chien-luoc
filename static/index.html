@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tam Quốc Chí Chiến Lược | 175 Đội Excel & Đề Xuất Meta / Khai Hoang Từ Ảnh</title>
+  <meta name="description" content="Công cụ tra cứu 175+ đội hình chuẩn Excel, tải ảnh chụp kho tướng game để AI tự động nhận diện và đề xuất team meta T0/T1 cùng team khai hoang mở đất tối ưu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="/anh/tamquocchi.jpg">
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/navbar.css?v=8">
+  <link rel="stylesheet" href="css/auth.css?v=8">
+  <style>
+    body { padding-top: 64px; }
+    .cloud-sync-bar-wrap {
+      background: rgba(22,30,46,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-navbar" id="site-navbar">
+  <a href="/" class="nav-brand">
+    <div class="nav-seal" style="width:36px;height:36px;min-width:36px;max-width:36px;min-height:36px;max-height:36px;overflow:hidden;border-radius:8px;flex-shrink:0"><img src="/anh/tamquocchi.jpg" alt="Logo" class="nav-seal-img" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:cover;border-radius:8px;display:block"></div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-title">TAM QUỐC CHÍ</span>
+      <span class="nav-brand-sub">Chiến Lược</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <button class="nav-link active" id="navbar-link-factions" onclick="switchTab('tab-factions')"><span class="nav-link-icon">🚩</span>175 Đội (Excel)</button>
+    <button class="nav-link" id="navbar-link-upload" onclick="switchTab('tab-upload')"><span class="nav-link-icon">📷</span>Tải Ảnh Quét</button>
+    <button class="nav-link" id="navbar-link-recommend" onclick="switchTab('tab-recommend')"><span class="nav-link-icon">🏆</span>Đề Xuất Team Meta</button>
+    <button class="nav-link" id="navbar-link-starter" onclick="switchTab('tab-starter')"><span class="nav-link-icon">🌱</span>Đề Xuất Khai Hoang</button>
+    <button class="nav-link" id="navbar-link-inventory" onclick="switchTab('tab-inventory')"><span class="nav-link-icon">⚔️</span>Kho Tướng &amp; CP</button>
+    <button class="nav-link nav-reset-btn" id="navbar-link-reset" onclick="resetInventoryData()" title="Làm mới kho về 0 (Xóa dữ liệu cũ)"><span class="nav-link-icon">🗑️</span>Làm Mới</button>
+  </div>
+
+  <div class="nav-auth" id="nav-auth-section">
+    <button class="nav-btn-login" onclick="openAuthModal('login')">Đăng Nhập</button>
+    <button class="nav-btn-register" onclick="openAuthModal('register')">Đăng Ký</button>
+  </div>
+</nav>
+
+<!-- CLOUD SYNC BAR -->
+<div class="cloud-sync-bar-wrap">
+  <div id="cloud-sync-bar" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <span style="color:#6b7280;font-size:12px">⏳ Đang kiểm tra trạng thái Cloud Save...</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     APPLICATION CONTAINER
+═══════════════════════════════════════════════════════ -->
+
+  <!-- HEADER & BANNER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-seal" style="width:48px;height:48px;min-width:48px;max-width:48px;min-height:48px;max-height:48px;overflow:hidden;border-radius:8px;flex-shrink:0"><img src="/anh/tamquocchi.jpg" alt="Logo" class="brand-seal-img" style="width:48px;height:48px;max-width:48px;max-height:48px;object-fit:cover;border-radius:8px;display:block"></div>
+        <div class="brand-info">
+          <h1>TAM QUỐC CHÍ <span class="accent-text">CHIẾN LƯỢC</span></h1>
+          <p class="tagline">175 Đội Hình Excel &middot; Nhận Diện Ảnh AI &middot; Đề Xuất Team Meta &amp; Khai Hoang</p>
+        </div>
+      </div>
+
+      <div class="inventory-summary">
+        <div class="stat-badge">
+          <span class="stat-label">Tướng đã nhận diện</span>
+          <span class="stat-val" id="stat-gen-count">0</span>
+        </div>
+        <div class="stat-badge">
+          <span class="stat-label">Chiến pháp đã nhận diện</span>
+          <span class="stat-val" id="stat-tactic-count">0</span>
+        </div>
+        <button class="btn btn-danger btn-sm" id="btn-reset-data" title="Xóa toàn bộ dữ liệu đang chọn về 0">
+          🗑️ Làm Mới Kho
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN NAVIGATION TABS -->
+    <nav class="nav-tabs">
+      <div class="nav-container">
+        <button class="nav-tab active" data-tab="tab-factions" id="nav-btn-factions">
+          <span class="tab-icon">🚩</span> 175 Đội Hình Theo Phe (Excel)
+          <span class="tab-badge" id="factions-nav-badge" style="background: linear-gradient(135deg, #d97706, #b45309);">175 Đội</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-upload" id="nav-btn-upload">
+          <span class="tab-icon">📷</span> Tải Ảnh &amp; Nhận Diện AI
+        </button>
+        <button class="nav-tab" data-tab="tab-recommend" id="nav-btn-recommend">
+          <span class="tab-icon">🏆</span> Đề Xuất Team Meta
+          <span class="tab-badge" id="recommend-badge">0 Đội</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-starter" id="nav-btn-starter">
+          <span class="tab-icon">🌱</span> Đề Xuất Khai Hoang
+          <span class="tab-badge" id="starter-nav-badge" style="background: linear-gradient(135deg, #10b981, #059669);">0 Đội</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-inventory" id="nav-btn-inventory">
+          <span class="tab-icon">⚔️</span> Kho Tướng &amp; Chiến Pháp
+          <span class="tab-counter" id="inventory-counter">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN APPLICATION BODY -->
+  <main class="main-content">
+
+    <!-- TAB 1: 175 ĐỘI HÌNH THEO PHE (EXCEL) — MÀN HÌNH ĐẦU TIÊN MẶC ĐỊNH -->
+    <section class="tab-panel active" id="tab-factions">
+      <div class="card panel-card">
+        <div class="section-title-wrap">
+          <h2>🚩 175 ĐỘI HÌNH META THEO PHE (EXCEL)</h2>
+          <p class="section-desc">Danh sách đầy đủ 175+ đội hình meta theo từng phe trích xuất từ file Excel chuẩn Mùa PK. Sau khi tải ảnh quét kho, bạn có thể tích "Chỉ hiện đủ kho" để lọc nhanh các đội hình khả dụng.</p>
+        </div>
+
+        <div id="factions-inventory-status"></div>
+
+        <div class="faction-filter-panel" id="faction-filter-panel">
+          <div class="faction-mega-tabs" id="faction-mega-tabs">
+            <button class="faction-mega-tab active" data-faction="All">🌐 Tất Cả</button>
+            <button class="faction-mega-tab" data-faction="Ngụy">🔵 Ngụy</button>
+            <button class="faction-mega-tab" data-faction="Thục">🟢 Thục</button>
+            <button class="faction-mega-tab" data-faction="Ngô">🔴 Ngô</button>
+            <button class="faction-mega-tab" data-faction="Quần">🟣 Quần Hùng</button>
+            <button class="faction-mega-tab" data-faction="Tam Thế">🌀 Đa Phe</button>
+          </div>
+          <div class="faction-sub-filters">
+            <select id="faction-filter-troop" class="filter-select">
+              <option value="All">Tất cả binh chủng</option>
+              <option value="Kỵ">Kỵ</option>
+              <option value="Thương">Thương</option>
+              <option value="Khiên">Khiên</option>
+              <option value="Cung">Cung</option>
+              <option value="Khí">Khí Xa</option>
+            </select>
+            <select id="faction-filter-tier" class="filter-select">
+              <option value="All">Tất cả tier</option>
+              <option value="T0">T0</option>
+              <option value="T0.5">T0.5</option>
+              <option value="T1">T1</option>
+            </select>
+            <input type="text" id="faction-search" class="inv-search-input" placeholder="🔍 Tìm kiếm đội hình, tướng...">
+            <label class="checkbox-label">
+              <input type="checkbox" id="faction-only-owned"> Chỉ hiện đủ kho
+            </label>
+          </div>
+        </div>
+
+        <div style="margin: 14px 0 18px; font-size: 14px; color: var(--text-muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px">
+          <span id="factions-current-title" style="font-weight:600; color:#fbbf24">TẤT CẢ CÁC PHE</span>
+          <span>Hiển thị <strong id="factions-count" class="accent-text">0</strong> đội hình</span>
+        </div>
+
+        <div id="faction-teams-grid" class="faction-teams-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: TRANG TẢI ẢNH NHẬN DIỆN (UP HÌNH) -->
+    <section class="tab-panel" id="tab-upload">
+      <div class="card panel-card">
+        <div class="section-title-wrap">
+          <h2>📸 TẢI ẢNH CHỤP MÀN HÌNH GAME (UP HÌNH)</h2>
+          <p class="section-desc">Hỗ trợ tải nhiều ảnh chụp màn hình kho Tướng hoặc kho Chiến Pháp. AI sẽ tự động phân tích và trích xuất danh sách sở hữu làm dữ liệu để đề xuất Team Meta và Team Khai Hoang.</p>
+        </div>
+
+        <div class="api-key-config">
+          <div class="api-key-header">
+            <span class="badge-tag">TÙY CHỌN NÂNG CAO</span>
+            <strong>Tích hợp AI Vision (Gemini 1.5/2.0 Flash)</strong>
+            <span class="helper-text">(Đọc chính xác 100% hình ảnh game chụp từ điện thoại)</span>
+          </div>
+          <div class="api-key-input-row">
+            <input type="password" id="gemini-api-key" placeholder="Nhập Google Gemini API Key của bạn (nếu có, hoặc để trống để dùng bộ quét thông minh)...">
+            <button class="btn btn-outline" id="btn-toggle-key">Hiện Key</button>
+            <button class="btn btn-secondary" id="btn-save-key">Lưu Key</button>
+          </div>
+        </div>
+
+        <!-- UPLOAD DROP ZONE -->
+        <div class="drop-zone" id="drop-zone">
+          <div class="drop-zone-content">
+            <span class="drop-icon">📁</span>
+            <p class="drop-title">Kéo thả ảnh vào đây hoặc click để chọn</p>
+            <p class="drop-hint">Hỗ trợ: JPG, PNG, WEBP — Tải nhiều ảnh cùng lúc</p>
+            <input type="file" id="file-input" accept="image/*" multiple style="display:none">
+            <button class="btn btn-primary" id="btn-select-files">📂 Chọn Ảnh Chụp Màn Hình</button>
+          </div>
+        </div>
+
+        <div id="file-preview-list" class="file-preview-list" style="display:none"></div>
+
+        <div class="upload-actions" id="upload-actions" style="display:none">
+          <button class="btn btn-primary btn-lg" id="btn-upload-analyze">
+            🔍 Phân Tích &amp; Nhận Diện Bằng AI
+          </button>
+          <button class="btn btn-outline" id="btn-clear-files">🗑️ Xóa ảnh</button>
+        </div>
+
+        <div id="upload-progress" class="upload-progress" style="display:none">
+          <div class="progress-spinner"></div>
+          <span id="progress-text">Đang phân tích ảnh bằng AI...</span>
+        </div>
+
+        <div id="upload-results" class="upload-results" style="display:none"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: ĐỀ XUẤT TEAM META (DỰA TRÊN DỮ LIỆU TỪ ẢNH) -->
+    <section class="tab-panel" id="tab-recommend">
+      <div class="card panel-card">
+        <div class="section-title-wrap">
+          <h2>🏆 ĐỀ XUẤT TEAM META (DỰA TRÊN DỮ LIỆU ẢNH)</h2>
+          <p class="section-desc">Hệ thống so khớp kho tướng &amp; chiến pháp (nhận diện từ ảnh bạn vừa tải lên) với toàn bộ 175 đội hình meta, tính toán % tương thích và đề xuất các đội T0/T1 mạnh nhất bạn có thể xuất trận.</p>
+        </div>
+
+        <div class="filter-bar" id="recommend-filter-bar">
+          <div class="filter-group">
+            <label class="filter-label">Mùa giải</label>
+            <select id="filter-season" class="filter-select">
+              <option value="All">Tất cả mùa</option>
+              <option value="PK">PK (Hiện tại)</option>
+              <option value="S1">Mùa 1</option>
+              <option value="S2">Mùa 2</option>
+              <option value="S3">Mùa 3</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Phe phái</label>
+            <select id="filter-faction" class="filter-select">
+              <option value="All">Tất cả phe</option>
+              <option value="Ngụy">Ngụy</option>
+              <option value="Thục">Thục</option>
+              <option value="Ngô">Ngô</option>
+              <option value="Quần">Quần Hùng</option>
+              <option value="Tam Thế">Đa Phe</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Binh chủng</label>
+            <select id="filter-troop" class="filter-select">
+              <option value="All">Tất cả</option>
+              <option value="Kỵ">Kỵ</option>
+              <option value="Thương">Thương</option>
+              <option value="Khiên">Khiên</option>
+              <option value="Cung">Cung</option>
+              <option value="Khí">Khí Xa</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Điểm tối thiểu</label>
+            <input type="range" id="filter-score" min="0" max="100" value="30" class="filter-slider">
+            <span id="filter-score-val" class="filter-slider-val">30%</span>
+          </div>
+          <button class="btn btn-primary" id="btn-recommend">🔍 Tìm Đội Hình</button>
+        </div>
+
+        <div style="margin: 14px 0 18px; font-size: 14px; color: var(--text-muted);">
+          Tìm thấy <strong id="results-count" class="accent-text">0</strong> đội hình phù hợp
+        </div>
+
+        <div id="recommend-results" class="recommend-results"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ĐỀ XUẤT TEAM KHAI HOANG (MỞ ĐẤT) (DỰA TRÊN DỮ LIỆU ẢNH) -->
+    <section class="tab-panel" id="tab-starter">
+      <div class="card panel-card">
+        <div class="section-title-wrap">
+          <h2>🌱 ĐỀ XUẤT TEAM KHAI HOANG (MỞ ĐẤT)</h2>
+          <p class="section-desc">Đề xuất các đội hình chuyên dụng cho Khai Hoang (mở đất đầu mùa) dựa trên tướng &amp; chiến pháp nhận diện từ ảnh. Kèm cẩm nang đánh Mỏ 4-5-6-7 và đội hình thám thính quái.</p>
+        </div>
+
+        <div class="starter-filter-bar">
+          <div class="filter-group">
+            <label class="filter-label">Binh chủng</label>
+            <select id="starter-filter-troop" class="filter-select">
+              <option value="All">Tất cả</option>
+              <option value="Kỵ">Kỵ</option>
+              <option value="Thương">Thương</option>
+              <option value="Khiên">Khiên</option>
+              <option value="Cung">Cung</option>
+            </select>
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" id="starter-only-ready"> Chỉ hiện đủ kho
+          </label>
+        </div>
+
+        <div style="margin: 14px 0 18px; font-size: 14px; color: var(--text-muted);">
+          Có <strong id="starter-ready-count" class="accent-text">0</strong> đội hình khả dụng
+        </div>
+
+        <div id="starter-teams-list" class="starter-teams-list"></div>
+
+        <!-- Mines Guide (Mỏ 4/5/6/7) -->
+        <div class="starter-section-wrap" style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(245,158,11,0.15)">
+          <div class="section-title-wrap">
+            <h3 style="color:#fbbf24;font-size:18px;margin-bottom:8px">🗺️ CẨM NANG ĐÁNH MỎ 4 - 5 - 6 - 7</h3>
+            <p class="section-desc">Hướng dẫn chi tiết cấp độ tướng, số lính đề xuất và độ khó các đội thủ mỏ để khai hoang ít tổn thất nhất.</p>
+          </div>
+          <div id="mines-guide-container" class="mines-guide-grid"></div>
+        </div>
+
+        <!-- Touch Scouts -->
+        <div class="starter-section-wrap" style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(245,158,11,0.15)">
+          <div class="section-title-wrap">
+            <h3 style="color:#38bdf8;font-size:18px;margin-bottom:8px">🕵️ ĐỘI HÌNH THÁM THÍNH QUÁI (TOUCH SCOUT)</h3>
+            <p class="section-desc">Đội quân 1 lính dùng để thám thính quái mỏ trước khi xuất quân chính, tránh gặp binh chủng bị khắc chế.</p>
+          </div>
+          <div id="touch-scouts-container" class="touch-scouts-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: KHO TƯỚNG & CHIẾN PHÁP (KIỂM TRA DỮ LIỆU) -->
+    <section class="tab-panel" id="tab-inventory">
+      <div class="card panel-card">
+        <div class="section-title-wrap">
+          <h2>⚔️ KHO TƯỚNG &amp; CHIẾN PHÁP ĐÃ NHẬN DIỆN</h2>
+          <p class="section-desc">Xem và kiểm tra danh sách tướng và chiến pháp đã được AI trích xuất từ ảnh chụp, hoặc tích chọn bổ sung thủ công.</p>
+        </div>
+
+        <div class="inventory-tabs">
+          <button class="inv-tab active" id="inv-tab-generals" onclick="switchInventoryTab('generals')">
+            🗡️ Tướng (<span id="inv-gen-count">0</span>)
+          </button>
+          <button class="inv-tab" id="inv-tab-tactics" onclick="switchInventoryTab('tactics')">
+            📜 Chiến Pháp (<span id="inv-tac-count">0</span>)
+          </button>
+        </div>
+
+        <div class="inv-panel active" id="inv-panel-generals">
+          <div class="inv-filter-row">
+            <input type="text" id="gen-search" placeholder="🔍 Tìm tướng..." class="inv-search-input">
+            <div class="faction-filter-buttons" id="gen-faction-filter">
+              <button class="faction-btn active" data-faction="All">Tất Cả</button>
+              <button class="faction-btn wei" data-faction="Ngụy">Ngụy</button>
+              <button class="faction-btn shu" data-faction="Thục">Thục</button>
+              <button class="faction-btn wu" data-faction="Ngô">Ngô</button>
+              <button class="faction-btn qun" data-faction="Quần">Quần</button>
+            </div>
+          </div>
+          <div class="card-grid" id="generals-grid"></div>
+        </div>
+
+        <div class="inv-panel" id="inv-panel-tactics">
+          <div class="inv-filter-row">
+            <input type="text" id="tac-search" placeholder="🔍 Tìm chiến pháp..." class="inv-search-input">
+            <div class="faction-filter-buttons" id="tac-type-filter">
+              <button class="faction-btn active" data-type="All">Tất Cả</button>
+              <button class="faction-btn" data-type="Binh chủng">Binh Chủng</button>
+              <button class="faction-btn" data-type="Chỉ huy">Chỉ Huy</button>
+              <button class="faction-btn" data-type="Chủ động">Chủ Động</button>
+              <button class="faction-btn" data-type="Đột kích">Đột Kích</button>
+              <button class="faction-btn" data-type="Bị động">Bị Động</button>
+              <button class="faction-btn" data-type="Trận pháp">Trận Pháp</button>
+            </div>
+          </div>
+          <div class="card-grid" id="tactics-grid"></div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /.main-content -->
+
+<!-- AUTH MODAL -->
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-modal">
+    <div class="auth-modal-header">
+      <div class="auth-modal-seal"><img src="/anh/tamquocchi.jpg" alt="Logo" class="auth-seal-img" style="width:44px;height:44px;object-fit:cover;border-radius:8px;display:block;margin:0 auto"></div>
+      <h2 class="auth-modal-title">TAM QUỐC CHÍ</h2>
+      <p class="auth-modal-subtitle">Đăng nhập để lưu kho tướng trên cloud</p>
+      <button class="auth-close-btn" onclick="closeAuthModal()">✕</button>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')">Đăng Nhập</button>
+      <button class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')">Đăng Ký</button>
+    </div>
+    <form class="auth-form active" id="auth-form-login">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="auth-submit-btn">Đăng Nhập</button>
+    </form>
+    <form class="auth-form" id="auth-form-register">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Hiển Thị</label>
+        <input class="auth-input" type="text" name="display_name" placeholder="Chủ Công của bạn...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Đăng Nhập</label>
+        <input class="auth-input" type="text" name="username" placeholder="username" required minlength="3">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required minlength="6">
+      </div>
+      <button type="submit" class="auth-submit-btn">Tạo Tài Khoản</button>
+    </form>
+    <div class="auth-footer">Miễn phí hoàn toàn &middot; Cloud Save kho đồ</div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+
+<!-- AI TEAM ANALYZER MODAL -->
+<div class="ai-analyze-overlay" id="ai-analyze-overlay">
+  <div class="ai-analyze-modal" id="ai-analyze-modal">
+    <div class="ai-analyze-modal-header">
+      <div class="ai-analyze-modal-icon">🔍</div>
+      <div>
+        <h3 id="ai-analyze-team-name">Phân Tích Đội Hình</h3>
+        <p>Gemini AI đang phân tích điểm mạnh, yếu và chiến thuật tối ưu...</p>
+      </div>
+    </div>
+    <button class="ai-analyze-close" onclick="closeAnalyzeModal()">✕</button>
+
+    <!-- Loading state -->
+    <div class="ai-analyze-loading" id="ai-analyze-loading">
+      <div class="ai-analyze-spinner"></div>
+      <p>Đang phân tích đội hình... ⚔️</p>
+    </div>
+
+    <!-- Result -->
+    <div class="ai-analysis-result" id="ai-analysis-result" style="display:none"></div>
+  </div>
+</div>
+
+</body>
+</html>

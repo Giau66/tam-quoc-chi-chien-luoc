@@ -1,0 +1,392 @@
+# -*- coding: utf-8 -*-
+"""
+Vision & Recognition Service for Tam Quoc Chi - Chien Luoc.
+Supports:
+1. High-speed Offline Local OCR (via RapidOCR / ONNX) without needing any API key.
+2. Google Gemini 1.5/2.0 Flash Vision API if API key is provided.
+"""
+import os
+import json
+import re
+import difflib
+import base64
+import requests
+import unicodedata
+from typing import List, Dict, Any, Optional
+
+try:
+    from rapidocr_onnxruntime import RapidOCR
+    HAS_RAPID_OCR = True
+except ImportError:
+    HAS_RAPID_OCR = False
+
+def remove_accents(text: str) -> str:
+    text = unicodedata.normalize('NFD', str(text))
+    text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
+    return text.lower().replace('đ', 'd').replace('  ', ' ').strip()
+
+def clean_ocr_line(text: str) -> str:
+    text = remove_accents(text)
+    # Strip grade prefixes like A, S, 1/1, percentages, or noise
+    text = re.sub(r'^[as\(\)\[\]\.\s\d]+', '', text)
+    text = re.sub(r'\b(40th|co|pk|s1|s2|s3|thuc tinh)\b', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+# Noise keywords in game UI that should not match generals or tactics
+NOISE_WORDS = {
+    "chu dong", "bi dong", "chi huy", "dot kich", "phap tran", "binh chung", "noi chinh",
+    "1/1", "100%", "50%", "40%", "35%", "30%", "25%", "thuc tinh", "ten chien phap",
+    "phat dong", "huong dan", "loai hinh", "co the thiet lap", "sat thuong", "binh dao",
+    "muu luoc", "quan dich", "quan ta", "chu tuong", "trang thai", "thiet lap", "toan bo"
+}
+
+# Comprehensive Stem & Regex Patterns for all tactics in game screenshots
+TACTIC_PATTERNS = {
+    "Đoạt Hồn Hiệp Phách": [r"doat\s*hon", r"hiep\s*phach"],
+    "Thảo Thuyền Mượn Tên": [r"thao\s*thuyen", r"thuyen\s*co", r"muon\s*ten"],
+    "Quân Dân Khích Lệ": [r"quan\s*dan", r"khich\s*le", r"an\s*ui\s*quan"],
+    "Tạm Thời Tránh Mũi Nhọn": [r"tam\s*thoi\s*tranh", r"tranh\s*mui", r"tam\s*lanh\s*song"],
+    "Cắt Xương Trị Độc": [r"cat\s*xuong", r"cao\s*xuong", r"tri\s*doc"],
+    "Chờ Đợi Xuất Phát": [r"cho\s*doi\s*xuat", r"xuat\s*phat", r"duong\s*suc\s*doi"],
+    "Bát Môn Kim Tỏa Trận": [r"bat\s*mon", r"kim\s*toa"],
+    "Thịnh Khí Lăng Địch": [r"thinh\s*khi", r"lang\s*dich", r"linh\s*dich"],
+    "Phong Thỉ Trận": [r"phong\s*thi\s*tran", r"phong\s*thi"],
+    "Tiềm Long Trận": [r"tiem\s*long"],
+    "Tam Thế Trận": [r"tam\s*the\s*tran", r"tam\s*the"],
+    "Vũ Phong Trận": [r"vu\s*phong"],
+    "Đằng Giáp Binh": [r"dang\s*giap", r"giap\s*may"],
+    "Hãm Trận Doanh": [r"ham\s*tran"],
+    "Vô Đương Phi Quân": [r"vo\s*duong\s*phi", r"vo\s*dang\s*phi", r"voduongphi", r"vodangphi"],
+    "Bạch Mã Nghĩa Tòng": [r"bach\s*ma\s*nghia", r"bach\s*ma"],
+    "Hổ Báo Kỵ": [r"ho\s*bao\s*ky", r"ho\s*bao"],
+    "Tây Lương Thiết Kỵ": [r"tay\s*luong\s*thiet", r"tay\s*luong"],
+    "Lính Thanh Châu": [r"thanh\s*chau"],
+    "Lính Đan Dương": [r"dan\s*duong"],
+    "Bạch Nhị Binh": [r"bach\s*nhi"],
+    "Tử Sĩ Tiên Phong": [r"tu\s*si\s*tien"],
+    "Giải Phiền Vệ": [r"giai\s*phien"],
+    "Phi Hùng Quân": [r"phi\s*hung"],
+    "Tượng Binh": [r"tuong\s*binh"],
+    "Đại Kích Sĩ": [r"dai\s*kich\s*si", r"dai\s*kich"],
+    "Hoành Tảo Thiên Quân": [r"hoanh\s*tao", r"tao\s*thien\s*quan"],
+    "Phá Quân Uy Thắng": [r"pha\s*quan\s*uy", r"pha\s*quan"],
+    "Đánh Đâu Thắng Đó": [r"danh\s*dau\s*thang", r"so\s*huong\s*phi"],
+    "Phá Trận Thôi Kiên": [r"pha\s*tran\s*thoi", r"thoi\s*kien"],
+    "Gió Táp Mưa Sa": [r"gio\s*tap", r"mua\s*sa"],
+    "Cứ Thủy Đoạn Kiều": [r"cu\s*thuy", r"doan\s*kieu"],
+    "Xế Đao Chước Địch": [r"xe\s*dao", r"chuoc\s*dich"],
+    "Trung Dũng Nghĩa Liệt": [r"trung\s*dung\s*nghia", r"nghia\s*liet"],
+    "Cưỡi Ngựa Nghìn Dặm": [r"cuoi\s*ngua\s*nghin", r"nghin\s*dam"],
+    "Huyết Đao Tranh Giành": [r"huyet\s*dao"],
+    "Trấn Mục Hoành Mâu": [r"tran\s*muc", r"hoanh\s*mau"],
+    "Hoành Qua Dược Mã": [r"hoanh\s*qua", r"duoc\s*ma"],
+    "Tuyệt Địa Phản Kích": [r"tuyet\s*dia", r"phan\s*kich"],
+    "Đánh Bại Quân Địch": [r"danh\s*bai\s*quan", r"be\s*gay\s*mui", r"chiet\s*xung"],
+    "Mau Giành Lợi Thế": [r"mau\s*gianh", r"loi\s*the", r"toc\s*thua\s*ky"],
+    "Bách Kỵ Kiếp Doanh": [r"bach\s*ky\s*kiep", r"kiep\s*doanh"],
+    "Nhất Kỵ Đương Thiên": [r"nhat\s*ky\s*duong", r"duong\s*thien"],
+    "Bạo Lệ Vô Nhân": [r"bao\s*le\s*vo", r"bao\s*le"],
+    "Đương Phong Thôi Quyết": [r"duong\s*phong\s*thoi", r"duong\s*phong\s*toi", r"duong\s*phong"],
+    "Thôi Phong Đoạn Nhẫn": [r"thoi\s*phong", r"doan\s*nhan"],
+    "Lõa Y Huyết Chiến": [r"loa\s*y\s*huyet", r"khoa\s*y", r"loa\s*y"],
+    "Thiết Kỵ Khu Trì": [r"thiet\s*ky\s*khu", r"khu\s*tri"],
+    "Quỷ Thần Đình Uy": [r"quy\s*than\s*dinh", r"dinh\s*uy"],
+    "Thái Bình Đạo Pháp": [r"thai\s*binh\s*dao", r"thai\s*binh"],
+    "Sĩ Biệt Tam Nhật": [r"si\s*biet\s*tam", r"si\s*biet"],
+    "Dụng Võ Thần Thông": [r"dung\s*vo\s*thong", r"dung\s*vo"],
+    "Sợ Bóng Sợ Gió": [r"so\s*bong", r"so\s*gio"],
+    "Phong Trợ Hỏa Thế": [r"phong\s*tro\s*hoa", r"phong\s*tro"],
+    "Thượng Binh Phạt Mưu": [r"thuong\s*binh\s*phat", r"phat\s*muu"],
+    "Binh Vô Thường Thế": [r"binh\s*vo\s*thuong", r"thuong\s*the"],
+    "Văn Võ Song Toàn": [r"van\s*vo\s*song", r"song\s*toan"],
+    "Vận Quyết Tính Kế": [r"van\s*quyet"],
+    "Uy Mưu Vô Địch": [r"uy\s*muu"],
+    "Mê Hoặc": [r"\bme\s*hoac\b"],
+    "Nhanh Chân Tranh Đất": [r"nhanh\s*chan", r"tranh\s*dat"],
+    "Vạn Quân Đoạt Sư": [r"van\s*quan\s*doat", r"doat\s*su", r"doat\s*soai"],
+    "Vạn Tiễn Tề Phát": [r"van\s*tien\s*te", r"van\s*tien"],
+    "Dụ Địch Thâm Nhập": [r"du\s*dich\s*tham", r"tham\s*nhap"],
+    "Ngụy Thư Tương Gian": [r"nguy\s*thu\s*tuong", r"tuong\s*gian"],
+    "Kế Hay Mưu Giỏi": [r"ke\s*hay\s*muu", r"kehaymuu"],
+    "Thiêu Đốt Doanh Lũy": [r"thieu\s*dot\s*doanh", r"doanh\s*luy"],
+    "Cốc Thần Tinh": [r"coc\s*than"],
+    "Họa Sĩ": [r"\bhoa\s*si\b"],
+    "Đẹp Lòng Người": [r"dep\s*dong", r"dong\s*long\s*nguoi", r"khuynh\s*quoc"],
+    "Thời Cơ Chiến Thắng": [r"thoi\s*co\s*chien"],
+    "Truyền Âm Nhập Mật": [r"truyen\s*am"],
+    "Đồng Lòng Hợp Sức": [r"dong\s*long\s*hop"],
+    "Toàn Quân Đồng Lòng": [r"toan\s*quan\s*dong"],
+    "Khí Lăng Tam Quân": [r"khi\s*lang\s*tam"],
+    "Lấy Ít Đánh Nhiều": [r"lay\s*it\s*danh"],
+    "Dũng Giả Hàng Đầu": [r"dung\s*gia\s*hang"],
+    "Tứ Diện Sở Ca": [r"tu\s*dien\s*so"],
+    "Nhất Lực Cự Thủ": [r"nhat\s*luc\s*cu"],
+    "Quân Cẩm Phàm": [r"quan\s*cam\s*pham", r"cam\s*pham"],
+    "Tiên Thành Kỳ Lự": [r"tien\s*thanh\s*ky"],
+    "Dốc Sức Tính Kế": [r"doc\s*suc\s*tinh"],
+    "Loạn Cung Ẩm Vũ": [r"loan\s*cung\s*am"],
+    "Ngự Địch Bình Chướng": [r"ngu\s*dich\s*binh", r"ngu\s*dich"],
+    "Tị Thực Kích Hư": [r"ti\s*thuc\s*kich", r"kich\s*hu"],
+    "Lạc Phượng": [r"lac\s*phuong", r"lac\s*phung"],
+    "Bất Nhục Sứ Mệnh": [r"bat\s*nhuc\s*su", r"su\s*menh"],
+    "Ám Tàng Huyền Cơ": [r"am\s*tang\s*huyen", r"am\s*tang"],
+    "Nhất Cử Tiệm Diệt": [r"nhat\s*cu\s*tiem", r"tiem\s*diet"],
+    "Phấn Đột": [r"\bphan\s*dot\b"],
+    "Tài Khí Quá Nhân": [r"tai\s*khi\s*qua"],
+    "Tọa Chi Nộ Hạp": [r"toa\s*chi\s*no"],
+    "Lỗ Mãng": [r"\blo\s*mang\b"],
+    "Cường Công": [r"\bcuong\s*cong\b"],
+    "Cường Dũng": [r"\bcuong\s*dung\b"],
+    "Mưu Lược Tung Hoành": [r"muu\s*luoc\s*tung"],
+    "Yêu Thuật": [r"\byeu\s*thuat\b"],
+    "Thần Thượng Sứ": [r"than\s*thuong\s*su"],
+    "Lạc Lôi": [r"\blac\s*loi\b"],
+    "Bạch Mi": [r"\bbach\s*mi\b"],
+    "Lửa Cháy Đồng Nội": [r"lua\s*chay\s*dong", r"dong\s*noi"],
+    "Tự Lành": [r"\btu\s*lanh\b"],
+    "Trá Hàng": [r"\btra\s*hang\b"],
+    "Tịnh Hóa": [r"\btinh\s*hoa\b"],
+    "Lư Giang Thượng Giáp": [r"lu\s*giang\s*thuong"],
+    "Thiên Lý Trị Viện": [r"thien\s*ly\s*tri", r"tri\s*vien"],
+    "Tọa Thủ Cô Thành": [r"toa\s*thu\s*co"],
+    "Khinh Dũng Phi Yến": [r"khinh\s*dung\s*phi", r"phi\s*yen"],
+    "Thả Lính Cướp Đoạt": [r"tha\s*linh\s*cuop", r"cuop\s*doat"],
+    "Thần Thương Thiệt Chiến": [r"than\s*thuong\s*thiet"],
+    "Xuất Kì Bất Ý": [r"xuat\s*ky\s*bat", r"xuat\s*ki\s*bat"],
+    "Phong Thanh Hạc Lệ": [r"phong\s*thanh\s*hac", r"thanh\s*hac"],
+    "Thiên Giáng Hỏa Vũ": [r"thien\s*giang\s*ha", r"thien\s*giang\s*hoa"],
+    "Thi Khí Đao Lạc": [r"thi\s*khai\s*dao", r"thi\s*khi\s*dao"],
+    "Hậu Phát Chế Nhân": [r"hau\s*phat\s*che"],
+    "Truyền Hịch Tuyên Uy": [r"truyen\s*hich\s*tuyen"],
+    "Xua Đuổi": [r"\bxua\s*duoi\b"],
+    "Ỷ Thế Cầm Quyền": [r"y\s*the\s*cam"],
+    "Kiêu Kiện Thần Hành": [r"kieu\s*kien\s*than"],
+    "Thi Chí Bất Di": [r"thi\s*chi\s*bat"],
+    "Đánh Vào Chỗ Đau": [r"danh\s*vao\s*cho\s*dau", r"danh\s*cho\s*dau"],
+}
+
+class VisionService:
+    def __init__(self, db_dir: str = None):
+        if db_dir is None:
+            db_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "database")
+        
+        self.ocr_engine = RapidOCR() if HAS_RAPID_OCR else None
+
+        with open(os.path.join(db_dir, "generals.json"), "r", encoding="utf-8") as f:
+            self.generals = json.load(f)
+            self.general_names = [g["name"] for g in self.generals]
+            
+        with open(os.path.join(db_dir, "tactics.json"), "r", encoding="utf-8") as f:
+            self.tactics = json.load(f)
+            self.tactic_names = [t["name"] for t in self.tactics]
+
+        # Normalized lookup maps
+        self.gen_norm_map = {}
+        for g in self.generals:
+            norm = remove_accents(g["name"])
+            self.gen_norm_map[norm] = g["name"]
+            if norm.startswith("sp "):
+                self.gen_norm_map[norm[3:]] = g["name"]
+
+        self.tac_norm_map = {}
+        for t in self.tactics:
+            norm = remove_accents(t["name"])
+            self.tac_norm_map[norm] = t["name"]
+
+    def recognize_image(self, image_path: str, api_key: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Unified image recognition pipeline:
+        1. Tries Gemini Vision if API key provided.
+        2. Falls back to local RapidOCR offline engine.
+        """
+        if api_key and len(api_key.strip()) > 10:
+            res = self.recognize_with_gemini(image_path, api_key.strip())
+            if res.get("success") and (res.get("generals") or res.get("tactics")):
+                return res
+
+        return self.recognize_with_local_ocr(image_path)
+
+    def recognize_with_local_ocr(self, image_path: str) -> Dict[str, Any]:
+        """
+        Use RapidOCR to read game screenshot text and match against database.
+        Combines pattern scanning, joined-text recognition, and line matching.
+        """
+        if not self.ocr_engine:
+            return {"success": False, "error": "RapidOCR engine is not installed", "generals": [], "tactics": []}
+
+        try:
+            res, _ = self.ocr_engine(image_path)
+        except Exception as e:
+            return {"success": False, "error": f"Lỗi OCR: {str(e)}", "generals": [], "tactics": []}
+
+        if not res:
+            return {"success": True, "generals": [], "tactics": [], "source": "local_ocr"}
+
+        raw_lines = []
+        for box, text, score in res:
+            try:
+                sc = float(score)
+            except:
+                sc = 1.0
+            if sc > 0.35 and text.strip():
+                raw_lines.append(text.strip())
+
+        found_generals = set()
+        found_tactics = set()
+
+        joined_raw = " ".join(raw_lines)
+        joined_norm = remove_accents(joined_raw)
+
+        # 1. First-pass: Scan TACTIC_PATTERNS across entire image text
+        for canon_tac, patterns in TACTIC_PATTERNS.items():
+            for pat in patterns:
+                if re.search(pat, joined_norm):
+                    found_tactics.add(canon_tac)
+                    break
+
+        # Build candidate lines (single lines + joined pairs for multi-line names)
+        candidate_lines = list(raw_lines)
+        for i in range(len(raw_lines) - 1):
+            candidate_lines.append(f"{raw_lines[i]} {raw_lines[i+1]}")
+
+        for raw_line in candidate_lines:
+            line_clean = clean_ocr_line(raw_line)
+            line_norm = remove_accents(raw_line)
+
+            if not line_clean and not line_norm:
+                continue
+
+            # Skip noise lines that collide with general names (e.g. 'chu dong' -> 'Chúc Dung')
+            if line_clean in NOISE_WORDS or line_norm in NOISE_WORDS:
+                continue
+
+            # A. Match Generals
+            for norm_g, canon_g in self.gen_norm_map.items():
+                if len(norm_g) < 3:
+                    continue
+
+                # Protect Chúc Dung from colliding with 'chu dong'
+                if norm_g == "chuc dung" and ("chu dong" in line_norm or "chi dong" in line_norm):
+                    continue
+
+                if norm_g == line_clean:
+                    found_generals.add(canon_g)
+                elif len(norm_g) >= 5 and re.search(r'\b' + re.escape(norm_g) + r'\b', line_norm):
+                    found_generals.add(canon_g)
+                elif len(norm_g) >= 6 and norm_g in line_norm:
+                    found_generals.add(canon_g)
+                else:
+                    # Stricter fuzzy match to prevent false positives
+                    if len(line_clean) >= 5 and abs(len(line_clean) - len(norm_g)) <= 2:
+                        ratio = difflib.SequenceMatcher(None, line_clean, norm_g).ratio()
+                        if ratio >= 0.88:
+                            found_generals.add(canon_g)
+
+            # B. Match Tactics via standard dictionary lookup
+            for norm_t, canon_t in self.tac_norm_map.items():
+                if len(norm_t) < 4:
+                    continue
+                # Protect Tịnh Hóa from colliding with 'thuc tinh'
+                if norm_t == "tinh hoa" and "thuc tinh" in line_norm:
+                    continue
+
+                if norm_t == line_clean:
+                    found_tactics.add(canon_t)
+                elif len(norm_t) >= 6 and (norm_t in line_norm or norm_t in line_clean):
+                    found_tactics.add(canon_t)
+                else:
+                    if len(line_clean) >= 6 and abs(len(line_clean) - len(norm_t)) <= 2:
+                        ratio = difflib.SequenceMatcher(None, line_clean, norm_t).ratio()
+                        if ratio >= 0.86:
+                            found_tactics.add(canon_t)
+
+        return {
+            "success": True,
+            "generals": sorted(list(found_generals)),
+            "tactics": sorted(list(found_tactics)),
+            "source": "local_ocr",
+            "lines_detected": len(raw_lines)
+        }
+
+    def recognize_with_gemini(self, image_path: str, api_key: str) -> Dict[str, Any]:
+        """
+        Use Google Gemini 1.5/2.0 Flash Vision API.
+        Improved: gửi full list tướng+chiến pháp, prompt chi tiết hơn.
+        """
+        if not api_key:
+            return {"error": "API Key không được để trống", "generals": [], "tactics": []}
+
+        try:
+            with open(image_path, "rb") as f:
+                image_bytes = f.read()
+                b64_image = base64.b64encode(image_bytes).decode("utf-8")
+
+            ext = os.path.splitext(image_path)[1].lower()
+            mime_type = "image/jpeg"
+            if ext == ".png":
+                mime_type = "image/png"
+            elif ext == ".webp":
+                mime_type = "image/webp"
+
+            # Send FULL lists — no truncation
+            all_gen_names = ", ".join(self.general_names)
+            all_tac_names = ", ".join(self.tactic_names)
+
+            prompt = f"""Bạn là chuyên gia game Tam Quốc Chí - Chiến Lược (Three Kingdoms Strategy - RTK).
+Nhiệm vụ: Nhận diện chính xác tất cả các TƯỚNG và CHIẾN PHÁP trong ảnh chụp game.
+
+DANH SÁCH TƯỚNG CHUẨN (chỉ trả về đúng các tên này):
+{all_gen_names}
+
+DANH SÁCH CHIẾN PHÁP CHUẨN (chỉ trả về đúng các tên này):
+{all_tac_names}
+
+Quy tắc nhận diện:
+1. Chỉ nhận diện các tên tướng và chiến pháp xuất hiện RÕ RÀNG trong ảnh.
+2. Nếu tên bị viết sai do OCR, khớp với tên cân nhất trong danh sách chuẩn.
+3. Không đoán mò. Nếu không chắc, bỏ qua.
+4. Trả về JSON hợp lệ, không có markdown, không có giải thích thêm.
+
+JSON format:
+{{"generals": ["Tên chuẩn 1", ...], "tactics": ["Tên chuẩn 1", ...]}}"""
+
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+            headers = {"Content-Type": "application/json"}
+            payload = {
+                "contents": [
+                    {
+                        "parts": [
+                            {"text": prompt},
+                            {"inline_data": {"mime_type": mime_type, "data": b64_image}}
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "response_mime_type": "application/json",
+                    "temperature": 0.1  # Low temp for accurate extraction
+                }
+            }
+
+            resp = requests.post(url, headers=headers, json=payload, timeout=30)
+            if resp.status_code == 200:
+                data = resp.json()
+                text_out = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                if text_out.startswith("```json"):
+                    text_out = text_out[7:]
+                if text_out.endswith("```"):
+                    text_out = text_out[:-3]
+                result = json.loads(text_out.strip())
+                # Validate: only return names that exist in our database
+                valid_gens = [g for g in result.get("generals", []) if g in self.general_names]
+                valid_tacs = [t for t in result.get("tactics", []) if t in self.tactic_names]
+                return {
+                    "success": True,
+                    "generals": valid_gens,
+                    "tactics": valid_tacs,
+                    "source": "gemini_vision"
+                }
+            else:
+                return {"success": False, "error": f"Lỗi Gemini: {resp.status_code}", "generals": [], "tactics": []}
+        except Exception as e:
+            return {"success": False, "error": str(e), "generals": [], "tactics": []}

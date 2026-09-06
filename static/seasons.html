@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mùa Giải | Tam Quốc Chí Chiến Lược</title>
+  <meta name="description" content="Xem ảnh đội hình và dữ liệu meta team theo từng mùa giải PK20, Mùa 5, Mùa 4 trong Tam Quốc Chí Chiến Lược.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="/anh/tamquocchi.jpg">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/navbar.css?v=3">
+  <link rel="stylesheet" href="css/auth.css?v=3">
+  <link rel="stylesheet" href="css/seasons.css?v=3">
+</head>
+<body style="background:#0b0f17;min-height:100vh">
+
+<!-- NAVBAR -->
+<nav class="site-navbar" id="site-navbar">
+  <a href="/" class="nav-brand">
+    <div class="nav-seal" style="width:36px;height:36px;min-width:36px;max-width:36px;min-height:36px;max-height:36px;overflow:hidden;border-radius:8px;flex-shrink:0"><img src="/anh/tamquocchi.jpg" alt="Logo" class="nav-seal-img" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:cover;border-radius:8px;display:block"></div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-title">TAM QUỐC CHÍ</span>
+      <span class="nav-brand-sub">Chiến Lược</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="/#section-home" class="nav-link"><span class="nav-link-icon">🏠</span>Trang Chủ</a>
+    <a href="/#section-tuong" class="nav-link"><span class="nav-link-icon">⚔️</span>Tướng</a>
+    <a href="/#section-chienphap" class="nav-link"><span class="nav-link-icon">📜</span>Chiến Pháp</a>
+    <a href="/#section-doihinh" class="nav-link"><span class="nav-link-icon">🛡️</span>Đội Hình</a>
+  </div>
+  <div class="nav-auth" id="nav-auth-section">
+    <a href="/tools.html" class="nav-btn-tools">🛠️ Công Cụ</a>
+    <button class="nav-btn-login" onclick="openAuthModal('login')">Đăng Nhập</button>
+    <button class="nav-btn-register" onclick="openAuthModal('register')">Đăng Ký</button>
+  </div>
+</nav>
+
+<div class="seasons-page">
+
+  <!-- Season Selector Bar -->
+  <div class="season-selector-bar">
+    <div class="season-tabs" id="season-tabs">
+      <!-- Tabs injected by seasons.js -->
+      <div style="padding:16px;color:#6b7280;font-size:13px">Đang tải mùa giải...</div>
+    </div>
+  </div>
+
+  <!-- PK20 Content Panel -->
+  <div class="season-content" id="season-pk20">
+    <!-- Banner -->
+    <div class="season-hero-banner">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Tướng Mới PK20 -->
+    <div class="new-generals-section">
+      <div class="section-heading">
+        <h2>⭐ Tướng & Chiến Pháp Mới PK20</h2>
+        <div class="section-heading-line"></div>
+      </div>
+      <div class="new-gen-grid new-generals-grid">
+        <div style="color:#6b7280;font-size:13px;padding:20px">Đang tải...</div>
+      </div>
+    </div>
+
+    <!-- Ảnh Đội Hình Gallery -->
+    <div class="gallery-section">
+      <div class="section-heading">
+        <h2>📸 Ảnh Đội Hình Mùa PK20</h2>
+        <div class="section-heading-line"></div>
+      </div>
+      <div class="gallery-controls">
+        <input type="text" class="gallery-search" placeholder="🔍 Lọc ảnh...">
+        <span class="gallery-count">0 ảnh</span>
+      </div>
+      <div class="gallery-grid gallery-items-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Đội Hình -->
+    <div class="teams-section">
+      <div class="section-heading">
+        <h2>⚔️ Đội Hình Meta PK20</h2>
+        <div class="section-heading-line"></div>
+      </div>
+      <div class="team-sub-tabs">
+        <button class="team-sub-tab active" data-list-type="intro">🌟 Team Giới Thiệu Mới</button>
+        <button class="team-sub-tab" data-list-type="douy">🏛️ Team Đô Úy</button>
+      </div>
+      <div class="team-list-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mùa 5 Panel -->
+  <div class="season-content" id="season-mua5">
+    <div class="season-hero-banner"></div>
+    <div class="teams-section">
+      <div class="section-heading">
+        <h2>⚔️ Đội Hình Meta Mùa 5</h2>
+        <div class="section-heading-line"></div>
+      </div>
+      <div class="team-list-container"></div>
+    </div>
+  </div>
+
+  <!-- Mùa 4 Panel -->
+  <div class="season-content" id="season-mua4">
+    <div class="season-hero-banner"></div>
+    <div class="teams-section">
+      <div class="section-heading">
+        <h2>⚔️ Đội Hình Meta Mùa 4</h2>
+        <div class="section-heading-line"></div>
+      </div>
+      <div class="team-list-container"></div>
+    </div>
+  </div>
+
+</div><!-- /.seasons-page -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-nav prev" onclick="prevLightbox()">‹</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    <button class="lightbox-nav next" onclick="nextLightbox()">›</button>
+  </div>
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-counter" id="lightbox-counter">1 / 98</div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-modal">
+    <div class="auth-modal-header">
+      <div class="auth-modal-seal"><img src="/anh/tamquocchi.jpg" alt="Logo" class="auth-seal-img" style="width:44px;height:44px;object-fit:cover;border-radius:8px;display:block;margin:0 auto"></div>
+      <h2 class="auth-modal-title">TAM QUỐC CHÍ</h2>
+      <p class="auth-modal-subtitle">Đăng nhập để lưu kho tướng trên cloud</p>
+      <button class="auth-close-btn" onclick="closeAuthModal()">✕</button>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')">Đăng Nhập</button>
+      <button class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')">Đăng Ký</button>
+    </div>
+    <form class="auth-form active" id="auth-form-login">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="auth-submit-btn">Đăng Nhập</button>
+    </form>
+    <form class="auth-form" id="auth-form-register">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Hiển Thị</label>
+        <input class="auth-input" type="text" name="display_name" placeholder="Chủ Công của bạn...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Đăng Nhập</label>
+        <input class="auth-input" type="text" name="username" placeholder="username" required minlength="3">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required minlength="6">
+      </div>
+      <button type="submit" class="auth-submit-btn">Tạo Tài Khoản</button>
+    </form>
+    <div class="auth-footer">Điều khoản sử dụng · Miễn phí hoàn toàn</div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/seasons.js"></script>
+<script>
+  // Close lightbox on overlay click
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+</body>
+</html>

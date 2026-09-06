@@ -1,0 +1,573 @@
+{
+  "mines_guide": {
+    "Mỏ 4": [
+      "Lăng Tháo(Kỵ)",
+      "Quách Dĩ(Kỵ)",
+      "Trương Dực(Khiên)",
+      "Chu Hoàn(Thương)",
+      "Trương Lương(Thương)",
+      "Tào Chương(Khiên)",
+      "Hoàng Quyền(Cung)",
+      "Tưởng Khâm(Cung)"
+    ],
+    "Mỏ 5": [
+      "Tào Chân(Kỵ)",
+      "Lý Thôi(Kỵ)",
+      "Trần Vũ(Khiên)",
+      "Phan Chương(Thương)",
+      "Trương Lương(Thương)",
+      "Trần Kiểu(Khiên)",
+      "Hoàng Quyền(Cung)",
+      "Tưởng Khâm(Cung)"
+    ],
+    "Mỏ 6": [
+      "Lăng Tháo(Kỵ)",
+      "Tào Chương(Kỵ)",
+      "Quách Hoài(Khiên)",
+      "Đinh Phụng(Thương)",
+      "Giả Quỳ(Thương)",
+      "Văn Sính(Khiên)",
+      "Chu Trị(Cung)",
+      "Hàn Đương(Cung)"
+    ],
+    "Mỏ 7": [
+      "Hạ Hầu Đôn(Kỵ)",
+      "Trương Giác(Khiên)",
+      "Trương Phi(Khiên)",
+      "Triệu Vân(Thương)",
+      "Chu Du(Cung)",
+      "Lữ Bố(Kỵ)",
+      "Trương Liêu(Thương)",
+      "Hoàng Cái(Cung)"
+    ],
+    "Mỏ 8": [
+      "Viên Thuật(Kỵ)",
+      "Hạ Hầu Đôn(Khiên)",
+      "Quan Vũ(Thương)",
+      "Cam Ninh(Thương)",
+      "Trương Phi(Khiên)",
+      "Hoàng Cái(Cung)",
+      "Trình Dục(Kỵ)",
+      "SP Viên Thiệu(Cung)"
+    ]
+  },
+  "touch_scout_teams": [
+    {
+      "name": "Lữ Mông & Giả Hủ",
+      "tactics": "Bạch Mã Nghĩa Tòng / Ngụy Báo Uyên Cương",
+      "note": "Hỗ trợ làm suy yếu vệ quân mỏ trước khi đội chính vào"
+    },
+    {
+      "name": "Mã Siêu & Hoàng Nguyệt Anh",
+      "tactics": "Bách Kỵ Kiếp Doanh / Lõa Y Huyết Chiến",
+      "note": "Gây sát thương vòng đầu cực mạnh với 1 lính"
+    },
+    {
+      "name": "Trương Nhượng & Hoàng Nguyệt Anh",
+      "tactics": "Văn Võ Song Toàn",
+      "note": "Tỉa máu vệ quân mỏ cấp cao"
+    },
+    {
+      "name": "Tôn Thượng Hương & Lăng Thống",
+      "tactics": "Lõa Y Huyết Chiến / Bách Kỵ",
+      "note": "Tận dụng tiên phong + tất trúng để quấy rối"
+    },
+    {
+      "name": "Thái Sử Từ & Lăng Thống",
+      "tactics": "Bạo Lệ Vô Nhân / Đánh Bại Quân Địch",
+      "note": "Đánh liên kích 2 lần hạ lính đối phương"
+    },
+    {
+      "name": "Hạ Hầu Uyên & Tào Thuận",
+      "tactics": "Lõa Y Huyết Chiến / Bách Kỵ",
+      "note": "Khóa tướng địch và làm tiêu hao binh lực mỏ"
+    },
+    {
+      "name": "Cam Ninh & Lăng Thống",
+      "tactics": "Phá Quân Uy Thắng / Bất Nhục Sứ Mệnh",
+      "note": "Bạo kích sốc sát thương 1 lính"
+    }
+  ],
+  "starter_teams": [
+    {
+      "id": "starter_team_01",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "SP Lô Trực",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Tiềm Long Trận",
+            "Thịnh Khí Linh Địch"
+          ]
+        },
+        {
+          "name": "Thái Sử Từ",
+          "cp_early": "Thôi Phong Đoạn Nhẫn",
+          "cp_lv20": [
+            "Thôi Phong Đoạn Nhẫn",
+            "Mau Giành Lợi Thế"
+          ]
+        },
+        {
+          "name": "Trương Xuân Hoa",
+          "cp_early": "Vô Đương Phi Quân",
+          "cp_lv20": [
+            "Vô Đương Phi Quân",
+            "Đồng Lòng Hợp Sức"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_02",
+      "troop": "Thương",
+      "troop_lv20": "Thương",
+      "generals": [
+        {
+          "name": "SP Hoàng Nguyệt Anh/Pháp Chính",
+          "cp_early": "Tiềm Long Trận",
+          "cp_lv20": [
+            "Tiềm Long Trận",
+            "Giải Phiền Vệ"
+          ]
+        },
+        {
+          "name": "SP Mã Siêu",
+          "cp_early": "Thôi Phong Đoạn Nhẫn",
+          "cp_lv20": [
+            "Mau Giành Lợi Thế",
+            "Thôi Phong Đoạn Nhẫn"
+          ]
+        },
+        {
+          "name": "Gia Cát Khác",
+          "cp_early": "Giải Phiền Vệ/Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Thời Cơ Chiến Thắng"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_03",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Gia Cát Khác",
+          "cp_early": "Võ Phong Trận",
+          "cp_lv20": [
+            "Võ Phong Trận",
+            "Thịnh Khí Linh Địch"
+          ]
+        },
+        {
+          "name": "Thái Sử Từ",
+          "cp_early": "Thôi Phong Đoạn Nhẫn",
+          "cp_lv20": [
+            "Thôi Phong Đoạn Nhẫn",
+            "Mau Giành Lợi Thế"
+          ]
+        },
+        {
+          "name": "Tả Từ",
+          "cp_early": "Vô Đương Phi Quân",
+          "cp_lv20": [
+            "Vô Đương Phi Quân",
+            "Cắt Xương Trị Độc"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_04",
+      "troop": "Thương",
+      "troop_lv20": "Thương",
+      "generals": [
+        {
+          "name": "SP Hoàng Nguyệt Anh/Pháp Chính",
+          "cp_early": "Tiềm Long Trận",
+          "cp_lv20": [
+            "Tiềm Long Trận",
+            "Giải Phiền Vệ"
+          ]
+        },
+        {
+          "name": "SP Mã Siêu",
+          "cp_early": "Thôi Phong Đoạn Nhẫn",
+          "cp_lv20": [
+            "Mau Giành Lợi Thế",
+            "Thôi Phong Đoạn Nhẫn"
+          ]
+        },
+        {
+          "name": "Gia Cát Khác",
+          "cp_early": "Giải Phiền Vệ/Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Thời Cơ Chiến Thắng"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_05",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Gia Cát Khác",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tam Thế Trận"
+          ]
+        },
+        {
+          "name": "Quan Ngân Bình",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Gió Táp Mưa Sa",
+            "Hoành Tào Thiên Quân"
+          ]
+        },
+        {
+          "name": "Nhạc Tiến",
+          "cp_early": "Nhanh Chân Tranh Đất",
+          "cp_lv20": [
+            "Nhanh Chân Tranh Đất/Văn Võ Song Toàn",
+            "Lính Thanh Châu"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_06",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Khương Duy",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió/Thượng Binh Phạt Mưu"
+          ]
+        },
+        {
+          "name": "Hạ Hầu Uyên",
+          "cp_early": "Lõa Y Huyết Chiến",
+          "cp_lv20": [
+            "Lõa Y Huyết Chiến",
+            "Thôi Phong Đoạn Nhẫn"
+          ]
+        },
+        {
+          "name": "Gia Cát Khác",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Vô Đương Phi Quân",
+            "Thịnh Khí Linh Địch"
+          ]
+        }
+      ],
+      "note": "Sau khi lv.20 để Gia Cát Khác làm chủ tướng"
+    },
+    {
+      "id": "starter_team_07",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Lục Tốn",
+          "cp_early": "Vô Đương Phi Quân",
+          "cp_lv20": [
+            "Thái Bình Đạo Pháp",
+            "Vô Đương Phi Quân"
+          ]
+        },
+        {
+          "name": "Tả Từ",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tam Thế Trận"
+          ]
+        },
+        {
+          "name": "Trương Xuân Hoa",
+          "cp_early": "Tam Thế Trận",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_08",
+      "troop": "Kỵ",
+      "troop_lv20": "Kỵ",
+      "generals": [
+        {
+          "name": "Hạ Hầu Uyên",
+          "cp_early": "Lõa Y Huyết Chiến",
+          "cp_lv20": [
+            "Lõa Y Huyết Chiến",
+            "Nhất Kỵ Đương Thiên"
+          ]
+        },
+        {
+          "name": "Thái Sử Từ",
+          "cp_early": "Bách Kỵ Kiếp Doanh",
+          "cp_lv20": [
+            "Đánh Bại Quân Địch",
+            "Bách Kỵ Kiếp Doanh"
+          ]
+        },
+        {
+          "name": "Hoàng Nguyệt Anh",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Hổ Báo Kỵ"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_09",
+      "troop": "Cung",
+      "troop_lv20": "Kỵ",
+      "generals": [
+        {
+          "name": "Tôn Thượng Hương",
+          "cp_early": "Lõa Y Huyết Chiến",
+          "cp_lv20": [
+            "Lõa Y Huyết Chiến",
+            "Bách Kỵ Kiếp Doanh"
+          ]
+        },
+        {
+          "name": "Trần Cung",
+          "cp_early": "Vô Đương Phi Quân",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió"
+          ]
+        },
+        {
+          "name": "Hoàng Nguyệt Anh",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tây Lương Thiết Kỵ"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_10",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Thái Văn Cơ",
+          "cp_early": "Tam Thế Trận",
+          "cp_lv20": [
+            "Tam Thế Trận",
+            "Sĩ Biệt Tam Nhật"
+          ]
+        },
+        {
+          "name": "Khương Duy",
+          "cp_early": "Sợ Bóng Sợ Gió",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió"
+          ]
+        },
+        {
+          "name": "Thái Sử Từ",
+          "cp_early": "Bạo Lệ Vô Nhân",
+          "cp_lv20": [
+            "Đánh Bại Quân Địch",
+            "Bạo Lệ Vô Nhân"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_11",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "Khương Duy",
+          "cp_early": "Đoạt Hồn Hiệp Phách",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió"
+          ]
+        },
+        {
+          "name": "Hạ Hầu Uyên",
+          "cp_early": "Lõa Y Huyết Chiến",
+          "cp_lv20": [
+            "Lõa Y Huyết Chiến",
+            "Nhất Kỵ Đương Thiên"
+          ]
+        },
+        {
+          "name": "Pháp Chính",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Vô Đương Phi Quân"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_12",
+      "troop": "Cung",
+      "troop_lv20": "Cung",
+      "generals": [
+        {
+          "name": "SP Viên Thiệu",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Gió Táp Mưa Sa",
+            "Hoành Tào Thiên Quân"
+          ]
+        },
+        {
+          "name": "Hạ Hầu Uyên",
+          "cp_early": "Lõa Y Huyết Chiến",
+          "cp_lv20": [
+            "Lõa Y Huyết Chiến",
+            "Thôi Phong Đoạn Nhẫn"
+          ]
+        },
+        {
+          "name": "Trương Xuân Hoa",
+          "cp_early": "Vô Đương Phi Quân",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Vô Đương Phi Quân"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_13",
+      "troop": "Kỵ",
+      "troop_lv20": "Kỵ",
+      "generals": [
+        {
+          "name": "Khương Duy",
+          "cp_early": "Thượng Binh Phạt Mưu",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió/Thượng Binh Phạt Mưu"
+          ]
+        },
+        {
+          "name": "Quan Ngân Bình",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Gió Táp Mưa Sa",
+            "Hoành Tào Thiên Quân"
+          ]
+        },
+        {
+          "name": "Thái Văn Cơ",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tạm Lánh Sóng Gió/Bát Môn Kim Tỏa Trận"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_14",
+      "troop": "Kỵ",
+      "troop_lv20": "Kỵ",
+      "generals": [
+        {
+          "name": "Khương Duy",
+          "cp_early": "Sợ Bóng Sợ Gió",
+          "cp_lv20": [
+            "Đoạt Hồn Hiệp Phách",
+            "Sợ Bóng Sợ Gió"
+          ]
+        },
+        {
+          "name": "Quan Ngân Bình",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Cứ Thủy Đoạn Kiều",
+            "Hoành Tào Thiên Quân"
+          ]
+        },
+        {
+          "name": "Thái Văn Cơ",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tạm Lánh Sóng Gió"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "starter_team_15",
+      "troop": "Thương",
+      "troop_lv20": "Thương",
+      "generals": [
+        {
+          "name": "Quan Ngân Bình",
+          "cp_early": "Hoành Tào Thiên Quân",
+          "cp_lv20": [
+            "Cứ Thủy Đoạn Kiều",
+            "Hoành Tào Thiên Quân"
+          ]
+        },
+        {
+          "name": "Nhạc Tiến",
+          "cp_early": "Nhanh Chân Tranh Đất",
+          "cp_lv20": [
+            "Nhanh Chân Tranh Đất",
+            "Văn Võ Song Toàn"
+          ]
+        },
+        {
+          "name": "Thái Văn Cơ",
+          "cp_early": "Thịnh Khí Linh Địch",
+          "cp_lv20": [
+            "Thịnh Khí Linh Địch",
+            "Tam Thế Trận"
+          ]
+        }
+      ],
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tam Quốc Chí Chiến Lược | Trợ Lý Đội Hình Meta Chuẩn</title>
+  <meta name="description" content="Website chiến lược Tam Quốc Chí: Nhận diện kho tướng bằng AI, đề xuất đội hình meta T0/T1, hệ thống đăng nhập lưu kho đồ cloud. Đầy đủ mùa giải PK20, Mùa 4, Mùa 5.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="/anh/tamquocchi.jpg">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/navbar.css?v=5">
+  <link rel="stylesheet" href="css/auth.css?v=5">
+  <link rel="stylesheet" href="css/landing.css?v=5">
+  <script>document.documentElement.classList.add('landing-mode');</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════ -->
+<nav class="site-navbar" id="site-navbar">
+  <a href="/" class="nav-brand">
+    <div class="nav-seal" style="width:36px;height:36px;min-width:36px;max-width:36px;min-height:36px;max-height:36px;overflow:hidden;border-radius:8px;flex-shrink:0"><img src="/anh/tamquocchi.jpg" alt="Logo" class="nav-seal-img" style="width:36px;height:36px;max-width:36px;max-height:36px;object-fit:cover;border-radius:8px;display:block"></div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-title">TAM QUỐC CHÍ</span>
+      <span class="nav-brand-sub">Chiến Lược</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="#section-home" class="nav-link active" data-section="0"><span class="nav-link-icon">🏠</span>Trang Chủ</a>
+    <a href="#section-tuong" class="nav-link" data-section="1"><span class="nav-link-icon">⚔️</span>Tướng</a>
+    <a href="#section-chienphap" class="nav-link" data-section="2"><span class="nav-link-icon">📜</span>Chiến Pháp</a>
+    <a href="#section-doihinh" class="nav-link" data-section="3"><span class="nav-link-icon">🛡️</span>Đội Hình</a>
+  </div>
+
+  <div class="nav-auth" id="nav-auth-section">
+    <a href="/" class="nav-btn-tools">🛠️ Công Cụ</a>
+    <button class="nav-btn-login" onclick="openAuthModal('login')">Đăng Nhập</button>
+    <button class="nav-btn-register" onclick="openAuthModal('register')">Đăng Ký</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     FULLSCREEN SCROLL CONTAINER
+════════════════════════════════════════════════════════ -->
+<div class="scroll-container">
+
+  <!-- MỤC 1: TRANG CHỦ ─────────────────────────────────── -->
+  <section class="fs-section hero-section" id="section-home">
+    <div class="hero-bg-art"></div>
+    <div class="hero-particles"></div>
+
+    <div class="hero-content">
+      <span class="hero-hanzi">戰</span>
+      <h1 class="hero-title">TAM QUỐC CHÍ <span class="gold">CHIẾN LƯỢC</span></h1>
+      <p class="hero-subtitle">
+        Trợ lý thông minh nhận diện kho tướng AI · Tra cứu danh tướng &amp; chiến pháp<br>
+        Đề xuất đội hình chuẩn Meta T0/T1 · Phân bổ đa đội hình không trùng lặp
+      </p>
+      <div class="hero-cta-group">
+        <button class="hero-btn-primary" onclick="goToSection(1)">⚔️ Khám Phá Danh Tướng</button>
+        <a href="/tools.html" class="hero-btn-secondary" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none">🛠️ Vào Công Cụ</a>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="hero-stats-bar">
+        <div class="hero-stat-item">
+          <span class="h-stat-num">106+</span>
+          <span class="h-stat-label">Danh Tướng 5⭐</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item">
+          <span class="h-stat-num">120+</span>
+          <span class="h-stat-label">Chiến Pháp S &amp; A</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item">
+          <span class="h-stat-num">175+</span>
+          <span class="h-stat-label">Đội Hình Meta</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item">
+          <span class="h-stat-num">100%</span>
+          <span class="h-stat-label">Phân Bổ Không Trùng</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="hero-scroll-mouse"></div>
+      <span>Cuộn chuột để di chuyển</span>
+    </div>
+  </section>
+
+  <!-- MỤC 2: TƯỚNG (SHOWCASE THEO MẪU WUTHERING WAVES) ── -->
+  <section class="fs-section generals-section" id="section-tuong">
+    <div class="generals-showcase-layout">
+
+      <!-- 1. CỘT TRÁI: VERTICAL FACTION SELECTOR -->
+      <div class="faction-nav-vertical">
+        <button class="faction-nav-btn active" data-faction="wei" onclick="switchFactionShowcase('wei')" title="Ngụy Quốc">
+          <div class="faction-btn-icon wei">魏</div>
+          <span class="faction-btn-label">Ngụy</span>
+        </button>
+        <button class="faction-nav-btn" data-faction="shu" onclick="switchFactionShowcase('shu')" title="Thục Quốc">
+          <div class="faction-btn-icon shu">蜀</div>
+          <span class="faction-btn-label">Thục</span>
+        </button>
+        <button class="faction-nav-btn" data-faction="wu" onclick="switchFactionShowcase('wu')" title="Ngô Quốc">
+          <div class="faction-btn-icon wu">吴</div>
+          <span class="faction-btn-label">Ngô</span>
+        </button>
+        <button class="faction-nav-btn" data-faction="qun" onclick="switchFactionShowcase('qun')" title="Quần Hùng">
+          <div class="faction-btn-icon qun">群</div>
+          <span class="faction-btn-label">Quần</span>
+        </button>
+      </div>
+
+      <!-- 2. CỘT GIỮA: THÔNG TIN PHE & WATERMARK -->
+      <div class="faction-info-panel">
+        <div class="faction-watermark" id="faction-watermark">魏</div>
+        
+        <div class="faction-info-content">
+          <span class="faction-tag-pill" id="faction-tag-pill">🔵 BÁ CHỦ TRUNG NGUYÊN</span>
+          <h2 class="faction-huge-title" id="faction-huge-title">NGỤY QUỐC</h2>
+          <div class="faction-divider-rune">
+            <span class="rune-line"></span>
+            <span class="rune-diamond">◈</span>
+            <span class="rune-line"></span>
+          </div>
+          <p class="faction-story-desc" id="faction-story-desc">
+            Quy tụ những bậc kỳ tài mưu sâu kế hiểm, lấy kỷ luật thép và năng lực phòng ngự phản kích kiên cố để bình định thiên hạ. Sở hữu các chiến đội bền bỉ nhất mùa giải.
+          </p>
+          <div class="faction-meta-highlights">
+            <div class="meta-feat-badge" id="faction-meta-badge">🏆 Meta T0: Thái Úy Khiên · Ngụy Kỵ</div>
+            <div class="meta-feat-badge" id="faction-count-badge">⚔️ 28 Danh tướng 5⭐</div>
+          </div>
+          <div class="faction-actions-row">
+            <a href="/tools.html#tab-upload" class="showcase-btn primary">📷 Quét Thẻ Tướng AI</a>
+            <a href="/tools.html#tab-inventory" class="showcase-btn secondary">⚔️ Kho 106 Tướng</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CỘT PHẢI: SLIDER THẺ TƯỚNG ĐỨNG -->
+      <div class="faction-cards-stage">
+        <div class="cards-slider-container" id="cards-slider-container">
+          <!-- Cards dynamically injected by JavaScript -->
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="stage-controls">
+          <button class="stage-nav-btn prev" onclick="slideGenerals(-1)" title="Trước">❮</button>
+          <div class="stage-counter" id="stage-counter">1 / 7</div>
+          <button class="stage-nav-btn next" onclick="slideGenerals(1)" title="Sau">❯</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MỤC 3: CHIẾN PHÁP ─────────────────────────────────── -->
+  <section class="fs-section tactics-section" id="section-chienphap">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Binh Pháp Diệu Kế</span>
+        <h2 class="section-title">KHO CHIẾN PHÁP HUYỀN THOẠI</h2>
+        <p class="section-desc">Phối hợp chiến pháp là linh hồn của Tam Quốc Chí. 6 loại hình chiến pháp định hình mọi lối chơi đỉnh cao.</p>
+      </div>
+
+      <div class="tactics-types-grid">
+        <!-- CHỈ HUY -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">🛡️</div>
+          <div class="tactic-type-name">Chỉ Huy</div>
+          <div class="tactic-type-timing">Kích hoạt chuẩn bị (Hiệp 0)</div>
+          <div class="tactic-samples">Bát Môn Kim Tỏa · Quân Dân Khăn Gói · Thịnh Khí Lăng Địch</div>
+          <div class="tactic-badge-tag">Miễn khống chế</div>
+        </div>
+
+        <!-- CHỦ ĐỘNG -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">⚡</div>
+          <div class="tactic-type-name">Chủ Động</div>
+          <div class="tactic-type-timing">Xác suất kích hoạt mỗi hiệp</div>
+          <div class="tactic-samples">Thái Bình Đạo Pháp · Thảo Thuyền Mượn Tên · Quát Cốt Liệu Độc</div>
+          <div class="tactic-badge-tag">Sát thương / Hồi phục</div>
+        </div>
+
+        <!-- BỊ ĐỘNG -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">💎</div>
+          <div class="tactic-type-name">Bị Động</div>
+          <div class="tactic-type-timing">Hiệu lực vĩnh viễn suốt trận</div>
+          <div class="tactic-samples">Sĩ Biệt Ba Ngày · Văn Võ Song Toàn · Binh Vô Thường Thế</div>
+          <div class="tactic-badge-tag">Chỉ số ổn định</div>
+        </div>
+
+        <!-- TRẬN PHÁP -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">🚩</div>
+          <div class="tactic-type-name">Trận Pháp</div>
+          <div class="tactic-type-timing">Quy hoạch trận hình Chủ/Phó</div>
+          <div class="tactic-samples">Phong Thỉ Trận · Tam Thế Trận · Bát Quái Trận</div>
+          <div class="tactic-badge-tag">Định hình phong cách</div>
+        </div>
+
+        <!-- BINH CHỦNG -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">🐎</div>
+          <div class="tactic-type-name">Binh Chủng</div>
+          <div class="tactic-type-timing">Cường hóa đặc chủng quân</div>
+          <div class="tactic-samples">Đằng Giáp Binh · Bạch Mã Nghĩa Tùng · Hổ Báo Kỵ · Bạch Nhị Binh</div>
+          <div class="tactic-badge-tag">Đặc dị quân binh</div>
+        </div>
+
+        <!-- ĐỘT KÍCH -->
+        <div class="tactic-type-card" onclick="window.location='/tools.html#tab-guide'">
+          <div class="tactic-type-icon">🗡️</div>
+          <div class="tactic-type-name">Đột Kích</div>
+          <div class="tactic-type-timing">Kích hoạt sau đánh thường</div>
+          <div class="tactic-samples">Đương Phong Thôi Quyết · Nhất Đương Đương Thiên · Bách Kỵ Kiếp Doanh</div>
+          <div class="tactic-badge-tag">Sát thương dồn dập</div>
+        </div>
+      </div>
+
+      <div class="section-actions">
+        <a href="/tools.html#tab-guide" class="btn-action-primary">📜 Cẩm Nang Thay Thế Chiến Pháp A-Tier</a>
+        <a href="/tools.html#tab-inventory" class="btn-action-secondary">🔍 Quản Lý Kho Chiến Pháp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MỤC 4: ĐỘI HÌNH ──────────────────────────────────── -->
+  <section class="fs-section teams-section" id="section-doihinh">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Đỉnh Cao Chiến Thuật</span>
+        <h2 class="section-title">ĐỘI HÌNH META T0 / T1</h2>
+        <p class="section-desc">Tuyển chọn các chiến đội bất bại từ 175+ đội hình meta PK20. Tối ưu điểm số và tỷ lệ thắng.</p>
+      </div>
+
+      <div class="teams-meta-grid">
+        <!-- TEAM 1: THÁI ÚY KHIÊN -->
+        <div class="meta-team-showcase-card" onclick="window.location='/tools.html#tab-recommend'">
+          <div class="meta-team-top">
+            <span class="tier-pill t0">TIER T0</span>
+            <span class="team-faction-pill wei">🔵 Ngụy Khiên</span>
+          </div>
+          <h3 class="meta-team-name">Thái Úy Khiên</h3>
+          <div class="team-generals-row">
+            <div class="team-gen-slot">
+              <span class="slot-pos">Chủ tướng</span>
+              <strong class="slot-name">Tư Mã Ý</strong>
+              <span class="slot-skills">Sĩ Biệt · Dụng Gian</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Tào Tháo</strong>
+              <span class="slot-skills">Quân Dân · Thao Quyền</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Mãn Sủng</strong>
+              <span class="slot-skills">Phong Thỉ · Quát Cốt</span>
+            </div>
+          </div>
+          <div class="meta-team-desc">Bức tường phòng thủ phản kích thép, sát thương diện rộng cực lớn từ hiệp 5 trở đi.</div>
+        </div>
+
+        <!-- TEAM 2: KỲ LÂN CUNG -->
+        <div class="meta-team-showcase-card" onclick="window.location='/tools.html#tab-recommend'">
+          <div class="meta-team-top">
+            <span class="tier-pill t0">TIER T0</span>
+            <span class="team-faction-pill shu">🟢 Thục Cung</span>
+          </div>
+          <h3 class="meta-team-name">Kỳ Lân Cung</h3>
+          <div class="team-generals-row">
+            <div class="team-gen-slot">
+              <span class="slot-pos">Chủ tướng</span>
+              <strong class="slot-name">Khương Duy</strong>
+              <span class="slot-skills">Đoạt Hồn · Bôi Quỷ</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Bàng Thống</strong>
+              <span class="slot-skills">Thái Bình · Vô Đương</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Gia Cát Lượng</strong>
+              <span class="slot-skills">Bát Môn · Anh Thành</span>
+            </div>
+          </div>
+          <div class="meta-team-desc">Hút chỉ số triệt để, sát thương chuỗi sấm sét áp chế mọi đội hình chủ động.</div>
+        </div>
+
+        <!-- TEAM 3: NGÔ ĐÔ ĐỐC -->
+        <div class="meta-team-showcase-card" onclick="window.location='/tools.html#tab-recommend'">
+          <div class="meta-team-top">
+            <span class="tier-pill t05">TIER T0.5</span>
+            <span class="team-faction-pill wu">🔴 Ngô Thương / Cung</span>
+          </div>
+          <h3 class="meta-team-name">Ngô Đô Đốc</h3>
+          <div class="team-generals-row">
+            <div class="team-gen-slot">
+              <span class="slot-pos">Chủ tướng</span>
+              <strong class="slot-name">Lục Tốn</strong>
+              <span class="slot-skills">Đương Phong · Binh Vô</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Lỗ Túc</strong>
+              <span class="slot-skills">Phong Thỉ · Bạch Nhị</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">SP Lữ Mông</strong>
+              <span class="slot-skills">Thảo Thuyền · Quân Dân</span>
+            </div>
+          </div>
+          <div class="meta-team-desc">Thiêu đốt liên hoàn, giải trừ khống chế nhanh nhạy, sinh tồn dẻo dai bọc lót tuyệt hảo.</div>
+        </div>
+
+        <!-- TEAM 4: TAM THẾ LỮ BỐ -->
+        <div class="meta-team-showcase-card" onclick="window.location='/tools.html#tab-recommend'">
+          <div class="meta-team-top">
+            <span class="tier-pill t1">TIER T1</span>
+            <span class="team-faction-pill qun">🟣 Tam Thế Kỵ</span>
+          </div>
+          <h3 class="meta-team-name">Tam Thế Lữ Bố</h3>
+          <div class="team-generals-row">
+            <div class="team-gen-slot">
+              <span class="slot-pos">Chủ tướng</span>
+              <strong class="slot-name">Lữ Bố</strong>
+              <span class="slot-skills">Nhất Đương · Quỷ Thần</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Quách Gia</strong>
+              <span class="slot-skills">Thiết Kỵ · Hổ Báo Kỵ</span>
+            </div>
+            <div class="team-gen-slot">
+              <span class="slot-pos">Phó tướng</span>
+              <strong class="slot-name">Hoàng Nguyệt Anh</strong>
+              <span class="slot-skills">Tam Thế · Hoành Qua</span>
+            </div>
+          </div>
+          <div class="meta-team-desc">Tăng tiên phong và bạo kích, quyết tử dồn chết chủ tướng địch ngay 2 hiệp đầu.</div>
+        </div>
+      </div>
+
+      <div class="section-actions">
+        <a href="/tools.html#tab-recommend" class="btn-action-primary large">🎯 Tự Động Đề Xuất Đội Hình Theo Kho Của Bạn</a>
+        <a href="/tools.html#tab-portfolio" class="btn-action-secondary">🛡️ Phân Bổ 5 Đội Không Trùng</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.scroll-container -->
+
+<!-- DOT NAVIGATOR -->
+<nav class="dot-nav" id="dot-nav"></nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════════════════════════ -->
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-modal">
+    <div class="auth-modal-header">
+      <div class="auth-modal-seal"><img src="/anh/tamquocchi.jpg" alt="Logo" class="auth-seal-img" style="width:44px;height:44px;object-fit:cover;border-radius:8px;display:block;margin:0 auto"></div>
+      <h2 class="auth-modal-title">TAM QUỐC CHÍ</h2>
+      <p class="auth-modal-subtitle">Đăng nhập để lưu kho tướng và chiến pháp trên cloud</p>
+      <button class="auth-close-btn" onclick="closeAuthModal()">✕</button>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')">Đăng Nhập</button>
+      <button class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')">Đăng Ký</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form active" id="auth-form-login">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="auth-submit-btn">Đăng Nhập</button>
+    </form>
+
+    <!-- Register Form -->
+    <form class="auth-form" id="auth-form-register">
+      <div class="auth-message"></div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Hiển Thị</label>
+        <input class="auth-input" type="text" name="display_name" placeholder="Chủ Công của bạn...">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Tên Đăng Nhập</label>
+        <input class="auth-input" type="text" name="username" placeholder="username" required minlength="3">
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input class="auth-input" type="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Mật Khẩu</label>
+        <input class="auth-input" type="password" name="password" placeholder="••••••••" required minlength="6">
+      </div>
+      <button type="submit" class="auth-submit-btn">Tạo Tài Khoản</button>
+    </form>
+
+    <div class="auth-footer">
+      Bằng việc đăng ký, bạn đồng ý với điều khoản sử dụng dịch vụ.
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js?v=5"></script>
+<script src="js/landing.js?v=5"></script>
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('site-navbar');
+  const heroSection = document.getElementById('section-home') || document.getElementById('section-hero');
+  if (heroSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      });
+    }, { threshold: 0.5 });
+    observer.observe(heroSection);
+  }
+</script>
+
+</body>
+</html>

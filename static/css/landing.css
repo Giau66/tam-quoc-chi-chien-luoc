@@ -1,0 +1,1082 @@
+/* =========================================================
+   LANDING PAGE — Fullscreen Scroll Sections
+   ========================================================= */
+
+/* ---- Reset scroll behaviour for fullscreen ---- */
+html.landing-mode {
+  overflow: hidden;
+  height: 100%;
+}
+
+html.landing-mode body {
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* ---- Scroll Container ---- */
+.scroll-container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- Sections ---- */
+.fs-section {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.18, 1),
+              opacity 0.85s ease;
+  will-change: transform;
+}
+
+.fs-section.is-above {
+  transform: translateY(-100vh);
+  opacity: 0;
+}
+
+.fs-section.is-current {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fs-section.is-below {
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+/* ===== SECTION 1: HERO ===== */
+.hero-section {
+  background: radial-gradient(ellipse at 50% 0%, #1a1006 0%, #0b0f17 55%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="%23f59e0b" stroke-width="0.3" opacity="0.08"/></svg>');
+  overflow: hidden;
+}
+
+/* Animated background particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #f59e0b;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float linear infinite;
+}
+
+@keyframes particle-float {
+  0%   { opacity: 0; transform: translateY(0) scale(0); }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-80vh) scale(1.5); }
+}
+
+/* Dragon/ink art decorative element */
+.hero-bg-art {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(245,158,11,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 20% 70%, rgba(245,158,11,0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  max-width: 700px;
+  animation: hero-fade-in 1.2s ease forwards;
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Large Chinese character */
+.hero-hanzi {
+  font-size: clamp(90px, 14vw, 160px);
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(160deg, #f59e0b 20%, #b45309 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 40px rgba(245,158,11,0.4));
+  display: block;
+  font-family: 'Cinzel', serif;
+  animation: hanzi-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes hanzi-glow {
+  from { filter: drop-shadow(0 0 20px rgba(245,158,11,0.3)); }
+  to   { filter: drop-shadow(0 0 60px rgba(245,158,11,0.7)); }
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 4vw, 42px);
+  font-weight: 900;
+  color: #f3f4f6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-title .gold { color: #f59e0b; }
+
+.hero-subtitle {
+  font-size: clamp(13px, 2vw, 16px);
+  color: #9ca3af;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  padding: 14px 36px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0b0f17;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245,158,11,0.5);
+}
+
+.hero-btn-secondary {
+  padding: 14px 36px;
+  border: 1.5px solid rgba(245,158,11,0.5);
+  border-radius: 12px;
+  background: transparent;
+  color: #f59e0b;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(245,158,11,0.08);
+  border-color: #f59e0b;
+}
+
+/* Scroll hint */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+  50%       { transform: translateX(-50%) translateY(6px); opacity: 1; }
+}
+
+.hero-scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid rgba(245,158,11,0.4);
+  border-radius: 12px;
+  position: relative;
+}
+
+.hero-scroll-mouse::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: #f59e0b;
+  border-radius: 2px;
+  animation: scroll-dot 2s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0%, 100% { top: 6px; opacity: 1; }
+  80%       { top: 18px; opacity: 0; }
+}
+
+/* Hero stats bar */
+.hero-stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 12px 28px;
+  background: rgba(22, 30, 46, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-stat-item { text-align: center; }
+
+.h-stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f59e0b;
+  display: block;
+}
+
+.h-stat-label {
+  font-size: 10.5px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Shared Section Container */
+.section-container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 60px 28px 24px;
+  z-index: 2;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 20px;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.25);
+  color: #f59e0b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3.2vw, 34px);
+  font-weight: 800;
+  color: #f3f4f6;
+  margin-bottom: 6px;
+  letter-spacing: 1.5px;
+}
+
+.section-desc {
+  font-size: 13.5px;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Common Section Action Buttons */
+.section-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-action-primary {
+  padding: 11px 24px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0b0f17;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  transition: all 0.25s;
+  box-shadow: 0 4px 16px rgba(245,158,11,0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-action-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245,158,11,0.45);
+  color: #0b0f17;
+}
+
+.btn-action-primary.large {
+  padding: 13px 32px;
+  font-size: 14.5px;
+}
+
+.btn-action-secondary {
+  padding: 10px 22px;
+  border: 1px solid rgba(245,158,11,0.4);
+  border-radius: 10px;
+  background: rgba(22, 30, 46, 0.7);
+  color: #f59e0b;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-action-secondary:hover {
+  background: rgba(245,158,11,0.12);
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  color: #fbbf24;
+}
+
+/* =========================================================
+   SECTION 1: TƯỚNG (WUTHERING WAVES CHARACTER SHOWCASE STYLE)
+   ========================================================= */
+.generals-section {
+  background: radial-gradient(ellipse at 70% 50%, #171f2d 0%, #080c13 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.generals-showcase-layout {
+  display: grid;
+  grid-template-columns: 72px 330px 1fr;
+  gap: 28px;
+  align-items: center;
+  width: 100%;
+  max-width: 1260px;
+  height: 100vh;
+  padding: 68px 24px 24px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* 1. Left Vertical Faction Nav */
+.faction-nav-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  z-index: 10;
+}
+
+.faction-nav-btn {
+  background: rgba(18, 25, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 58px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+  color: #9ca3af;
+  position: relative;
+}
+
+.faction-nav-btn:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: scale(1.05);
+  color: #f3f4f6;
+}
+
+.faction-nav-btn.active {
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0.08));
+  border-color: #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
+  transform: scale(1.08);
+}
+
+.faction-btn-icon {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.faction-btn-icon.wei { color: #60a5fa; }
+.faction-btn-icon.shu { color: #34d399; }
+.faction-btn-icon.wu  { color: #f87171; }
+.faction-btn-icon.qun { color: #c084fc; }
+
+.faction-btn-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+  color: inherit;
+}
+
+.faction-nav-btn.active .faction-btn-label {
+  color: #f59e0b;
+}
+
+/* 2. Center Faction Info & Watermark */
+.faction-info-panel {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 12px;
+}
+
+.faction-watermark {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 240px;
+  font-weight: 900;
+  opacity: 0.04;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.faction-info-content {
+  position: relative;
+  z-index: 3;
+}
+
+.faction-tag-pill {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.faction-huge-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 900;
+  color: #f3f4f6;
+  letter-spacing: 3px;
+  margin: 0 0 8px 0;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  line-height: 1.15;
+}
+
+.faction-divider-rune {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.rune-line {
+  height: 1.5px;
+  width: 50px;
+  background: linear-gradient(90deg, #f59e0b, transparent);
+}
+
+.rune-diamond {
+  color: #f59e0b;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.faction-story-desc {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.faction-meta-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.meta-feat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(22, 30, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.faction-actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.showcase-btn {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.showcase-btn.primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0b0f17;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+}
+
+.showcase-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+}
+
+.showcase-btn.secondary {
+  background: rgba(22, 30, 46, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #f59e0b;
+}
+
+.showcase-btn.secondary:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+}
+
+/* 3. Right Column: Tall Character Cards Stage */
+.faction-cards-stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+}
+
+.cards-slider-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 12px 6px 18px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cards-slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-card {
+  flex: 0 0 185px;
+  height: 410px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid rgba(245, 158, 11, 0.22);
+  background: #111827;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.showcase-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #f59e0b;
+  box-shadow: 0 16px 40px rgba(245, 158, 11, 0.35);
+}
+
+.showcase-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.showcase-card:hover .showcase-card-img {
+  transform: scale(1.06);
+}
+
+.showcase-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 10, 18, 0.96) 0%, rgba(7, 10, 18, 0.72) 28%, rgba(7, 10, 18, 0.1) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 12px;
+  z-index: 2;
+}
+
+.showcase-card-cost {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  padding: 2px 7px;
+  background: rgba(185, 28, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.showcase-card-stars {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.showcase-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #f3f4f6;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.showcase-card-role {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.showcase-card-skill {
+  font-size: 10.5px;
+  color: #f59e0b;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Stage Controls */
+.stage-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-right: 6px;
+}
+
+.stage-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(22, 30, 46, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stage-nav-btn:hover {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: #f59e0b;
+  transform: scale(1.08);
+  color: #ffffff;
+}
+
+.stage-counter {
+  font-family: 'Cinzel', serif;
+  font-size: 11.5px;
+  color: #9ca3af;
+  font-weight: 700;
+  min-width: 48px;
+  text-align: center;
+}
+
+/* =========================================================
+   SECTION 2: CHIẾN PHÁP (TACTICS)
+   ========================================================= */
+.tactics-section {
+  background: radial-gradient(ellipse at 50% 0%, #151d2c 0%, #0b0f17 70%);
+}
+
+.tactics-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tactic-type-card {
+  background: rgba(22, 30, 46, 0.55);
+  border: 1px solid rgba(245,158,11,0.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.tactic-type-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,158,11,0.35);
+  box-shadow: 0 8px 24px rgba(245,158,11,0.1);
+}
+
+.tactic-type-icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.tactic-type-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin-bottom: 4px;
+}
+
+.tactic-type-timing {
+  font-size: 11px;
+  color: #f59e0b;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.tactic-samples {
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.tactic-badge-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  font-size: 10.5px;
+  color: #6ee7b7;
+}
+
+/* =========================================================
+   SECTION 3: ĐỘI HÌNH (TEAMS)
+   ========================================================= */
+.teams-section {
+  background: radial-gradient(ellipse at 50% 100%, #1c1307 0%, #0b0f17 65%);
+}
+
+.teams-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.meta-team-showcase-card {
+  background: rgba(22, 30, 46, 0.6);
+  border: 1px solid rgba(245,158,11,0.18);
+  border-radius: 16px;
+  padding: 18px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-team-showcase-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245,158,11,0.45);
+  box-shadow: 0 10px 30px rgba(245,158,11,0.15);
+}
+
+.meta-team-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tier-pill {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.tier-pill.t0 {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  color: #0b0f17;
+  box-shadow: 0 0 10px rgba(245,158,11,0.4);
+}
+
+.tier-pill.t05 {
+  background: rgba(245,158,11,0.2);
+  border: 1px solid rgba(245,158,11,0.4);
+  color: #f59e0b;
+}
+
+.tier-pill.t1 {
+  background: rgba(168,85,247,0.2);
+  border: 1px solid rgba(168,85,247,0.4);
+  color: #c084fc;
+}
+
+.team-faction-pill {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.team-faction-pill.wei { color: #60a5fa; }
+.team-faction-pill.shu { color: #34d399; }
+.team-faction-pill.wu  { color: #f87171; }
+.team-faction-pill.qun { color: #c084fc; }
+
+.meta-team-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin-bottom: 10px;
+}
+
+.team-generals-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.team-gen-slot {
+  background: rgba(11, 15, 23, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slot-pos {
+  font-size: 9.5px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slot-name {
+  font-size: 12.5px;
+  color: #f3f4f6;
+  font-weight: 600;
+}
+
+.slot-skills {
+  font-size: 10.5px;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta-team-desc {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.4;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 8px;
+}
+
+/* ===== DOT NAVIGATOR ===== */
+.dot-nav {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 8000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dot-nav-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dot-nav-item:hover { background: rgba(245,158,11,0.5); }
+
+.dot-nav-item.active {
+  background: #f59e0b;
+  transform: scale(1.5);
+  box-shadow: 0 0 10px rgba(245,158,11,0.6);
+}
+
+.dot-nav-item[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(11,15,23,0.9);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #f3f4f6;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.dot-nav-item:hover[data-tooltip]::before { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .generals-showcase-layout {
+    grid-template-columns: 60px 280px 1fr;
+    gap: 16px;
+    padding: 60px 16px 20px;
+  }
+  .showcase-card { flex: 0 0 160px; height: 360px; }
+  .tactics-types-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .teams-meta-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .section-container { padding: 50px 20px 20px; }
+}
+
+@media (max-width: 768px) {
+  .generals-showcase-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 60px 14px 20px;
+    gap: 16px;
+  }
+  .faction-nav-vertical {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  .faction-nav-btn { width: 50px; height: 50px; }
+  .faction-info-panel { text-align: center; }
+  .faction-divider-rune { justify-content: center; }
+  .faction-actions-row { justify-content: center; }
+  .showcase-card { flex: 0 0 150px; height: 320px; }
+  .tactics-types-grid { grid-template-columns: 1fr; gap: 10px; }
+  .teams-meta-grid { grid-template-columns: 1fr; gap: 10px; }
+  .hero-stats-bar { flex-wrap: wrap; gap: 12px; }
+  .dot-nav { right: 8px; }
+  .section-container { padding: 40px 16px 16px; overflow-y: auto; }
+}
+
+@media (max-height: 740px) {
+  .generals-showcase-layout { padding-top: 54px; padding-bottom: 12px; }
+  .showcase-card { height: 350px; flex: 0 0 160px; }
+  .faction-huge-title { font-size: 28px; margin-bottom: 4px; }
+  .faction-story-desc { font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+  .section-container { padding-top: 50px; padding-bottom: 16px; }
+  .section-header { margin-bottom: 14px; }
+  .section-actions { margin-top: 10px; }
+  .meta-team-showcase-card { padding: 12px 10px; }
+}
