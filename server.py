@@ -241,7 +241,14 @@ async def upload_images(
     detected_tactics  = set()
     file_results = []
 
-    active_api_key = (gemini_api_key or os.getenv("GEMINI_API_KEY") or "").strip()
+    active_api_key = (
+        gemini_api_key or 
+        os.getenv("GEMINI_API_KEY") or 
+        os.getenv("GeminiAPI") or 
+        os.getenv("gemini_api_key") or 
+        os.getenv("GEMINI_KEY") or 
+        ""
+    ).strip()
 
     # Step 1: Rapidly save all uploaded files to disk
     saved_files = []
