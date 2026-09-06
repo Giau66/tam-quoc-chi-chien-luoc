@@ -564,109 +564,129 @@ async function processUploadQueue() {
   if (progress) progress.style.display = 'flex';
   if (btnAnalyze) btnAnalyze.disabled = true;
 
+  const BATCH_SIZE = 4; // Chia nhỏ mỗi đợt 4 ảnh để tránh nghẽn mạng & timeout máy chủ
+  const totalFiles = files.length;
+  let totalAddedGen = 0;
+  let totalAddedTac = 0;
+  const allDetectedGens = new Set();
+  const allDetectedTacs = new Set();
+
   try {
-    if (progressText) progressText.textContent = `⚡ Đang tối ưu hóa ${files.length} ảnh siêu tốc...`;
-    const optimizedFiles = await Promise.all(
-      files.map(f => compressImageForUpload(f))
-    );
-
-    if (progressText) progressText.textContent = `🚀 Đang tải lên và AI quét song song ${files.length} ảnh...`;
-
-    const formData = new FormData();
-    optimizedFiles.forEach(file => formData.append('files', file));
-
     const apiKey = AppState.apiKey || localStorage.getItem('tqc_gemini_api_key');
-    if (apiKey) {
-      formData.append('gemini_api_key', apiKey);
-    }
 
-    const res = await fetch('/api/upload-images', {
-      method: 'POST',
-      body: formData
-    });
+    for (let i = 0; i < totalFiles; i += BATCH_SIZE) {
+      const batchFiles = files.slice(i, i + BATCH_SIZE);
+      const batchStart = i + 1;
+      const batchEnd = Math.min(i + BATCH_SIZE, totalFiles);
 
-    if (progress) progress.style.display = 'none';
-    if (btnAnalyze) btnAnalyze.disabled = false;
-
-    if (res.ok) {
-      const data = await res.json();
-
-      let addedGen = 0;
-      let addedTac = 0;
-
-      (data.generals || []).forEach(g => {
-        if (!AppState.ownedGenerals.has(g)) {
-          AppState.ownedGenerals.add(g);
-          addedGen++;
-        }
-      });
-
-      (data.tactics || []).forEach(t => {
-        if (!AppState.ownedTactics.has(t)) {
-          AppState.ownedTactics.add(t);
-          addedTac++;
-        }
-      });
-
-      saveInventory();
-      renderInventory();
-      fetchRecommendations();
-      fetchStarterRecommendations();
-      renderFactionTeams();
-
-      if (resultsDiv) {
-        resultsDiv.style.display = 'block';
-        resultsDiv.innerHTML = `
-          <div class="card alert alert-success" style="padding: 1.5rem; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);">
-            <h3 style="color:#34d399; margin-bottom: 0.5rem; font-size:1.15rem;">
-              ✅ Nhận diện thành công ${files.length} ảnh!
-            </h3>
-            <p style="color:#e5e7eb; margin-bottom: 1rem; font-size:0.95rem;">
-              Tìm thấy tổng cộng <strong>${data.total_generals || 0} tướng</strong> và <strong>${data.total_tactics || 0} chiến pháp</strong>.
-              <span style="color:#fbbf24;">(Mới thêm vào kho: +${addedGen} tướng, +${addedTac} chiến pháp).</span>
-            </p>
-
-            ${(data.generals && data.generals.length > 0) ? `
-              <div style="margin-bottom: 1rem;">
-                <strong style="color:var(--gold-light); font-size:0.88rem;">🗡️ TƯỚNG NHẬN DIỆN ĐƯỢC:</strong>
-                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-                  ${data.generals.map(g => `<span class="meta-pill" style="background:rgba(59,130,246,0.15); color:#60a5fa; border-color:rgba(59,130,246,0.3); font-size:0.8rem;">${g}</span>`).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            ${(data.tactics && data.tactics.length > 0) ? `
-              <div style="margin-bottom: 1.25rem;">
-                <strong style="color:var(--gold-light); font-size:0.88rem;">📜 CHIẾN PHÁP NHẬN DIỆN ĐƯỢC:</strong>
-                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-                  ${data.tactics.map(t => `<span class="meta-pill" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.3); font-size:0.8rem;">${t}</span>`).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-              <button class="btn btn-primary" onclick="switchTab('tab-recommend')">
-                🏆 Xem Đề Xuất Team Meta
-              </button>
-              <button class="btn btn-primary" style="background: linear-gradient(135deg, #10b981, #059669);" onclick="switchTab('tab-starter')">
-                🌱 Xem Team Khai Hoang (Mở Đất)
-              </button>
-              <button class="btn btn-secondary" onclick="switchTab('tab-inventory')">
-                ⚔️ Xem Kho Tướng &amp; Chiến Pháp
-              </button>
-            </div>
-          </div>
+      if (progressText) {
+        progressText.innerHTML = `
+          <span>⚡ Đang nén &amp; AI quét ảnh <strong>${batchStart} - ${batchEnd} / ${totalFiles}</strong>...</span>
+          <span style="font-size: 0.8rem; color: #34d399; margin-left: 8px;">(Đã tìm thấy: ${allDetectedGens.size} tướng, ${allDetectedTacs.size} chiến pháp)</span>
         `;
       }
 
-      showToast(`✨ Đã thêm +${addedGen} tướng và +${addedTac} chiến pháp vào kho đồ!`);
-    } else {
-      showToast('❌ Lỗi xử lý ảnh từ máy chủ', 'error');
+      // Step 1: Compress images on client side
+      const optimizedBatch = await Promise.all(
+        batchFiles.map(f => compressImageForUpload(f))
+      );
+
+      // Step 2: Upload batch
+      const formData = new FormData();
+      optimizedBatch.forEach(file => formData.append('files', file));
+      if (apiKey) {
+        formData.append('gemini_api_key', apiKey);
+      }
+
+      const res = await fetch('/api/upload-images', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        (data.generals || []).forEach(g => {
+          allDetectedGens.add(g);
+          if (!AppState.ownedGenerals.has(g)) {
+            AppState.ownedGenerals.add(g);
+            totalAddedGen++;
+          }
+        });
+        (data.tactics || []).forEach(t => {
+          allDetectedTacs.add(t);
+          if (!AppState.ownedTactics.has(t)) {
+            AppState.ownedTactics.add(t);
+            totalAddedTac++;
+          }
+        });
+
+        // Save inventory incrementally
+        saveInventory();
+        updateStatBadges();
+      } else {
+        console.warn(`Lỗi ở đợt ảnh ${batchStart} - ${batchEnd}`);
+      }
     }
+
+    if (progress) progress.style.display = 'none';
+    if (btnAnalyze) btnAnalyze.disabled = false;
+
+    // Render results
+    renderInventory();
+    fetchRecommendations();
+    fetchStarterRecommendations();
+    renderFactionTeams();
+
+    if (resultsDiv) {
+      resultsDiv.style.display = 'block';
+      resultsDiv.innerHTML = `
+        <div class="card alert alert-success" style="padding: 1.5rem; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);">
+          <h3 style="color:#34d399; margin-bottom: 0.5rem; font-size:1.15rem;">
+            ✅ Đã hoàn tất quét thành công toàn bộ ${totalFiles} ảnh!
+          </h3>
+          <p style="color:#e5e7eb; margin-bottom: 1rem; font-size:0.95rem;">
+            Tìm thấy tổng cộng <strong>${allDetectedGens.size} tướng</strong> và <strong>${allDetectedTacs.size} chiến pháp</strong>.
+            <span style="color:#fbbf24;">(Mới thêm vào kho: +${totalAddedGen} tướng, +${totalAddedTac} chiến pháp).</span>
+          </p>
+
+          ${(allDetectedGens.size > 0) ? `
+            <div style="margin-bottom: 1rem;">
+              <strong style="color:var(--gold-light); font-size:0.88rem;">🗡️ TƯỚNG NHẬN DIỆN ĐƯỢC:</strong>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+                ${Array.from(allDetectedGens).map(g => `<span class="meta-pill" style="background:rgba(59,130,246,0.15); color:#60a5fa; border-color:rgba(59,130,246,0.3); font-size:0.8rem;">${g}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${(allDetectedTacs.size > 0) ? `
+            <div style="margin-bottom: 1.25rem;">
+              <strong style="color:var(--gold-light); font-size:0.88rem;">📜 CHIẾN PHÁP NHẬN DIỆN ĐƯỢC:</strong>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+                ${Array.from(allDetectedTacs).map(t => `<span class="meta-pill" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.3); font-size:0.8rem;">${t}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn btn-primary" onclick="switchTab('tab-recommend')">
+              🏆 Xem Đề Xuất Team Meta
+            </button>
+            <button class="btn btn-primary" style="background: linear-gradient(135deg, #10b981, #059669);" onclick="switchTab('tab-starter')">
+              🌱 Xem Team Khai Hoang (Mở Đất)
+            </button>
+            <button class="btn btn-secondary" onclick="switchTab('tab-inventory')">
+              ⚔️ Xem Kho Tướng &amp; Chiến Pháp
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    showToast(`✨ Đã hoàn thành quét ${totalFiles} ảnh (+${totalAddedGen} tướng, +${totalAddedTac} chiến pháp)!`);
   } catch (err) {
     if (progress) progress.style.display = 'none';
     if (btnAnalyze) btnAnalyze.disabled = false;
-    showToast('❌ Không thể kết nối tới API nhận diện ảnh', 'error');
+    showToast('❌ Quá trình quét gặp sự cố kết nối, vui lòng thử lại', 'error');
   }
 }
 
