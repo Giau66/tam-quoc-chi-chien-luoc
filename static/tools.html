@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/jpeg" href="/anh/tamquocchi.jpg">
-  <link rel="stylesheet" href="css/style.css?v=11">
-  <link rel="stylesheet" href="css/navbar.css?v=11">
-  <link rel="stylesheet" href="css/auth.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/navbar.css?v=22">
+  <link rel="stylesheet" href="css/auth.css?v=22">
   <style>
     body { padding-top: 64px; }
     .cloud-sync-bar-wrap {
@@ -40,15 +40,18 @@
   </a>
 
   <div class="nav-links">
-    <button class="nav-link active" id="navbar-link-factions" onclick="switchTab('tab-factions')"><span class="nav-link-icon">🚩</span>175 Đội (Excel)</button>
-    <button class="nav-link" id="navbar-link-upload" onclick="switchTab('tab-upload')"><span class="nav-link-icon">📷</span>Tải Ảnh Quét</button>
-    <button class="nav-link" id="navbar-link-recommend" onclick="switchTab('tab-recommend')"><span class="nav-link-icon">🏆</span>Đề Xuất Team Meta</button>
+    <button class="nav-link active" id="navbar-link-factions" onclick="switchTab('tab-factions')"><span class="nav-link-icon">🏆</span>Đội Hình Meta</button>
+    <button class="nav-link" id="navbar-link-recommend" onclick="switchTab('tab-recommend')"><span class="nav-link-icon">🤖</span>Đề Xuất Kho</button>
     <button class="nav-link" id="navbar-link-starter" onclick="switchTab('tab-starter')"><span class="nav-link-icon">🌱</span>Đề Xuất Khai Hoang</button>
-    <button class="nav-link" id="navbar-link-inventory" onclick="switchTab('tab-inventory')"><span class="nav-link-icon">⚔️</span>Kho Tướng &amp; CP</button>
-    <button class="nav-link nav-reset-btn" id="navbar-link-reset" onclick="resetInventoryData()" title="Làm mới kho về 0 (Xóa dữ liệu cũ)"><span class="nav-link-icon">🗑️</span>Làm Mới</button>
+    <button class="nav-link" id="navbar-link-upload" onclick="switchTab('tab-upload')"><span class="nav-link-icon">📷</span>Quét Ảnh &amp; Kho Đồ</button>
   </div>
 
   <div class="nav-auth" id="nav-auth-section">
+    <button class="nav-inv-pill" id="navbar-inv-pill" onclick="switchTab('tab-inventory')" title="Xem kho tướng và chiến pháp đã nhận diện">
+      <span class="pill-dot"></span>
+      <span><strong id="nav-gen-count">0</strong> Tướng &bull; <strong id="nav-tac-count">0</strong> CP</span>
+    </button>
+    <button class="nav-reset-pill" id="navbar-link-reset" onclick="resetInventoryData()" title="Làm mới kho về 0 (Xóa dữ liệu cũ)">🗑️</button>
     <button class="nav-btn-login" onclick="openAuthModal('login')">Đăng Nhập</button>
     <button class="nav-btn-register" onclick="openAuthModal('register')">Đăng Ký</button>
   </div>
@@ -72,7 +75,7 @@
         <div class="brand-seal" style="width:48px;height:48px;min-width:48px;max-width:48px;min-height:48px;max-height:48px;overflow:hidden;border-radius:8px;flex-shrink:0"><img src="/anh/tamquocchi.jpg" alt="Logo" class="brand-seal-img" style="width:48px;height:48px;max-width:48px;max-height:48px;object-fit:cover;border-radius:8px;display:block"></div>
         <div class="brand-info">
           <h1>TAM QUỐC CHÍ <span class="accent-text">CHIẾN LƯỢC</span></h1>
-          <p class="tagline">175 Đội Hình Excel &middot; Nhận Diện Ảnh AI &middot; Đề Xuất Team Meta &amp; Khai Hoang</p>
+          <p class="tagline">188 Đội Hình Meta Chuẩn PK &middot; AI Nhận Diện Ảnh Kho Tướng &middot; Đề Xuất Tối Ưu</p>
         </div>
       </div>
 
@@ -90,42 +93,29 @@
         </button>
       </div>
     </div>
-
-    <!-- MAIN NAVIGATION TABS -->
-    <nav class="nav-tabs">
-      <div class="nav-container">
-        <button class="nav-tab active" data-tab="tab-factions" id="nav-btn-factions">
-          <span class="tab-icon">🚩</span> 175 Đội Hình Theo Phe (Excel)
-          <span class="tab-badge" id="factions-nav-badge" style="background: linear-gradient(135deg, #d97706, #b45309);">175 Đội</span>
-        </button>
-        <button class="nav-tab" data-tab="tab-upload" id="nav-btn-upload">
-          <span class="tab-icon">📷</span> Tải Ảnh &amp; Nhận Diện AI
-        </button>
-        <button class="nav-tab" data-tab="tab-recommend" id="nav-btn-recommend">
-          <span class="tab-icon">🏆</span> Đề Xuất Team Meta
-          <span class="tab-badge" id="recommend-badge">0 Đội</span>
-        </button>
-        <button class="nav-tab" data-tab="tab-starter" id="nav-btn-starter">
-          <span class="tab-icon">🌱</span> Đề Xuất Khai Hoang
-          <span class="tab-badge" id="starter-nav-badge" style="background: linear-gradient(135deg, #10b981, #059669);">0 Đội</span>
-        </button>
-        <button class="nav-tab" data-tab="tab-inventory" id="nav-btn-inventory">
-          <span class="tab-icon">⚔️</span> Kho Tướng &amp; Chiến Pháp
-          <span class="tab-counter" id="inventory-counter">0</span>
-        </button>
-      </div>
-    </nav>
   </header>
 
   <!-- MAIN APPLICATION BODY -->
   <main class="main-content">
 
-    <!-- TAB 1: 175 ĐỘI HÌNH THEO PHE (EXCEL) — MÀN HÌNH ĐẦU TIÊN MẶC ĐỊNH -->
+    <!-- TAB 1: 188 ĐỘI HÌNH THEO PHE (EXCEL) — MÀN HÌNH ĐẦU TIÊN MẶC ĐỊNH -->
     <section class="tab-panel active" id="tab-factions">
       <div class="card panel-card">
+        <!-- Unified Quick Switcher -->
+        <div class="team-category-switcher">
+          <button class="cat-pill active" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+        </div>
+
         <div class="section-title-wrap">
-          <h2>🚩 175 ĐỘI HÌNH META THEO PHE (EXCEL)</h2>
-          <p class="section-desc">Danh sách đầy đủ 175+ đội hình meta theo từng phe trích xuất từ file Excel chuẩn Mùa PK. Sau khi tải ảnh quét kho, bạn có thể tích "Chỉ hiện đủ kho" để lọc nhanh các đội hình khả dụng.</p>
+          <h2>🚩 188 ĐỘI HÌNH META THEO PHE (EXCEL)</h2>
+          <p class="section-desc">Danh sách đầy đủ 188 đội hình meta chuẩn Mùa PK, Mùa 4 &amp; Mùa 5 trích xuất trực tiếp từ file Excel với 100% Binh Thư, Chiến Pháp và điểm Chạm/Tránh. Sau khi tải ảnh quét kho, bạn có thể tích "Chỉ hiện đủ kho" để lọc nhanh các đội hình khả dụng.</p>
         </div>
 
         <div id="factions-inventory-status"></div>
@@ -140,6 +130,12 @@
             <button class="faction-mega-tab" data-faction="Tam Thế">🌀 Đa Phe</button>
           </div>
           <div class="faction-sub-filters">
+            <select id="faction-filter-season" class="filter-select">
+              <option value="All">Tất cả mùa giải</option>
+              <option value="PK">Mùa PK (176 đội)</option>
+              <option value="Mùa 4">Mùa 4 (6 đội)</option>
+              <option value="Mùa 5">Mùa 5 (6 đội)</option>
+            </select>
             <select id="faction-filter-troop" class="filter-select">
               <option value="All">Tất cả binh chủng</option>
               <option value="Kỵ">Kỵ</option>
@@ -170,9 +166,117 @@
       </div>
     </section>
 
-    <!-- TAB 2: TRANG TẢI ẢNH NHẬN DIỆN (UP HÌNH) -->
+    <!-- TAB 2: TEAM ĐÔ ÚY -->
+    <section class="tab-panel" id="tab-do-uy">
+      <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill active" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2>🛡️ TEAM ĐÔ ÚY — HƯỚNG DẪN ĐẦU TƯ TEAM</h2>
+          <p class="section-desc">Danh sách 12 đội hình Team Đô Úy được biên soạn từ kinh nghiệm người chơi. Dựa trên tính tham khảo, không xài tuyệt kỹ. Nếu có tuyệt kỹ sẽ mạnh hơn.</p>
+        </div>
+        <div style="margin: 14px 0 18px; font-size: 14px; color: var(--text-muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px">
+          <span style="font-weight:600; color:#a78bfa">TEAM ĐÔ ÚY</span>
+          <span>Hiển thị <strong id="do-uy-count" class="accent-text">0</strong> đội hình</span>
+        </div>
+        <div id="do-uy-teams-grid" class="faction-teams-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: CẢI TẠO BINH CHỦNG & LỆNH ĐĂNG UNG -->
+    <section class="tab-panel" id="tab-cai-tao">
+      <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill active" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2>🔧 TIẾN CỬ ĐỘI HÌNH CẢI TẠO BINH CHỦNG &amp; LỆNH ĐĂNG UNG</h2>
+          <p class="section-desc">17 đội hình đặc biệt vận dụng cơ chế Cải Tạo Binh Chủng và Lệnh Đăng Ung từ file Excel. Tối ưu hóa chuyển đổi binh chủng S, mở khóa các chiến thuật đỉnh cao.</p>
+        </div>
+
+        <div class="faction-filter-panel">
+          <div class="faction-mega-tabs" id="cai-tao-tabs">
+            <button class="faction-mega-tab active" data-section="All" id="cai-tao-tab-all" onclick="filterCaiTaoSection('All')">🌐 Tất Cả (17 Đội)</button>
+            <button class="faction-mega-tab" data-section="Cải Tạo Binh Chủng" id="cai-tao-tab-ct" onclick="filterCaiTaoSection('Cải Tạo Binh Chủng')">🛠️ Cải Tạo Binh Chủng (14 Đội)</button>
+            <button class="faction-mega-tab" data-section="Lệnh Đăng Ung" id="cai-tao-tab-du" onclick="filterCaiTaoSection('Lệnh Đăng Ung')">📜 Lệnh Đăng Ung (3 Đội)</button>
+          </div>
+          <div class="faction-sub-filters">
+            <input type="text" id="cai-tao-search" class="inv-search-input" placeholder="🔍 Tìm kiếm tướng, chiến pháp cải tạo..." oninput="filterCaiTaoSearch(this.value)">
+          </div>
+        </div>
+
+        <div style="margin: 14px 0 18px; font-size: 14px; color: var(--text-muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px">
+          <span style="font-weight:600; color:#38bdf8">ĐỘI HÌNH CẢI TẠO &amp; ĐĂNG UNG</span>
+          <span>Hiển thị <strong id="cai-tao-count" class="accent-text">0</strong> đội hình</span>
+        </div>
+
+        <div id="cai-tao-teams-grid" class="faction-teams-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ĐỘI HÌNH CÙNG TỒN (COEXISTING PORTFOLIOS) -->
+    <section class="tab-panel" id="tab-cung-ton">
+      <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill active" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2>🔄 CÁC BỘ ĐỘI HÌNH CÙNG TỒN TẠI (5 - 8 ĐỘI KHÔNG TRÙNG CHIẾN PHÁP)</h2>
+          <p class="section-desc">Trích xuất trực tiếp từ các sheet "Team Cùng Tồn" và "nhiều Team cùng tồn tại" trong file Excel. Các bộ khung 5-8 đội phối hợp ra trận không trùng chiến pháp, kèm đội hình tiến cử Khai Hoang, Binh Thư và điểm cộng thuộc tính.</p>
+        </div>
+
+        <!-- Portfolio set selector buttons -->
+        <div class="portfolio-set-selector" id="cung-ton-sets-bar" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)">
+        </div>
+
+        <!-- Portfolio set header info (Description & Starter recommendation) -->
+        <div id="cung-ton-set-info" style="margin-bottom:20px"></div>
+
+        <!-- Portfolio teams container -->
+        <div id="cung-ton-teams-container"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: TRANG TẢI ẢNH NHẬN DIỆN (UP HÌNH) -->
     <section class="tab-panel" id="tab-upload">
       <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill active" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+          <span id="upload-sub-gen-count" style="display:none">0</span>
+          <span id="upload-sub-tac-count" style="display:none">0</span>
+        </div>
         <div class="section-title-wrap">
           <h2>📸 TẢI ẢNH CHỤP MÀN HÌNH GAME (UP HÌNH)</h2>
           <p class="section-desc">Hỗ trợ tải nhiều ảnh chụp màn hình kho Tướng hoặc kho Chiến Pháp. AI sẽ tự động phân tích và trích xuất danh sách sở hữu làm dữ liệu để đề xuất Team Meta và Team Khai Hoang.</p>
@@ -223,6 +327,17 @@
     <!-- TAB 3: ĐỀ XUẤT TEAM META (DỰA TRÊN DỮ LIỆU TỪ ẢNH) -->
     <section class="tab-panel" id="tab-recommend">
       <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill active" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+          <span id="rec-meta-count" style="display:none">0</span>
+        </div>
         <div class="section-title-wrap">
           <h2>🏆 ĐỀ XUẤT TEAM META (DỰA TRÊN DỮ LIỆU ẢNH)</h2>
           <p class="section-desc">Hệ thống so khớp kho tướng &amp; chiến pháp (nhận diện từ ảnh bạn vừa tải lên) với toàn bộ 175 đội hình meta, tính toán % tương thích và đề xuất các đội T0/T1 mạnh nhất bạn có thể xuất trận.</p>
@@ -280,6 +395,20 @@
     <!-- TAB 4: ĐỀ XUẤT TEAM KHAI HOANG (MỞ ĐẤT) (DỰA TRÊN DỮ LIỆU ẢNH) -->
     <section class="tab-panel" id="tab-starter">
       <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill active" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+          <span id="rec-starter-count" style="display:none">15</span>
+          <span id="rec-meta-count-2" style="display:none">0</span>
+          <span id="rec-starter-count-2" style="display:none">15</span>
+        </div>
+
         <div class="section-title-wrap">
           <h2>🌱 ĐỀ XUẤT TEAM KHAI HOANG (MỞ ĐẤT)</h2>
           <p class="section-desc">Đề xuất các đội hình chuyên dụng cho Khai Hoang (mở đất đầu mùa) dựa trên tướng &amp; chiến pháp nhận diện từ ảnh. Kèm cẩm nang đánh Mỏ 4-5-6-7 và đội hình thám thính quái.</p>
@@ -330,6 +459,17 @@
     <!-- TAB 5: KHO TƯỚNG & CHIẾN PHÁP (KIỂM TRA DỮ LIỆU) -->
     <section class="tab-panel" id="tab-inventory">
       <div class="card panel-card">
+        <div class="team-category-switcher">
+          <button class="cat-pill" data-tab="tab-factions" onclick="switchTab('tab-factions')">⭐ 188 Đội Meta PK</button>
+          <button class="cat-pill" data-tab="tab-recommend" onclick="switchTab('tab-recommend')">🤖 Đề Xuất Meta <span class="badge-rec-meta"></span></button>
+          <button class="cat-pill" data-tab="tab-starter" onclick="switchTab('tab-starter')">🌱 Đề Xuất Khai Hoang <span class="badge-rec-starter"></span></button>
+          <button class="cat-pill" data-tab="tab-do-uy" onclick="switchTab('tab-do-uy')">🛡️ Đội Đô Úy (12)</button>
+          <button class="cat-pill" data-tab="tab-cai-tao" onclick="switchTab('tab-cai-tao')">🔧 Cải Tạo BC &amp; Đăng Ung (17)</button>
+          <button class="cat-pill" data-tab="tab-cung-ton" onclick="switchTab('tab-cung-ton')">🔄 5 Đội Cùng Tồn (10 Bộ)</button>
+          <button class="cat-pill" data-tab="tab-upload" onclick="switchTab('tab-upload')">📷 Quét Ảnh AI</button>
+          <button class="cat-pill active" data-tab="tab-inventory" onclick="switchTab('tab-inventory')">⚔️ Kho Tướng &amp; CP</button>
+        </div>
+
         <div class="section-title-wrap">
           <h2>⚔️ KHO TƯỚNG &amp; CHIẾN PHÁP ĐÃ NHẬN DIỆN</h2>
           <p class="section-desc">Xem và kiểm tra danh sách tướng và chiến pháp đã được AI trích xuất từ ảnh chụp, hoặc tích chọn bổ sung thủ công.</p>
@@ -427,8 +567,8 @@
   </div>
 </div>
 
-<script src="js/auth.js?v=13"></script>
-<script src="js/app.js?v=13"></script>
+<script src="js/auth.js?v=22"></script>
+<script src="js/app.js?v=22"></script>
 
 <!-- AI TEAM ANALYZER MODAL -->
 <div class="ai-analyze-overlay" id="ai-analyze-overlay">

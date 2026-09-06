@@ -25,10 +25,18 @@ const AppState = {
   starterOnlyReady: false,
   factionTab: {
     activeFaction: 'All',
+    filterSeason: 'All',
     filterTroop: 'All',
     filterTier: 'All',
     searchQuery: '',
     onlyOwned: false
+  },
+  caiTaoTab: {
+    section: 'All',
+    searchQuery: ''
+  },
+  cungTonTab: {
+    selectedSetId: null
   },
   uploadQueue: []
 };
@@ -45,10 +53,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderInventory();
   updateStatBadges();
 
-  // Initial fetch for all recommendation views & factions
+  // Initial fetch for all views & factions
   renderFactionTeams();
   fetchRecommendations();
   fetchStarterRecommendations();
+  fetchDoUy();
+  fetchCaiTao();
+  fetchCungTon();
   setupCloudSyncUI();
 
   handleHashNavigation();
@@ -57,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function handleHashNavigation() {
   const hash = (window.location.hash || '').replace('#', '').trim();
-  const validTabs = ['tab-factions', 'tab-upload', 'tab-recommend', 'tab-starter', 'tab-inventory'];
+  const validTabs = ['tab-factions', 'tab-do-uy', 'tab-cai-tao', 'tab-cung-ton', 'tab-upload', 'tab-recommend', 'tab-starter', 'tab-inventory'];
   if (hash && validTabs.includes(hash)) {
     switchTab(hash);
   }
@@ -324,15 +335,13 @@ function switchTab(tabId) {
     panel.classList.toggle('active', panel.id === tabId);
   });
 
-  // Sync top navbar active state
+  // Sync top navbar active state (primary 3 hubs)
   document.querySelectorAll('.site-navbar .nav-links .nav-link').forEach(link => {
     link.classList.remove('active');
   });
-  if (tabId === 'tab-factions') {
+
+  if (['tab-factions', 'tab-do-uy', 'tab-cai-tao', 'tab-cung-ton'].includes(tabId)) {
     const el = document.getElementById('navbar-link-factions');
-    if (el) el.classList.add('active');
-  } else if (tabId === 'tab-upload') {
-    const el = document.getElementById('navbar-link-upload');
     if (el) el.classList.add('active');
   } else if (tabId === 'tab-recommend') {
     const el = document.getElementById('navbar-link-recommend');
@@ -340,10 +349,21 @@ function switchTab(tabId) {
   } else if (tabId === 'tab-starter') {
     const el = document.getElementById('navbar-link-starter');
     if (el) el.classList.add('active');
-  } else if (tabId === 'tab-inventory') {
-    const el = document.getElementById('navbar-link-inventory');
+  } else if (tabId === 'tab-upload' || tabId === 'tab-inventory') {
+    const el = document.getElementById('navbar-link-upload');
     if (el) el.classList.add('active');
   }
+
+  // Sync .team-category-switcher sub-pills across panels
+  document.querySelectorAll('.team-category-switcher .cat-pill').forEach(pill => {
+    const oc = pill.getAttribute('onclick') || '';
+    const dt = pill.getAttribute('data-tab') || '';
+    if (dt === tabId || oc.includes(`switchTab('${tabId}')`)) {
+      pill.classList.add('active');
+    } else {
+      pill.classList.remove('active');
+    }
+  });
 
   if (tabId === 'tab-recommend') {
     fetchRecommendations();
@@ -351,6 +371,12 @@ function switchTab(tabId) {
     renderFactionTeams();
   } else if (tabId === 'tab-starter') {
     fetchStarterRecommendations();
+  } else if (tabId === 'tab-do-uy') {
+    fetchDoUy();
+  } else if (tabId === 'tab-cai-tao') {
+    fetchCaiTao();
+  } else if (tabId === 'tab-cung-ton') {
+    fetchCungTon();
   }
 
   // Smooth scroll to top of main content
@@ -425,6 +451,24 @@ function setupUploadEventListeners() {
       }
     });
   }
+
+  // Support Ctrl+V paste from clipboard (Snipping Tool, PrintScreen, etc.)
+  window.addEventListener('paste', (e) => {
+    const items = e.clipboardData && e.clipboardData.items;
+    if (!items) return;
+    const pastedFiles = [];
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') !== -1) {
+        const blob = items[i].getAsFile();
+        if (blob) pastedFiles.push(blob);
+      }
+    }
+    if (pastedFiles.length > 0) {
+      switchTab('tab-upload');
+      addFilesToQueue(pastedFiles);
+      showToast(`📋 Đã dán ${pastedFiles.length} ảnh từ Clipboard! Nhấn 'Phân Tích Bằng AI' để quét.`);
+    }
+  });
 
   if (btnAnalyze) {
     btnAnalyze.addEventListener('click', processUploadQueue);
@@ -502,9 +546,13 @@ function removeUploadFile(index) {
   renderUploadPreviews();
 }
 
-// Nén ảnh client-side bằng canvas giúp giảm 90% dung lượng, upload siêu tốc
-async function compressImageForUpload(file, maxDimension = 1400, quality = 0.82) {
+// Giữ nguyên độ sắc nét ảnh gốc cho OCR (chỉ nén nếu ảnh quá lớn > 2.5MB)
+async function compressImageForUpload(file, maxDimension = 1800, quality = 0.92) {
   if (!file || !file.type.startsWith('image/')) return file;
+  // If file is already reasonable in size (<= 2.5MB), send original bytes for maximum OCR fidelity!
+  if (file.size <= 2.5 * 1024 * 1024) {
+    return file;
+  }
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -808,6 +856,12 @@ function updateStatBadges() {
   const invGenCount = document.getElementById('inv-gen-count');
   const invTacCount = document.getElementById('inv-tac-count');
 
+  // Navbar and Sub-category counters
+  const navGen = document.getElementById('nav-gen-count');
+  const navTac = document.getElementById('nav-tac-count');
+  const upGen = document.getElementById('upload-sub-gen-count');
+  const upTac = document.getElementById('upload-sub-tac-count');
+
   const gSize = AppState.ownedGenerals.size;
   const tSize = AppState.ownedTactics.size;
 
@@ -816,6 +870,11 @@ function updateStatBadges() {
   if (invCounter) invCounter.textContent = gSize + tSize;
   if (invGenCount) invGenCount.textContent = gSize;
   if (invTacCount) invTacCount.textContent = tSize;
+
+  if (navGen) navGen.textContent = gSize;
+  if (navTac) navTac.textContent = tSize;
+  if (upGen) upGen.textContent = gSize;
+  if (upTac) upTac.textContent = tSize;
 }
 
 // --- RECOMMENDATIONS (TAB 3) ---
@@ -868,9 +927,15 @@ async function fetchRecommendations() {
     if (res.ok) {
       const data = await res.json();
       const results = data.results || [];
-
       if (countSpan) countSpan.textContent = results.length;
       if (recommendBadge) recommendBadge.textContent = `${results.length} Đội`;
+      const recMeta1 = document.getElementById('rec-meta-count');
+      const recMeta2 = document.getElementById('rec-meta-count-2');
+      if (recMeta1) recMeta1.textContent = results.length;
+      if (recMeta2) recMeta2.textContent = results.length;
+      document.querySelectorAll('.badge-rec-meta').forEach(el => {
+        el.textContent = results.length > 0 ? `(${results.length})` : '';
+      });
 
       if (results.length === 0) {
         listContainer.innerHTML = `
@@ -879,9 +944,13 @@ async function fetchRecommendations() {
               Chưa tìm thấy đội hình nào đạt trên ${AppState.filters.minScore}% độ hoàn thiện.
             </p>
             <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem;">
-              Bạn có thể hạ thanh trượt "Điểm tối thiểu" xuống 20-30% hoặc tải thêm ảnh kho tướng &amp; chiến pháp.
+              Bạn có thể hạ thanh trượt "Điểm tối thiểu" xuống 20-30%, hoặc quét thêm ảnh kho tướng &amp; chiến pháp, hoặc xem trước toàn bộ 188 đội hình meta.
             </p>
-            <button class="btn btn-primary" onclick="switchTab('tab-upload')">📷 Tải Thêm Ảnh Quét Kho</button>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+              <button class="btn btn-primary" onclick="switchTab('tab-upload')">📷 Tải Thêm Ảnh Quét Kho</button>
+              <button class="btn btn-secondary" onclick="switchTab('tab-factions')">⭐ Xem 188 Đội Meta PK</button>
+              <button class="btn btn-outline" onclick="switchTab('tab-starter')">🌱 Xem 15 Đội Khai Hoang</button>
+            </div>
           </div>
         `;
         return;
@@ -900,13 +969,16 @@ function renderTeamCard(evalRes) {
 
   const tierClass = team.tier === 'T0' ? 'tier-T0' : (team.tier === 'T0.5' ? 'tier-T05' : 'tier-T1');
 
+  const actualOwnedGens = (generalsEval || []).filter(s => s.is_owned || AppState.ownedGenerals.has(s.target_name) || (s.target_id && AppState.ownedGenerals.has(s.target_id))).length;
+  const displayOwnedCount = Math.max(evalRes.owned_gen_count || 0, actualOwnedGens);
+
   let ownedBadgeHtml = '';
-  if (evalRes.owned_gen_count === 3) {
+  if (displayOwnedCount >= 3) {
     ownedBadgeHtml = '<span class="meta-pill" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; font-weight: 700;">✨ SỞ HỮU 3/3 TƯỚNG</span>';
-  } else if (evalRes.owned_gen_count === 2) {
+  } else if (displayOwnedCount === 2) {
     ownedBadgeHtml = '<span class="meta-pill" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; font-weight: 700;">⚡ SỞ HỮU 2/3 TƯỚNG</span>';
   } else {
-    ownedBadgeHtml = `<span class="meta-pill" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); font-weight: 700;">❌ SỞ HỮU ${evalRes.owned_gen_count}/3 TƯỚNG</span>`;
+    ownedBadgeHtml = `<span class="meta-pill" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); font-weight: 700;">❌ SỞ HỮU ${displayOwnedCount}/3 TƯỚNG</span>`;
   }
 
   const tacticPillHtml = `<span class="meta-pill" style="background: rgba(212, 175, 55, 0.15); color: #fde047; border: 1px solid rgba(212, 175, 55, 0.4); font-weight: 700;">📜 CP CHUẨN: ${evalRes.owned_bis_count}/${evalRes.total_tactics_count}</span>`;
@@ -919,7 +991,7 @@ function renderTeamCard(evalRes) {
 
   const analyzeBtn = (typeof buildAnalyzeButton === 'function') ? buildAnalyzeButton(evalRes) : '';
 
-  const scoreTitle = `Tỉ lệ giống chuẩn: ${evalRes.overall_score}% | Tướng: ${evalRes.owned_gen_count}/3 | Chiến pháp: ${evalRes.owned_bis_count}/${evalRes.total_tactics_count}`;
+  const scoreTitle = `Tỉ lệ giống chuẩn: ${evalRes.overall_score}% | Tướng: ${displayOwnedCount}/3 | Chiến pháp: ${evalRes.owned_bis_count}/${evalRes.total_tactics_count}`;
 
   return `
     <div class="team-card">
@@ -950,7 +1022,8 @@ function renderTeamCard(evalRes) {
       <div class="team-body">
         <div class="generals-lineup">
           ${generalsEval.map(slot => {
-            const statusBadge = slot.is_owned
+            const isOwned = slot.is_owned || AppState.ownedGenerals.has(slot.target_name) || (slot.target_id && AppState.ownedGenerals.has(slot.target_id));
+            const statusBadge = isOwned
               ? '<span class="status-chip status-owned">✓ Có</span>'
               : '<span class="status-chip status-missing">❌ Chưa có</span>';
 
@@ -964,8 +1037,9 @@ function renderTeamCard(evalRes) {
 
                 <div class="slot-tactics-list">
                   ${slot.tactics.map(t => {
-                    const slotClass = t.is_owned ? 'tactic-bis' : 'tactic-missing-slot';
-                    const statusText = t.is_owned ? '✓ Có' : (t.is_substitute ? '🔄 Thay thế' : '❌ Thiếu');
+                    const isTacOwned = t.is_owned || AppState.ownedTactics.has(t.name);
+                    const slotClass = isTacOwned ? 'tactic-bis' : 'tactic-missing-slot';
+                    const statusText = isTacOwned ? '✓ Có' : (t.is_substitute ? '🔄 Thay thế' : '❌ Thiếu');
 
                     return `
                       <div class="slot-tactic-item ${slotClass}">
@@ -1203,9 +1277,19 @@ async function fetchStarterRecommendations() {
       renderMinesGuide(data.mines_guide);
       renderTouchScouts(data.touch_scout_teams);
 
-      const readyCount = (data.starter_teams || []).filter(t => t.owned_generals_count >= 2).length;
-      if (countSpan) countSpan.textContent = readyCount;
+      const allStarters = data.starter_teams || [];
+      const hasInv = AppState.ownedGenerals.size > 0;
+      const readyCount = allStarters.filter(t => t.owned_generals_count >= 2).length;
+      if (countSpan) countSpan.textContent = hasInv ? `${readyCount}/${allStarters.length}` : allStarters.length;
       if (navBadge) navBadge.textContent = `${readyCount} Đội`;
+
+      const recStar1 = document.getElementById('rec-starter-count');
+      const recStar2 = document.getElementById('rec-starter-count-2');
+      if (recStar1) recStar1.textContent = allStarters.length;
+      if (recStar2) recStar2.textContent = allStarters.length;
+      document.querySelectorAll('.badge-rec-starter').forEach(el => {
+        el.textContent = hasInv ? `(${readyCount}/${allStarters.length})` : `(${allStarters.length})`;
+      });
     }
   } catch (err) {
     console.error('Lỗi lấy dữ liệu khai hoang:', err);
@@ -1252,10 +1336,10 @@ function renderStarterTeams() {
     if (hasInventory) {
       if (isReady) {
         badgeHtml = `<span class="badge-tag" style="background: rgba(16,185,129,0.2); color: #34d399; border-color: #10b981;">✨ ĐỦ ${st.total_generals} TƯỚNG (100%)</span>`;
-      } else if (st.owned_generals_count >= 2) {
+      } else if (st.owned_generals_count >= 1) {
         badgeHtml = `<span class="badge-tag" style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: #f59e0b;">⚡ CÓ ${st.owned_generals_count}/${st.total_generals} TƯỚNG (${st.gen_percentage}%)</span>`;
       } else {
-        badgeHtml = `<span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.3);">❌ CÓ ${st.owned_generals_count}/${st.total_generals} TƯỚNG</span>`;
+        badgeHtml = `<span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.3);">❌ THIẾU TƯỚNG</span>`;
       }
     }
 
@@ -1276,11 +1360,16 @@ function renderStarterTeams() {
 
         <div class="starter-gens-lineup">
           ${st.generals.map(g => {
-            const isGenOwned = hasInventory && g.is_owned;
+            const isGenOwned = hasInventory && (g.is_owned || AppState.ownedGenerals.has(g.active_name));
+            const earlyTac = g.cp_early || g.tactics_before_lv20 || { name: 'Chưa có', is_owned: false };
+            const earlyName = earlyTac.name || '';
+            const tacBeforeOwned = hasInventory && (earlyTac.is_owned || AppState.ownedTactics.has(earlyName));
+            const lv20Tacs = g.cp_lv20 || g.tactics_after_lv20 || [];
+
             return `
               <div class="starter-gen-box ${hasInventory ? (isGenOwned ? 'owned-gen' : 'missing-gen') : ''}">
                 <div class="starter-gen-title">
-                  <strong>${g.active_name}</strong>
+                  <strong>${g.active_name || g.target_name}</strong>
                   ${hasInventory ? `<span>${isGenOwned ? '✓ Có' : '❌ Thiếu'}</span>` : ''}
                 </div>
                 ${g.alt_name ? `<div style="font-size: 0.75rem; color: var(--text-dim);">(Hoặc: ${g.alt_name})</div>` : ''}
@@ -1288,18 +1377,22 @@ function renderStarterTeams() {
                 <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 4px;">
                   <div class="starter-stage-section">
                     <span class="stage-label">Lv &lt; 20:</span>
-                    <span class="starter-tactic-pill ${hasInventory ? (g.tactics_before_lv20.is_owned ? 'has-tac' : 'missing-tac') : 'neutral-tac'}">
-                      ${g.tactics_before_lv20.name}
+                    <span class="starter-tactic-pill ${hasInventory ? (tacBeforeOwned ? 'has-tac' : 'missing-tac') : 'neutral-tac'}">
+                      ${earlyName}
                     </span>
                   </div>
                   <div class="starter-stage-section">
                     <span class="stage-label">Lv &gt;= 20:</span>
                     <div style="display: flex; gap: 4px; flex-wrap: wrap;">
-                      ${g.tactics_after_lv20.map(tc => `
-                        <span class="starter-tactic-pill ${hasInventory ? (tc.is_owned ? 'has-tac' : 'missing-tac') : 'neutral-tac'}">
-                          ${tc.name}
-                        </span>
-                      `).join('')}
+                      ${lv20Tacs.map(tc => {
+                        const tcName = tc.name || '';
+                        const isTacOwned = hasInventory && (tc.is_owned || AppState.ownedTactics.has(tcName));
+                        return `
+                          <span class="starter-tactic-pill ${hasInventory ? (isTacOwned ? 'has-tac' : 'missing-tac') : 'neutral-tac'}">
+                            ${tcName}
+                          </span>
+                        `;
+                      }).join('')}
                     </div>
                   </div>
                 </div>
@@ -1308,9 +1401,9 @@ function renderStarterTeams() {
           }).join('')}
         </div>
 
-        ${st.starter_note ? `
+        ${(st.starter_note || st.note) ? `
           <div class="starter-note-box" style="margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: rgba(0,0,0,0.25); border-radius: 6px; font-size: 0.84rem; color: var(--text-muted);">
-            💡 <strong>Ghi chú khai hoang:</strong> ${st.starter_note}
+            💡 <strong>Ghi chú khai hoang:</strong> ${st.starter_note || st.note}
           </div>
         ` : ''}
       </div>
@@ -1428,6 +1521,14 @@ function setupFactionEventListeners() {
     });
   }
 
+  const seasonSelect = document.getElementById('faction-filter-season');
+  if (seasonSelect) {
+    seasonSelect.addEventListener('change', (e) => {
+      AppState.factionTab.filterSeason = e.target.value;
+      renderFactionTeams();
+    });
+  }
+
   const troopSelect = document.getElementById('faction-filter-troop');
   if (troopSelect) {
     troopSelect.addEventListener('change', (e) => {
@@ -1464,6 +1565,7 @@ function setupFactionEventListeners() {
 function renderFactionTeams() {
   const container = document.getElementById('faction-teams-grid');
   const countSpan = document.getElementById('factions-count');
+  const navBadge = document.getElementById('factions-nav-badge');
   if (!container) return;
 
   const hasInventory = AppState.ownedGenerals.size > 0 || AppState.ownedTactics.size > 0;
@@ -1482,7 +1584,7 @@ function renderFactionTeams() {
     } else {
       statusEl.innerHTML = `
         <div style="margin-bottom: 1.25rem; padding: 0.85rem 1.15rem; border-radius: 8px; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; flex-wrap: wrap; gap: 10px;">
-          <span>📋 <em>Đang hiển thị danh mục 175 đội hình nguyên bản theo file Excel. (Kho của bạn hiện đang trống: 0 Tướng - 0 Chiến Pháp)</em></span>
+          <span>📋 <em>Đang hiển thị danh mục 178 đội hình nguyên bản theo file Excel. (Kho của bạn hiện đang trống: 0 Tướng - 0 Chiến Pháp)</em></span>
           <button class="btn btn-primary btn-sm" onclick="switchTab('tab-upload')" style="padding: 5px 14px; font-size: 0.82rem;">📷 Tải Ảnh Quét Kho Của Bạn</button>
         </div>
       `;
@@ -1490,10 +1592,14 @@ function renderFactionTeams() {
   }
 
   const allTeams = AppState.db.meta_teams || [];
-  const { activeFaction, filterTroop, filterTier, searchQuery, onlyOwned } = AppState.factionTab;
+  if (navBadge && allTeams.length > 0) {
+    navBadge.textContent = `${allTeams.length} Đội`;
+  }
+  const { activeFaction, filterSeason, filterTroop, filterTier, searchQuery, onlyOwned } = AppState.factionTab;
 
   const filtered = allTeams.filter(team => {
     if (activeFaction !== 'All' && team.faction !== activeFaction) return false;
+    if (filterSeason && filterSeason !== 'All' && team.season !== filterSeason) return false;
     if (filterTroop !== 'All' && team.troop !== filterTroop) return false;
     if (filterTier !== 'All' && team.tier !== filterTier) return false;
 
@@ -1731,5 +1837,387 @@ window.app = {
   selectFactionTab,
   renderFactionTeams,
   fetchRecommendations,
-  fetchPortfolioRecommendations
+  fetchPortfolioRecommendations,
+  fetchDoUy
 };
+
+// ==========================================================
+// TEAM ĐÔ ÚY — FETCH & RENDER
+// ==========================================================
+
+async function fetchDoUy() {
+  const grid = document.getElementById('do-uy-teams-grid');
+  if (!grid) return;
+  grid.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">⏳ Đang tải dữ liệu Team Đô Úy...</div>';
+  try {
+    const resp = await fetch('/api/team-do-uy');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    renderDoUyTeams(data);
+  } catch (e) {
+    grid.innerHTML = `<div style="text-align:center;padding:40px;color:#f87171">❌ Lỗi tải dữ liệu Team Đô Úy: ${e.message}</div>`;
+  }
+}
+
+function renderDoUyTeams(teams) {
+  const grid = document.getElementById('do-uy-teams-grid');
+  const countEl = document.getElementById('do-uy-count');
+  if (!grid) return;
+  if (countEl) countEl.textContent = teams.length;
+
+  const TROOP_ICON = { 'Thương': '🔱', 'Kỵ': '🐎', 'Cung': '🏹', 'Khiên': '🛡', 'Khí': '💨' };
+
+  if (!teams || teams.length === 0) {
+    grid.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">Không có dữ liệu Team Đô Úy.</div>';
+    return;
+  }
+
+  grid.innerHTML = teams.map((team, idx) => {
+    const gens = (team.generals || []);
+    const troop = team.troop || 'Kỵ';
+    const icon = TROOP_ICON[troop] || '⚔️';
+    const note = team.note || '';
+
+    // Extract chạm/tránh from note
+    let cham = '', tranh = '';
+    if (note.includes('Chạm:')) {
+      const after = note.split('Chạm:')[1];
+      if (after.includes('Tránh:')) {
+        cham = after.split('Tránh:')[0].trim();
+        tranh = after.split('Tránh:')[1].trim();
+      } else {
+        cham = after.trim();
+      }
+    }
+
+    const gensHtml = gens.map((g, gi) => {
+      const gName = g.name || g.raw_name || '';
+      const cp1 = g.cp1 || g.cp1_raw || '';
+      const cp2 = g.cp2 || g.cp2_raw || '';
+      const bt = (g.binh_thu || []).filter(b => b);
+      const pos = gi === 0 ? 'Chủ tướng' : `Phó tướng ${gi}`;
+      const posClass = gi === 0 ? 'pos-main' : 'pos-sub';
+
+      const tacticsHtml = [cp1, cp2].filter(Boolean).map(t =>
+        `<span class="tactic-pill">${t}</span>`
+      ).join('');
+
+      const btHtml = bt.length > 0
+        ? `<div class="binh-thu-row">${bt.map((b, bi) => `<span class="binh-thu-pill ${bi === 0 ? 'main-tome' : 'sub-tome'}">${bi === 0 ? '★ ' : ''}${b}</span>`).join('')}</div>`
+        : '';
+
+      return `
+        <div class="general-slot ${posClass}">
+          <div class="gen-header">
+            <span class="gen-pos-badge ${posClass}">${pos}</span>
+            <span class="gen-name">${gName}</span>
+          </div>
+          <div class="gen-tactics">${tacticsHtml}</div>
+          ${btHtml}
+        </div>`;
+    }).join('');
+
+    const noteHtml = note ? `
+      <div class="team-note-block" style="margin-top:10px;padding:8px 12px;background:rgba(167,139,250,0.08);border-left:3px solid #7c3aed;border-radius:6px;font-size:12px;color:var(--text-muted)">
+        ${cham ? `<div>✅ <strong>Chạm:</strong> ${cham}</div>` : ''}
+        ${tranh ? `<div>⚠️ <strong>Tránh:</strong> ${tranh}</div>` : ''}
+        ${!cham && !tranh ? `<div>${note}</div>` : ''}
+      </div>` : '';
+
+    return `
+      <div class="team-card do-uy-card" style="border-top:3px solid #7c3aed">
+        <div class="team-card-header">
+          <div class="team-badge-group">
+            <span class="troop-badge" style="background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.3)">${icon} ${troop}</span>
+            <span class="tier-badge tier-t1" style="background:rgba(124,58,237,0.2);color:#c4b5fd">🛡 Đô Úy</span>
+          </div>
+          <span class="team-number" style="color:#7c3aed">#${idx + 1}</span>
+        </div>
+        <div class="team-generals">
+          ${gensHtml}
+        </div>
+        ${noteHtml}
+      </div>`;
+  }).join('');
+}
+
+// ==========================================================
+// CẢI TẠO BINH CHỦNG & LỆNH ĐĂNG UNG — FETCH & RENDER
+// ==========================================================
+
+let _caiTaoData = [];
+
+async function fetchCaiTao() {
+  const grid = document.getElementById('cai-tao-teams-grid');
+  if (!grid) return;
+  grid.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">⏳ Đang tải dữ liệu Cải Tạo Binh Chủng...</div>';
+  try {
+    const resp = await fetch('/api/cai-tao-binh-chung');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    _caiTaoData = await resp.json();
+    renderCaiTaoTeams();
+  } catch (e) {
+    grid.innerHTML = `<div style="text-align:center;padding:40px;color:#f87171">❌ Lỗi tải dữ liệu Cải Tạo Binh Chủng: ${e.message}</div>`;
+  }
+}
+
+function filterCaiTaoSection(sec) {
+  AppState.caiTaoTab.section = sec;
+  document.querySelectorAll('#cai-tao-tabs .faction-mega-tab').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-section') === sec);
+  });
+  renderCaiTaoTeams();
+}
+
+function filterCaiTaoSearch(val) {
+  AppState.caiTaoTab.searchQuery = (val || '').toLowerCase().trim();
+  renderCaiTaoTeams();
+}
+
+function renderCaiTaoTeams() {
+  const grid = document.getElementById('cai-tao-teams-grid');
+  const countEl = document.getElementById('cai-tao-count');
+  if (!grid) return;
+
+  const { section, searchQuery } = AppState.caiTaoTab;
+  let filtered = _caiTaoData || [];
+
+  if (section !== 'All') {
+    filtered = filtered.filter(t => t.section === section);
+  }
+
+  if (searchQuery) {
+    filtered = filtered.filter(t => {
+      const matchTrp = (t.troop || '').toLowerCase().includes(searchQuery);
+      const matchNote = (t.note || '').toLowerCase().includes(searchQuery);
+      const matchGen = (t.generals || []).some(g => (g.name || g.raw_name || '').toLowerCase().includes(searchQuery));
+      const matchTac = (t.generals || []).some(g => [g.cp1, g.cp2].some(c => (c || '').toLowerCase().includes(searchQuery)));
+      return matchTrp || matchNote || matchGen || matchTac;
+    });
+  }
+
+  if (countEl) countEl.textContent = filtered.length;
+
+  const TROOP_ICON = { 'Thương': '🔱', 'Kỵ': '🐎', 'Cung': '🏹', 'Khiên': '🛡', 'Khí': '💨' };
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);grid-column:1/-1">Không tìm thấy đội hình cải tạo nào phù hợp.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map((team, idx) => {
+    const isDangUng = team.section === 'Lệnh Đăng Ung';
+    const troop = team.troop || 'Kỵ';
+    const icon = TROOP_ICON[troop] || '⚔️';
+    const note = team.note || '';
+
+    const gensHtml = (team.generals || []).map((g, gi) => {
+      const gName = g.raw_name || g.name || '';
+      const cp1 = g.cp1 || '';
+      const cp2 = g.cp2 || '';
+      const bt = (g.binh_thu || []).filter(b => b);
+      const pos = gi === 0 ? 'Chủ tướng' : `Phó tướng ${gi}`;
+      const posClass = gi === 0 ? 'pos-main' : 'pos-sub';
+
+      const tacticsHtml = [cp1, cp2].filter(Boolean).map(t =>
+        `<span class="tactic-pill">${t}</span>`
+      ).join('');
+
+      const btHtml = bt.length > 0
+        ? `<div class="binh-thu-row">${bt.map((b, bi) => `<span class="binh-thu-pill ${bi === 0 ? 'main-tome' : 'sub-tome'}">${bi === 0 ? '★ ' : ''}${b}</span>`).join('')}</div>`
+        : '';
+
+      return `
+        <div class="general-slot ${posClass}">
+          <div class="gen-header">
+            <span class="gen-pos-badge ${posClass}">${pos}</span>
+            <span class="gen-name" style="font-size:13px;font-weight:700">${gName}</span>
+          </div>
+          <div class="gen-tactics">${tacticsHtml}</div>
+          ${btHtml}
+        </div>`;
+    }).join('');
+
+    const noteHtml = note ? `
+      <div class="team-note-block" style="margin-top:12px;padding:8px 12px;background:${isDangUng ? 'rgba(245,158,11,0.08)' : 'rgba(14,165,233,0.08)'};border-left:3px solid ${isDangUng ? '#f59e0b' : '#0ea5e9'};border-radius:6px;font-size:12px;color:var(--text-muted)">
+        💡 <strong>Ý tưởng:</strong> ${note}
+      </div>` : '';
+
+    return `
+      <div class="team-card cai-tao-card ${isDangUng ? 'section-dang-ung' : ''}">
+        <div class="team-card-header">
+          <div class="team-badge-group">
+            <span class="troop-badge" style="background:${isDangUng ? 'rgba(245,158,11,0.15)' : 'rgba(14,165,233,0.15)'};color:${isDangUng ? '#fbbf24' : '#38bdf8'};border:1px solid ${isDangUng ? 'rgba(245,158,11,0.3)' : 'rgba(14,165,233,0.3)'}">${icon} ${troop}</span>
+            <span class="tier-badge" style="background:${isDangUng ? 'rgba(245,158,11,0.2)' : 'rgba(14,165,233,0.2)'};color:${isDangUng ? '#fde68a' : '#bae6fd'}">${team.section}</span>
+          </div>
+          <span class="team-number" style="color:${isDangUng ? '#f59e0b' : '#0ea5e9'}">#${idx + 1}</span>
+        </div>
+        <div class="team-generals">
+          ${gensHtml}
+        </div>
+        ${noteHtml}
+      </div>`;
+  }).join('');
+}
+
+// ==========================================================
+// ĐỘI HÌNH CÙNG TỒN (COEXISTING PORTFOLIOS) — FETCH & RENDER
+// ==========================================================
+
+let _cungTonData = [];
+let _activePortfolioIdx = 0;
+
+async function fetchCungTon() {
+  const container = document.getElementById('cung-ton-teams-container');
+  if (!container) return;
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">⏳ Đang tải dữ liệu Đội Hình Cùng Tồn...</div>';
+  try {
+    const resp = await fetch('/api/coexisting-portfolios');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    _cungTonData = await resp.json();
+    renderCungTonPortfolios();
+  } catch (e) {
+    container.innerHTML = `<div style="text-align:center;padding:40px;color:#f87171">❌ Lỗi tải dữ liệu Đội Hình Cùng Tồn: ${e.message}</div>`;
+  }
+}
+
+function selectCungTonSet(idx) {
+  _activePortfolioIdx = idx;
+  renderCungTonPortfolios();
+}
+
+function renderCungTonPortfolios() {
+  const bar = document.getElementById('cung-ton-sets-bar');
+  const infoEl = document.getElementById('cung-ton-set-info');
+  const container = document.getElementById('cung-ton-teams-container');
+  if (!container) return;
+
+  if (!_cungTonData || _cungTonData.length === 0) {
+    container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">Không có dữ liệu Đội Hình Cùng Tồn.</div>';
+    return;
+  }
+
+  // Render buttons
+  if (bar) {
+    bar.innerHTML = _cungTonData.map((p, idx) => {
+      const isAct = idx === _activePortfolioIdx;
+      const tCount = (p.teams || []).length;
+      return `
+        <button class="portfolio-set-btn ${isAct ? 'active' : ''}" onclick="selectCungTonSet(${idx})">
+          ${p.set_name} (${tCount} Đội)
+        </button>
+      `;
+    }).join('');
+  }
+
+  const p = _cungTonData[_activePortfolioIdx] || _cungTonData[0];
+  if (!p) return;
+
+  // Render info banner
+  if (infoEl) {
+    const starterHtml = p.starter_recommendation ? `
+      <div class="cung-ton-starter-banner">
+        <div class="cung-ton-starter-title">
+          <span>🌱 TIẾN CỬ ĐỘI HÌNH KHAI HOANG CHO BỘ NÀY (EXCEL):</span>
+        </div>
+        <div class="cung-ton-starter-content">${p.starter_recommendation}</div>
+      </div>
+    ` : '';
+
+    infoEl.innerHTML = `
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 18px;margin-bottom:14px">
+        <h3 style="font-size:16px;color:#10b981;margin-bottom:6px">⚜️ ${p.set_name}</h3>
+        ${p.description ? `<p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">${p.description}</p>` : ''}
+        <div style="font-size:12px;color:var(--text-dim)">Gồm <strong>${(p.teams || []).length} đội hình</strong> phối hợp xuất chiến không trùng chiến pháp, phát huy tối đa sức mạnh liên minh.</div>
+      </div>
+      ${starterHtml}
+    `;
+  }
+
+  // Render teams in this portfolio
+  const teams = p.teams || [];
+  if (teams.length === 0) {
+    container.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-muted)">Bộ này chưa có thông tin chi tiết các đội.</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="cung-ton-teams-grid">
+      ${teams.map((t, tidx) => {
+        const gens = t.generals || [];
+        const tName = t.team_name || `Đội ${tidx + 1}`;
+        const cost = t.cost || '';
+
+        return `
+          <div class="cung-ton-team-card">
+            <div class="cung-ton-card-header">
+              <div>
+                <span class="cung-ton-team-title">${tName}</span>
+                ${cost ? `<span class="meta-pill" style="margin-left:8px;background:rgba(16,185,129,0.15);color:#34d399;font-size:11px">${cost}</span>` : ''}
+              </div>
+              <span style="font-size:12px;font-weight:700;color:#10b981">Team #${tidx + 1}</span>
+            </div>
+
+            <div class="generals-lineup" style="display:flex;flex-direction:column;gap:10px">
+              ${gens.map((g, gi) => {
+                const pos = gi === 0 ? 'Chủ tướng' : `Phó tướng ${gi}`;
+                const posClass = gi === 0 ? 'pos-main' : 'pos-sub';
+                const gName = g.raw_name || g.name || '';
+                const t1 = g.tactic1 || '';
+                const t2 = g.tactic2 || '';
+                const stat = g.stat_point || '';
+                const bt = (g.binh_thu || []).filter(Boolean);
+
+                return `
+                  <div class="general-slot ${posClass}" style="padding:10px">
+                    <div class="gen-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                      <div>
+                        <span class="gen-pos-badge ${posClass}" style="font-size:10px">${pos}</span>
+                        <strong style="font-size:13.5px;color:#f3f4f6;margin-left:6px">${gName}</strong>
+                      </div>
+                      ${stat ? `<span class="stat-point-pill">🎯 ${stat}</span>` : ''}
+                    </div>
+
+                    <div class="gen-tactics" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px">
+                      ${t1 ? `<span class="tactic-pill">${t1}</span>` : ''}
+                      ${t2 ? `<span class="tactic-pill">${t2}</span>` : ''}
+                    </div>
+
+                    ${bt.length > 0 ? `
+                      <div class="binh-thu-row" style="margin-top:4px">
+                        ${bt.map((b, bi) => `<span class="binh-thu-pill ${bi === 0 ? 'main-tome' : 'sub-tome'}">${bi === 0 ? '★ ' : ''}${b}</span>`).join('')}
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+window.fetchCaiTao = fetchCaiTao;
+window.filterCaiTaoSection = filterCaiTaoSection;
+window.filterCaiTaoSearch = filterCaiTaoSearch;
+window.renderCaiTaoTeams = renderCaiTaoTeams;
+window.fetchCungTon = fetchCungTon;
+window.selectCungTonSet = selectCungTonSet;
+window.renderCungTonPortfolios = renderCungTonPortfolios;
+window.fetchDoUy = fetchDoUy;
+window.renderDoUyTeams = renderDoUyTeams;
+
+window.app = Object.assign(window.app || {}, {
+  fetchCaiTao,
+  filterCaiTaoSection,
+  filterCaiTaoSearch,
+  renderCaiTaoTeams,
+  fetchCungTon,
+  selectCungTonSet,
+  renderCungTonPortfolios,
+  fetchDoUy,
+  renderDoUyTeams
+});
+

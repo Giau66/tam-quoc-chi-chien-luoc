@@ -1,0 +1,733 @@
+[
+  {
+    "id": "cai_tao_01",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Thương",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Tinh Nghiên] + [Võ Khôi] + [Cứu Viện] + [Quân Tâm]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Mã Siêu",
+        "raw_name": "SP Mã Siêu",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Tấn Công Điểm Yếu",
+          "Tốc Chiến",
+          "Khép Hờ"
+        ]
+      },
+      {
+        "name": "SP Hoàng Phổ Tung",
+        "raw_name": "SP Hoàng Phổ Tung",
+        "cp1": "Thuyền Cỏ Mượn Tên",
+        "cp2": "Vạn Quân Đoạt Sư",
+        "binh_thu": [
+          "Đánh Giá Tình Hình",
+          "Khai Hạp",
+          "Chia Lời"
+        ]
+      },
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Tinh·Giải Phiền Vệ",
+        "binh_thu": [
+          "Yêu Lính Thương Dân",
+          "Thế Phòng Thủ",
+          "Phòng Bị"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_02",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Thương",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Chuyển·Cung] + [Thành Thạo] + [Lưỡng Nghi] + [Bút Đao]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Tuân Úc",
+        "raw_name": "SP Tuân Úc\n(Chính Lệnh S)",
+        "cp1": "Chuyển·Bạch Nhị Binh",
+        "cp2": "Cắt Xương Trị Độc",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      },
+      {
+        "name": "SP Quách Gia",
+        "raw_name": "SP Quách Gia\n(Cung S)",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Đương Phong Thôi Quyết",
+        "binh_thu": [
+          "Kỳ Chính Tương Sinh",
+          "Giấu Đao",
+          "Văn Thao"
+        ]
+      },
+      {
+        "name": "Giả Hủ",
+        "raw_name": "Giả Hủ",
+        "cp1": "Nhanh Trí Động Não",
+        "cp2": "Thượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_03",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Thương",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Chuyển·Cung] + [Thành Thạo] + [Lưỡng Nghi] + [Bút Đao]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Chu Du",
+        "raw_name": "Chu Du",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Thiêu Đốt Doanh Lũy",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Mưu Kế Sâu Xa",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Lục Tốn",
+        "raw_name": "Lục Tốn",
+        "cp1": "Đồng Lòng Hợp Sức/\nTinh·Nhanh Trí Động Não",
+        "cp2": "Chuyển·Bạch Nhị Binh",
+        "binh_thu": [
+          "Đánh Bất Ngờ Thắng",
+          "Tinh Chuẩn",
+          "Khai Hạp"
+        ]
+      },
+      {
+        "name": "SP Lữ Mông",
+        "raw_name": "SP Lữ Mông",
+        "cp1": "Nhạn Hình Trận",
+        "cp2": "Thuyền Cỏ Mượn Tên",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_04",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Kỵ",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Thần Hành] / [Kỵ Thuật] + [Thao Luyện] + [Diên Ích] + [Trọng Thương]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Đại Kiều",
+        "raw_name": "Vô Song Đại Kiều",
+        "cp1": "Mê Hoặc",
+        "cp2": "Thuyền Cỏ Mượn Tên",
+        "binh_thu": [
+          "Nhìn Rõ Mồn Một/\nTam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Tôn Thượng Hương",
+        "raw_name": "Tôn Thượng Hương",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Mau Giành Lợi Thế",
+        "binh_thu": [
+          "Thắng Càng Mạnh/\nLấy Võ Dẹp Loạn",
+          "Thắng Trận/\nThần Cơ",
+          "Giấu Đao/\nTướng Uy"
+        ]
+      },
+      {
+        "name": "Tiểu Kiều",
+        "raw_name": "Vô Song Tiểu Kiều",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Tinh·Hổ Báo Kỵ",
+        "binh_thu": [
+          "Chẩm Qua Tọa Giáp",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_05",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Kỵ",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Thần Hành] + [Xung Phong] + [Diên Ích] + [Trọng Thương]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Tôn Quyền",
+        "raw_name": "Tôn Quyền",
+        "cp1": "Nhất Kỵ Đương Thiên",
+        "cp2": "Bách Kỵ Kiếp Doanh",
+        "binh_thu": [
+          "Liền Mạch Một Hơi",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "Lăng Thống",
+        "raw_name": "Lăng Thống",
+        "cp1": "Lõa Y Huyết Chiến",
+        "cp2": "Đương Phong Thôi Quyết/\nMau Giành Lợi Thế",
+        "binh_thu": [
+          "Không Chiến Sẽ Chết",
+          "Thắng Trận",
+          "Phân Hiểm"
+        ]
+      },
+      {
+        "name": "Chu Thái",
+        "raw_name": "Chu Thái",
+        "cp1": "Tinh·Hổ Báo Kỵ",
+        "cp2": "Phong Thi Trận",
+        "binh_thu": [
+          "Biết Cách Phòng Thủ",
+          "Thế Phòng Thủ",
+          "Tĩnh Tâm"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_06",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Kỵ",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Chuyển·Cung] + [Phá Địch] + [Phò Thương] + [Quần Lực]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Đổng Trác",
+        "raw_name": "SP Đổng Trác",
+        "cp1": "Chuyển·Phi Hùng Quân",
+        "cp2": "Thượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Lô Trực",
+        "raw_name": "SP Lô Trực",
+        "cp1": "Nhạn Hình Trận",
+        "cp2": "Cương Nhu Kết Hợp",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Điêu Thuyền",
+        "raw_name": "SP Điêu Thuyền",
+        "cp1": "Thâm Tàng Nhược Hư",
+        "cp2": "Đồng Lòng Hợp Sức",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_07",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Chống Lại] + [Ức Thế] + [Đoạt Chí] + [Cộng Dồn]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố 40th",
+        "cp1": "Huyết Đao Tranh Giành",
+        "cp2": "Dẫn Huyền Lực Chiến",
+        "binh_thu": [
+          "Thắng Càng Mạnh/\nKhông Chiến Sẽ Chết",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "SP Lô Trực",
+        "raw_name": "SP Lô Trực",
+        "cp1": "Nhạn Hành Trận",
+        "cp2": "Tinh·Tử Sĩ Tiên Phong",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Cửu Chiến",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Điêu Thuyền",
+        "raw_name": "SP Điêu Thuyền",
+        "cp1": "Thâm Tàng Nhược Hư",
+        "cp2": "Cương Nhu Kết Hợp",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Cửu Chiến",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_08",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Chống Lại] + [Ức Thế] + [Đoạt Chí] + [Cộng Dồn]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố 40th",
+        "cp1": "Huyết Đao Tranh Giành",
+        "cp2": "Dẫn Huyền Lực Chiến",
+        "binh_thu": [
+          "Thắng Càng Mạnh/\nKhông Chiến Sẽ Chết",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "SP Điêu Thuyền",
+        "raw_name": "SP Điêu Thuyền",
+        "cp1": "Thâm Tàng Nhược Hư",
+        "cp2": "Cương Nhu Kết Hợp",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Cửu Chiến",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Đổng Trác /SP Đổng Trác",
+        "raw_name": "Đổng Trác\n/SP Đổng Trác",
+        "cp1": "Nhạn Hành Trận",
+        "cp2": "Tinh·Tử Sĩ Tiên Phong",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Cửu Chiến",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_09",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Thần Xạ] + [Dũng Võ] + [Ngăn Chặn] + [Doanh Khiếu]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Cam Ninh",
+        "raw_name": "Cam Ninh\n(Lệnh Đăng Ung·Quần)",
+        "cp1": "Thuyền Cỏ Mượn Tên",
+        "cp2": "Tinh·Quân Cẩm Phàm",
+        "binh_thu": [
+          "Thích Làm Việc Thiện",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố 40th",
+        "cp1": "Dẫn Huyền Lực Chiến",
+        "cp2": "Huyết Đao Tranh Giành",
+        "binh_thu": [
+          "Thắng Càng Mạnh",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Nhạn Hình Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_10",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Thần Xạ] + [Dũng Võ] + [Ngăn Chặn] + [Doanh Khiếu]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Cam Ninh",
+        "raw_name": "Cam Ninh",
+        "cp1": "Thuyền Cỏ Mượn Tên",
+        "cp2": "Tinh·Quân Cẩm Phàm",
+        "binh_thu": [
+          "Thích Làm Việc Thiện",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Thái Sử Từ",
+        "raw_name": "Thái Sử Từ",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Thắng Càng Mạnh",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "SP Lữ Mông",
+        "raw_name": "SP Lữ Mông",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Nhạn Hình Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_11",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Kiêm Tu] + [Mùi Định] + [Phá Quân] + [Trí Tuyệt]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Chu Thái",
+        "raw_name": "Chu Thái",
+        "cp1": "Tiềm Long Trận",
+        "cp2": "Thịnh Khí Linh Địch",
+        "binh_thu": [
+          "Biết Cách Phòng Thủ/\nKế Sách Dụ Địch",
+          "Thế Phòng Thủ/\nKhép Hờ",
+          "Phòng Bị/\nKhích Lệ Lòng Quân"
+        ]
+      },
+      {
+        "name": "Trương Phi",
+        "raw_name": "Trương Phi\n(Chính Lệnh·Cung S)",
+        "cp1": "Gió Táp Mưa Sa/\nHoành Tảo Thiên Quân",
+        "cp2": "Vô Địch Can Trường",
+        "binh_thu": [
+          "Lấy Lùi Làm Tiến",
+          "Tinh Chuẩn",
+          "Trì Trọng"
+        ]
+      },
+      {
+        "name": "SP Chu Tuấn",
+        "raw_name": "SP Chu Tuấn",
+        "cp1": "Tinh·Vô Đương Phi Quân",
+        "cp2": "Thái Bình Đạo Pháp/\nThiêu Đốt Doanh Lũy",
+        "binh_thu": [
+          "Lấy Lùi Làm Tiến",
+          "Tinh Chuẩn",
+          "Trì Trọng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_12",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Tật Trì] + [Tập Võ] + [Linh Quang] + [Cửu Chiến]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố\n(Quân Sư Điêu Thuyền)",
+        "cp1": "Loan Cung Ẩm Vũ",
+        "cp2": "Phá Giáp",
+        "binh_thu": [
+          "Đánh Bất Ngờ Thắng",
+          "Trì Trọng",
+          "Tinh Chuẩn"
+        ]
+      },
+      {
+        "name": "Quách Gia",
+        "raw_name": "Quách Gia",
+        "cp1": "Tam Thế Trận",
+        "cp2": "Lửa Lan Khắp Chốn",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Tiểu Kiều",
+        "raw_name": "Vô Song Tiểu Kiều",
+        "cp1": "Văn Võ Song Toàn",
+        "cp2": "Tinh·Bạch Mã Nghĩa Tòng",
+        "binh_thu": [
+          "Lấy Lùi Làm Tiến",
+          "Tinh Chuẩn",
+          "Trì Trọng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_13",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Khiên",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Nhẫn Nại] + [Giáp Mây] + [Miễn Dịch] + [Rắn Chắc]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Quan Vũ",
+        "raw_name": "SP Quan Vũ",
+        "cp1": "Lấy Ít Đánh Nhiều",
+        "cp2": "Gió Táp Mưa Sa",
+        "binh_thu": [
+          "Chia Nhỏ Đánh Nhanh",
+          "Trăm Trận",
+          "Khép Hờ"
+        ]
+      },
+      {
+        "name": "Mã Đại/ Tinh Thái",
+        "raw_name": "Mã Đại/CO Tinh Thái",
+        "cp1": "Ngư Lân Trận",
+        "cp2": "Tinh·Lính Giáp Mây",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Pháp Chính",
+        "raw_name": "SP Pháp Chính",
+        "cp1": "Dưỡng Sức Đợi Chiến",
+        "cp2": "Không Đánh Mà Thắng",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_14",
+    "section": "Cải Tạo Binh Chủng",
+    "troop": "Khiên",
+    "tier": "T1",
+    "note": "Ý tưởng phối hợp: [Đồng Lòng] + [Thiện Chiến] + [Làm Phản] + [Võ Khôi]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Gia Cát Lượng",
+        "raw_name": "SP Gia Cát Lượng\n(Chính Lệnh-Khiên S)",
+        "cp1": "Tinh·Quân Hổ Vệ",
+        "cp2": "Dưỡng Sức Đợi Chiến",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Quan Hưng/Quan Vũ",
+        "raw_name": "Quan Hưng/Quan Vũ",
+        "cp1": "Cưỡi Ngựa Nghìn Dặm",
+        "cp2": "Văn Võ Song Toàn/Gió Táp Mưa Sa",
+        "binh_thu": [
+          "Đánh Sau Trúng Trước",
+          "Quỷ Mưu",
+          "Tướng Uy"
+        ]
+      },
+      {
+        "name": "Trương Bào",
+        "raw_name": "Trương Bào\n(Khiên S)",
+        "cp1": "Xông Pha Khói Lửa",
+        "cp2": "Không Đánh Mà Thắng",
+        "binh_thu": [
+          "Chẩm Qua Tọa Giáp",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_15",
+    "section": "Lệnh Đăng Ung",
+    "troop": "Kỵ",
+    "tier": "T0.5",
+    "note": "",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Khương Duy",
+        "raw_name": "Khương Duy\n(Lệnh Đăng Ung-Ngụy)",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Thượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Man Dũng Phi Dũng",
+          "Cầm Binh Khí",
+          "Văn Thao"
+        ]
+      },
+      {
+        "name": "Tào Tháo",
+        "raw_name": "Tào Tháo",
+        "cp1": "Mê Hoặc",
+        "cp2": "Phong Thi Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Mãn Sủng",
+        "raw_name": "Mãn Sủng",
+        "cp1": "Tinh·Phi Hùng Quân",
+        "cp2": "Nhanh Trí Động Não",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_16",
+    "section": "Lệnh Đăng Ung",
+    "troop": "Kỵ",
+    "tier": "T0.5",
+    "note": "",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Đại Kiều",
+        "raw_name": "CO Đại Kiều\n(Kỵ S)",
+        "cp1": "Tiềm Long Trận",
+        "cp2": "Độc Hành Phó Đấu",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du\n(Lệnh Đăng Ung-Ngụy)",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Tinh·Hổ Báo Kỵ",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Mã Siêu",
+        "raw_name": "SP Mã Siêu",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Tấn Công Điểm Yếu",
+          "Tốc Chiến",
+          "Khép Hờ"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cai_tao_17",
+    "section": "Lệnh Đăng Ung",
+    "troop": "Cung",
+    "tier": "T0.5",
+    "note": "",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du\n(Cung S)\n(Lệnh Đăng Ung-Ngụy)",
+        "cp1": "Tiềm Long Trận",
+        "cp2": "Lâm Nguy Cứu Chủ",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Đánh Bất Ngờ Thắng",
+          "Trì Trọng",
+          "Tinh Chuẩn"
+        ]
+      },
+      {
+        "name": "Chu Du",
+        "raw_name": "Chu Du",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Thiêu Đốt Doanh Lũy/\nThượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  }
+]

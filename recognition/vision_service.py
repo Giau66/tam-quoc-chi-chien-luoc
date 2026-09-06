@@ -2,7 +2,7 @@
 """
 Vision & Recognition Service for Tam Quoc Chi - Chien Luoc.
 Supports:
-1. High-speed Offline Local OCR (via RapidOCR / ONNX) without needing any API key.
+1. High-speed Offline Local OCR (via RapidOCR / ONNX) with Card Grid Detection & SP Badge Resolution.
 2. Google Gemini 1.5/2.0 Flash Vision API if API key is provided.
 """
 import os
@@ -13,6 +13,12 @@ import base64
 import requests
 import unicodedata
 from typing import List, Dict, Any, Optional
+
+try:
+    from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 try:
     from rapidocr_onnxruntime import RapidOCR
@@ -27,18 +33,83 @@ def remove_accents(text: str) -> str:
 
 def clean_ocr_line(text: str) -> str:
     text = remove_accents(text)
-    # Strip grade prefixes like A, S, 1/1, percentages, or noise
-    text = re.sub(r'^[as\(\)\[\]\.\s\d]+', '', text)
-    text = re.sub(r'\b(40th|co|pk|s1|s2|s3|thuc tinh)\b', '', text)
+    # Don't strip SP! Only strip lone leading single letters if followed by space or symbols
+    text = re.sub(r'^[a-z]\s+', '', text)
+    text = re.sub(r'^[\[\]\(\)\.\s\d]+', '', text)
+    text = re.sub(r'\b(40th|co|pk|s1|s2|s3|thuc tinh|thire tinh|thure tinh)\b', '', text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text
+
+# Common OCR distortions for game font cards
+GENERAL_ALIASES = {
+    "gia ho": "Giả Hủ",
+    "gia hu": "Giả Hủ",
+    "quan vi": "Quan Vũ",
+    "quan vu": "Quan Vũ",
+    "ter thuog": "Tôn Thượng Hương",
+    "ter thuong": "Tôn Thượng Hương",
+    "tor thudng": "Tôn Thượng Hương",
+    "ton thuong": "Tôn Thượng Hương",
+    "ton thuong huong": "Tôn Thượng Hương",
+    "bang diuc": "Bàng Đức",
+    "bang duc": "Bàng Đức",
+    "manh hoach": "Mạnh Hoạch",
+    "ma quan": "Mã Quân",
+    "ma sieu": "Mã Siêu",
+    "luc ton": "Lục Tốn",
+    "lu bo": "Lữ Bố",
+    "lu b6": "Lữ Bố",
+    "ton kien": "Tôn Kiên",
+    "dieu thuyen": "Điêu Thuyền",
+    "tu ma y": "Tư Mã Ý",
+    "bang thong": "Bàng Thống",
+    "chuc dung": "Chúc Dung",
+    "khuong duy": "Khương Duy",
+    "tao thao": "Tào Tháo",
+    "luu bi": "Lưu Bị",
+    "trieu van": "Triệu Vân",
+    "truong phi": "Trương Phi",
+    "gia cat luong": "Gia Cát Lượng",
+    "chu du": "Chu Du",
+    "chu thai": "Chu Thái",
+    "thai su tu": "Thái Sử Từ",
+    "trinh pho": "Trình Phổ",
+    "cam ninh": "Cam Ninh",
+    "lang thong": "Lăng Thống",
+    "lo tuc": "Lỗ Túc",
+    "hoang nguyet anh": "Hoàng Nguyệt Anh",
+    "quan ngan binh": "Quan Ngân Bình",
+    "phap chinh": "Pháp Chính",
+    "nguy dien": "Ngụy Diên",
+    "truong bao": "Trương Bào",
+    "quan hung": "Quan Hưng",
+    "truong giac": "Trương Giác",
+    "ta tu": "Tả Từ",
+    "vu cat": "Vu Cát",
+    "hoa da": "Hoa Đà",
+    "vien thieu": "Viên Thiệu",
+    "dong trac": "Đổng Trác",
+    "man sung": "Mãn Sủng",
+    "hac chieu": "Hác Chiêu",
+    "ha hau uyen": "Hạ Hầu Uyên",
+    "ha hau don": "Hạ Hầu Đôn",
+    "quach gia": "Quách Gia",
+    "trinh duc": "Trình Dục",
+    "dien vi": "Điển Vi",
+    "hua chu": "Hứa Chử",
+    "tao nhan": "Tào Nhân",
+    "tuan uc": "Tuân Úc",
+    "tuan du": "Tuân Du",
+    "tao phi": "Tào Phi"
+}
 
 # Noise keywords in game UI that should not match generals or tactics
 NOISE_WORDS = {
     "chu dong", "bi dong", "chi huy", "dot kich", "phap tran", "binh chung", "noi chinh",
     "1/1", "100%", "50%", "40%", "35%", "30%", "25%", "thuc tinh", "ten chien phap",
     "phat dong", "huong dan", "loai hinh", "co the thiet lap", "sat thuong", "binh dao",
-    "muu luoc", "quan dich", "quan ta", "chu tuong", "trang thai", "thiet lap", "toan bo"
+    "muu luoc", "quan dich", "quan ta", "chu tuong", "trang thai", "thiet lap", "toan bo",
+    "chieumo", "tmhansw", "quan ket tran", "chieumodudc"
 }
 
 # Comprehensive Stem & Regex Patterns for all tactics in game screenshots
@@ -59,7 +130,7 @@ TACTIC_PATTERNS = {
     "Hãm Trận Doanh": [r"ham\s*tran"],
     "Vô Đương Phi Quân": [r"vo\s*duong\s*phi", r"vo\s*dang\s*phi", r"voduongphi", r"vodangphi"],
     "Bạch Mã Nghĩa Tòng": [r"bach\s*ma\s*nghia", r"bach\s*ma"],
-    "Hổ Báo Kỵ": [r"ho\s*bao\s*ky", r"ho\s*bao"],
+    "Hổ Báo Kỵ": [r"h[oôổ]?\s*bao\s*ky", r"ho\s*bao", r"\bbao\s*ky\b"],
     "Tây Lương Thiết Kỵ": [r"tay\s*luong\s*thiet", r"tay\s*luong"],
     "Lính Thanh Châu": [r"thanh\s*chau"],
     "Lính Đan Dương": [r"dan\s*duong"],
@@ -181,13 +252,11 @@ class VisionService:
             self.tactics = json.load(f)
             self.tactic_names = [t["name"] for t in self.tactics]
 
-        # Normalized lookup maps
+        # Normalized lookup maps (Do NOT overwrite regular names with SP!)
         self.gen_norm_map = {}
         for g in self.generals:
             norm = remove_accents(g["name"])
             self.gen_norm_map[norm] = g["name"]
-            if norm.startswith("sp "):
-                self.gen_norm_map[norm[3:]] = g["name"]
 
         self.tac_norm_map = {}
         for t in self.tactics:
@@ -207,23 +276,134 @@ class VisionService:
 
         return self.recognize_with_local_ocr(image_path)
 
+    def _recognize_grid_cards(self, image_path: str, w: int, h: int) -> List[str]:
+        """
+        Dedicated recognizer for game hero card grids.
+        Crops each card slot, eliminates top ticker noise, resolves bottom name bar and SP badges.
+        """
+        if not HAS_PIL or not self.ocr_engine:
+            return []
+
+        # Determine grid dimension: card aspect ratio in game is ~1.44 (height / width)
+        num_rows = 2 if h >= 280 else 1
+        row_h = h / float(num_rows)
+        card_w = row_h / 1.44
+        num_cols = max(1, int(round(w / card_w)))
+        col_w = w / float(num_cols)
+
+        found_cards = set()
+        tmp_crop_path = f"{image_path}_tmp_cell.png"
+
+        try:
+            with Image.open(image_path) as im:
+                for r in range(num_rows):
+                    for c in range(num_cols):
+                        x1 = int(c * col_w)
+                        x2 = int(min(w, (c + 1) * col_w))
+                        # Avoid top world broadcast ticker on top row
+                        top_offset = 25 if r == 0 else 0
+                        y1 = int(r * row_h) + top_offset
+                        y2 = int(min(h, (r + 1) * row_h))
+
+                        if x2 - x1 < 20 or y2 - y1 < 20:
+                            continue
+
+                        crop = im.crop((x1, y1, x2, y2))
+                        crop.save(tmp_crop_path)
+
+                        c_res, _ = self.ocr_engine(tmp_crop_path)
+                        if not c_res:
+                            continue
+
+                        # Check for SP badge in card text
+                        has_sp = any(
+                            it[1].strip().upper() == 'SP' or 
+                            re.search(r'\bSP\b', it[1].upper())
+                            for it in c_res
+                        )
+
+                        # Sort text lines by Y descending (bottom-up), hero names are at the bottom!
+                        sorted_lines = sorted(c_res, key=lambda it: it[0][0][1], reverse=True)
+
+                        card_gen = None
+                        for it in sorted_lines:
+                            raw = it[1]
+                            clean = clean_ocr_line(raw)
+                            norm = remove_accents(raw)
+
+                            if not clean or any(noise in norm for noise in ['thuc tinh', 'chieumo', 'tmhansw', 'quan ket tran']):
+                                continue
+
+                            # 1. Check exact aliases
+                            if clean in GENERAL_ALIASES:
+                                card_gen = GENERAL_ALIASES[clean]
+                                break
+
+                            # 2. Check norm map
+                            if clean in self.gen_norm_map:
+                                card_gen = self.gen_norm_map[clean]
+                                break
+
+                            # 3. Fuzzy match aliases
+                            for k, v in GENERAL_ALIASES.items():
+                                if len(clean) >= 4 and abs(len(clean) - len(k)) <= 2:
+                                    if difflib.SequenceMatcher(None, clean, k).ratio() >= 0.80:
+                                        card_gen = v
+                                        break
+                            if card_gen:
+                                break
+
+                            # 4. Fuzzy match norm map
+                            for k, v in self.gen_norm_map.items():
+                                if len(clean) >= 5 and abs(len(clean) - len(k)) <= 2:
+                                    if difflib.SequenceMatcher(None, clean, k).ratio() >= 0.84:
+                                        card_gen = v
+                                        break
+                            if card_gen:
+                                break
+
+                        if card_gen:
+                            # If SP badge found, check if SP version exists in database
+                            sp_candidate = f"SP {card_gen}" if not card_gen.startswith("SP ") else card_gen
+                            if has_sp and sp_candidate in self.general_names:
+                                found_cards.add(sp_candidate)
+                            else:
+                                found_cards.add(card_gen)
+
+        except Exception as err:
+            print(f"Grid card recognition error: {err}")
+        finally:
+            if os.path.exists(tmp_crop_path):
+                try:
+                    os.remove(tmp_crop_path)
+                except Exception:
+                    pass
+
+        return list(found_cards)
+
     def recognize_with_local_ocr(self, image_path: str) -> Dict[str, Any]:
         """
         Use RapidOCR to read game screenshot text and match against database.
-        Combines pattern scanning, joined-text recognition, and line matching.
+        Combines pattern scanning, card grid resolution, and line matching.
         """
         if not self.ocr_engine:
             return {"success": False, "error": "RapidOCR engine is not installed", "generals": [], "tactics": []}
 
+        im_w, im_h = 0, 0
+        try:
+            with Image.open(image_path) as im:
+                im_w, im_h = im.size
+        except Exception:
+            pass
+
+        # 1. Full image OCR
         ocr_target = image_path
         tmp_resized = None
         try:
-            from PIL import Image
-            with Image.open(image_path) as im:
-                w, h = im.size
-                if max(w, h) > 1300:
-                    scale = 1300.0 / max(w, h)
-                    resized = im.resize((int(w * scale), int(h * scale)), Image.Resampling.BILINEAR)
+            if max(im_w, im_h) > 1300:
+                scale = 1300.0 / max(im_w, im_h)
+                with Image.open(image_path) as im:
+                    resized = im.resize((int(im_w * scale), int(im_h * scale)), Image.Resampling.BILINEAR)
                     tmp_resized = f"{image_path}_ocr_opt.jpg"
                     resized.convert("RGB").save(tmp_resized, "JPEG", quality=85)
                     ocr_target = tmp_resized
@@ -259,14 +439,25 @@ class VisionService:
         joined_raw = " ".join(raw_lines)
         joined_norm = remove_accents(joined_raw)
 
-        # 1. First-pass: Scan TACTIC_PATTERNS across entire image text
+        # 2. First-pass: Scan TACTIC_PATTERNS across entire image text
         for canon_tac, patterns in TACTIC_PATTERNS.items():
             for pat in patterns:
                 if re.search(pat, joined_norm):
                     found_tactics.add(canon_tac)
                     break
 
-        # Build candidate lines (single lines + joined pairs for multi-line names)
+        # 3. Check if image appears to be a Card Grid
+        grid_gens = []
+        has_card_hints = any(
+            any(hint in l.lower() for hint in ['thuc tinh', 's1', 's2', 's3', 'danh tuong', 'ton kien', 'dieu thuyen', 'lu bo']) 
+            for l in raw_lines
+        )
+        if (has_card_hints or (im_w > 400 and im_h > 180 and im_w / max(1, im_h) > 1.3)) and not found_tactics:
+            grid_gens = self._recognize_grid_cards(image_path, im_w, im_h)
+            for g in grid_gens:
+                found_generals.add(g)
+
+        # 4. Standard line matching for non-grid images or tactics
         candidate_lines = list(raw_lines)
         for i in range(len(raw_lines) - 1):
             candidate_lines.append(f"{raw_lines[i]} {raw_lines[i+1]}")
@@ -278,37 +469,37 @@ class VisionService:
             if not line_clean and not line_norm:
                 continue
 
-            # Skip noise lines that collide with general names (e.g. 'chu dong' -> 'Chúc Dung')
             if line_clean in NOISE_WORDS or line_norm in NOISE_WORDS:
                 continue
 
-            # A. Match Generals
-            for norm_g, canon_g in self.gen_norm_map.items():
-                if len(norm_g) < 3:
-                    continue
+            # Check general aliases (only if not already resolved by grid)
+            if not grid_gens and line_clean in GENERAL_ALIASES:
+                found_generals.add(GENERAL_ALIASES[line_clean])
 
-                # Protect Chúc Dung from colliding with 'chu dong'
-                if norm_g == "chuc dung" and ("chu dong" in line_norm or "chi dong" in line_norm):
-                    continue
+            # Match Generals via dictionary (only if not already resolved by grid)
+            if not grid_gens:
+                for norm_g, canon_g in self.gen_norm_map.items():
+                    if len(norm_g) < 3:
+                        continue
+                    if norm_g == "chuc dung" and ("chu dong" in line_norm or "chi dong" in line_norm):
+                        continue
 
-                if norm_g == line_clean:
-                    found_generals.add(canon_g)
-                elif len(norm_g) >= 5 and re.search(r'\b' + re.escape(norm_g) + r'\b', line_norm):
-                    found_generals.add(canon_g)
-                elif len(norm_g) >= 6 and norm_g in line_norm:
-                    found_generals.add(canon_g)
-                else:
-                    # Stricter fuzzy match to prevent false positives
-                    if len(line_clean) >= 5 and abs(len(line_clean) - len(norm_g)) <= 2:
-                        ratio = difflib.SequenceMatcher(None, line_clean, norm_g).ratio()
-                        if ratio >= 0.88:
-                            found_generals.add(canon_g)
+                    if norm_g == line_clean:
+                        found_generals.add(canon_g)
+                    elif len(norm_g) >= 5 and re.search(r'\b' + re.escape(norm_g) + r'\b', line_norm):
+                        found_generals.add(canon_g)
+                    elif len(norm_g) >= 6 and norm_g in line_norm:
+                        found_generals.add(canon_g)
+                    else:
+                        if len(line_clean) >= 5 and abs(len(line_clean) - len(norm_g)) <= 2:
+                            ratio = difflib.SequenceMatcher(None, line_clean, norm_g).ratio()
+                            if ratio >= 0.85:
+                                found_generals.add(canon_g)
 
-            # B. Match Tactics via standard dictionary lookup
+            # Match Tactics via standard dictionary lookup
             for norm_t, canon_t in self.tac_norm_map.items():
                 if len(norm_t) < 4:
                     continue
-                # Protect Tịnh Hóa from colliding with 'thuc tinh'
                 if norm_t == "tinh hoa" and "thuc tinh" in line_norm:
                     continue
 
@@ -340,13 +531,12 @@ class VisionService:
         try:
             mime_type = "image/jpeg"
             try:
-                from PIL import Image
-                import io
                 with Image.open(image_path) as im:
                     w, h = im.size
                     if max(w, h) > 1200:
                         scale = 1200.0 / max(w, h)
                         im = im.resize((int(w * scale), int(h * scale)), Image.Resampling.BILINEAR)
+                    import io
                     buf = io.BytesIO()
                     im.convert("RGB").save(buf, format="JPEG", quality=85)
                     image_bytes = buf.getvalue()
@@ -356,7 +546,6 @@ class VisionService:
 
             b64_image = base64.b64encode(image_bytes).decode("utf-8")
 
-            # Send FULL lists — no truncation
             all_gen_names = ", ".join(self.general_names)
             all_tac_names = ", ".join(self.tactic_names)
 
@@ -371,12 +560,9 @@ DANH SÁCH CHIẾN PHÁP CHUẨN (chỉ trả về đúng các tên này):
 
 Quy tắc nhận diện:
 1. Chỉ nhận diện các tên tướng và chiến pháp xuất hiện RÕ RÀNG trong ảnh.
-2. Nếu tên bị viết sai do OCR, khớp với tên cân nhất trong danh sách chuẩn.
+2. Nếu tướng có huy hiệu SP màu đỏ/cam, trả về tên 'SP <Tên Tướng>' nếu có trong danh sách chuẩn.
 3. Không đoán mò. Nếu không chắc, bỏ qua.
-4. Trả về JSON hợp lệ, không có markdown, không có giải thích thêm.
-
-JSON format:
-{{"generals": ["Tên chuẩn 1", ...], "tactics": ["Tên chuẩn 1", ...]}}"""
+4. Trả về JSON hợp lệ: {{"generals": ["Tên 1", ...], "tactics": ["Tên 1", ...]}}"""
 
             headers = {"Content-Type": "application/json"}
             payload = {
@@ -394,7 +580,7 @@ JSON format:
                 }
             }
 
-            models = ["gemini-3.6-flash", "gemini-3-flash-preview", "gemini-flash-latest"]
+            models = ["gemini-2.0-flash", "gemini-1.5-flash"]
             resp = None
             for m in models:
                 try:
@@ -414,7 +600,6 @@ JSON format:
                 if text_out.endswith("```"):
                     text_out = text_out[:-3]
                 result = json.loads(text_out.strip())
-                # Validate: only return names that exist in our database
                 valid_gens = [g for g in result.get("generals", []) if g in self.general_names]
                 valid_tacs = [t for t in result.get("tactics", []) if t in self.tactic_names]
                 return {
@@ -425,7 +610,5 @@ JSON format:
                 }
             else:
                 return {"success": False, "error": f"Lỗi Gemini Vision: {resp.status_code if resp else 'Không phản hồi'}", "generals": [], "tactics": []}
-        except Exception as e:
-            return {"success": False, "error": str(e), "generals": [], "tactics": []}
         except Exception as e:
             return {"success": False, "error": str(e), "generals": [], "tactics": []}

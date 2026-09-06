@@ -1,529 +1,3204 @@
 [
   {
+    "set_id": "cung_ton_1",
     "set_name": "Cùng tồn 1",
     "description": "40 Lữ Điêu Lô, Hoàng Mã Thương, Pháp Quan Khiên, Ngũ Mưu Kỵ, Ngô Kỵ",
+    "starter_recommendation": "[Pháp Mã Khác]\nPháp Chính\nSP Mã Siêu\nGia Cát Khác\n\n[Nguyệt Anh Mã Khác]\nSP Hoàng Nguyệt Anh\nSP Mã Siêu\nGia Cát Khác\n\n[Lô Trực Cung]\nSP Lô Trực\nVương Bình\nTrần Cung",
     "teams": [
       {
-        "team_name": "Hoàng Mã Thương\n19C",
+        "team_name": "Hoàng Mã Thương - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "SP Mã Siêu",
+            "raw_name": "SP Mã Siêu",
             "tactic1": "Đương Phong Thôi Quyết",
-            "tactic2": "Thôi Phong Đoạn Nhẫn"
+            "tactic2": "Thôi Phong Đoạn Nhẫn",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu"
+            ]
           },
           {
             "name": "SP Hoàng Phổ Tung",
-            "tactic1": "Thảo Thuyền Mượn Tên",
-            "tactic2": "Uy Mưu Vô Địch"
+            "raw_name": "SP Hoàng Phổ Tung",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước"
+            ]
           },
           {
             "name": "Hứa Du",
+            "raw_name": "Hứa Du (Thương S)",
             "tactic1": "Lâm Nguy Cứu Chủ",
-            "tactic2": "Giải Phiền Vệ"
+            "tactic2": "Giải Phiền Vệ",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Yêu Lính Thương Dân"
+            ]
           }
         ]
       },
       {
-        "team_name": "40 Lữ Điêu Lô\n19C",
+        "team_name": "40 Lữ Điêu Lô - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Lữ Bố",
+            "raw_name": "Lữ Bố 40th",
             "tactic1": "Huyết Đao Tranh Giành",
-            "tactic2": "Dẫn Huyền Lực Chiến"
+            "tactic2": "Dẫn Huyền Lực Chiến",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Thắng Càng Mạnh"
+            ]
           },
           {
             "name": "SP Lô Trực",
+            "raw_name": "SP Lô Trực",
             "tactic1": "Tử Sĩ Tiên Phong",
-            "tactic2": "Nhạn Hành Trận"
+            "tactic2": "Nhạn Hành Trận",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Điêu Thuyền",
+            "raw_name": "SP Điêu Thuyền",
             "tactic1": "Thâm Tàng Nhược Hư",
-            "tactic2": "Cương Nhu Kết Hợp"
+            "tactic2": "Cương Nhu Kết Hợp",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Tinh Thái Pháp Quan Khiên\n19C",
+        "team_name": "Tinh Thái Pháp Quan Khiên - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "SP Quan Vũ",
+            "raw_name": "SP Quan Vũ (Khiên S)",
             "tactic1": "Lấy Ít Đánh Nhiều",
-            "tactic2": "Kích Kỳ Nọa Quy/ Gió Táp Mưa Sa"
+            "tactic2": "Kích Kỳ Nọa Quy/ Gió Táp Mưa Sa",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Chia Nhỏ Đánh Nhanh"
+            ]
           },
           {
             "name": "SP Pháp Chính",
+            "raw_name": "SP Pháp Chính",
             "tactic1": "Dưỡng Sức Đợi Chiến",
-            "tactic2": "Không Đánh Mà Thắng"
+            "tactic2": "Không Đánh Mà Thắng",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Trương Tinh Thái",
+            "raw_name": "CO Tinh Thái",
             "tactic1": "Lính Đan Dương",
-            "tactic2": "Mê Hoặc"
+            "tactic2": "Mê Hoặc",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Ngũ Mưu Kỵ\n20C",
+        "team_name": "Ngũ Mưu Kỵ - 20C",
+        "cost": "20C",
         "generals": [
           {
             "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc",
             "tactic1": "Phi Hùng Quân",
-            "tactic2": "Cắt Xương Trị Độc"
+            "tactic2": "Cắt Xương Trị Độc",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia",
             "tactic1": "Đoạt Hồn Hiệp Phách",
-            "tactic2": "Thượng Binh Phạt Mưu"
+            "tactic2": "Thượng Binh Phạt Mưu",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn"
+            ]
           },
           {
             "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
             "tactic1": "Nhanh Trí Động Não",
-            "tactic2": "Đồng Lòng Hợp Sức"
+            "tactic2": "Đồng Lòng Hợp Sức",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Ngô Kỵ\n19C",
+        "team_name": "Ngô Kỵ - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Chu Thái",
+            "raw_name": "Chu Thái",
             "tactic1": "Thịnh Khí Linh Địch",
-            "tactic2": "Tây Lương Thiết Kỵ"
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ"
+            ]
           },
           {
             "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương",
             "tactic1": "Lõa Y Huyết Chiến",
-            "tactic2": "Hổ Cứ Ưng Dương/ Bách Kỵ Kiếp Doanh"
+            "tactic2": "Hổ Cứ Ưng Dương/ Bách Kỵ Kiếp Doanh",
+            "stat_point": "Võ Lực, Tốc 1",
+            "binh_thu": [
+              "Thắng Càng Mạnh"
+            ]
           },
           {
             "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
             "tactic1": "Phá Quân Uy Thắng",
-            "tactic2": "Nằm Gai Nếm Mật/ Tị Thực Kích Hư"
+            "tactic2": "Nằm Gai Nếm Mật/ Tị Thực Kích Hư",
+            "stat_point": "Võ Lực, Tốc 2",
+            "binh_thu": [
+              "Thắng Càng Mạnh"
+            ]
           }
         ]
       }
     ]
   },
   {
+    "set_id": "cung_ton_2",
     "set_name": "Cùng tồn 2",
     "description": "Thái Sư Cung, Ngô Nữ Kỵ, Pháp Quan Khiên, Đô Đốc Cung, Trương Quan Hoàng",
+    "starter_recommendation": "[Pháp Mã Khác]\nPháp Chính\nSP Mã Siêu\nGia Cát Khác\n\n[Nguyệt Anh Mã Khác]\nSP Hoàng Nguyệt Anh\nSP Mã Siêu\nGia Cát Khác\n\n[Lô Trực Cung]\nSP Lô Trực\nVương Bình\nTrần Cung",
     "teams": [
       {
-        "team_name": "Thái Sư Cung\n18C",
+        "team_name": "Thái Sư Cung - 18C",
+        "cost": "18C",
         "generals": [
           {
-            "name": "SP Đổng Trác",
+            "name": "SPĐổng Trác",
+            "raw_name": "SPĐổng Trác",
             "tactic1": "Phi Hùng Quân",
-            "tactic2": "Thượng Binh Phạt Mưu"
+            "tactic2": "Thượng Binh Phạt Mưu",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Lô Trực",
+            "raw_name": "SP Lô Trực",
             "tactic1": "Cương Nhu Kết Hợp",
-            "tactic2": "Nhạn Hành Trận"
+            "tactic2": "Nhạn Hành Trận",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Điêu Thuyền",
+            "raw_name": "SP Điêu Thuyền",
             "tactic1": "Thâm Tàng Nhược Hư",
-            "tactic2": "Đồng Lòng Hợp Sức"
+            "tactic2": "Đồng Lòng Hợp Sức",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Ngô Nữ Kỵ\n18C",
+        "team_name": "Ngô Nữ Kỵ - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Đại Kiều",
+            "raw_name": "CO Đại Kiều (Kỵ S)",
             "tactic1": "Mê Hoặc",
-            "tactic2": "Thảo Thuyền Mượn Tên"
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Nhìn Rõ Mồn Một/\nTam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương",
             "tactic1": "Đương Phong Thôi Quyết",
-            "tactic2": "Mau Giành Lợi Thế"
+            "tactic2": "Mau Giành Lợi Thế",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Thắng Càng Mạnh/\nLấy Võ Dẹp Loạn"
+            ]
           },
           {
             "name": "Tiểu Kiều",
+            "raw_name": "CO Tiểu Kiều",
             "tactic1": "Hổ Báo Kỵ",
-            "tactic2": "Lâm Nguy Cứu Chủ"
+            "tactic2": "Lâm Nguy Cứu Chủ",
+            "stat_point": "Võ Lực/Thống Soái",
+            "binh_thu": [
+              "Chẩm Qua Tọa Giáp"
+            ]
           }
         ]
       },
       {
-        "team_name": "Mã Đại Pháp Quan Khiên\n19C",
+        "team_name": "Mã Đại Pháp Quan Khiên - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "SP Quan Vũ",
+            "raw_name": "SP Quan Vũ (Khiên S)",
             "tactic1": "Lấy Ít Đánh Nhiều",
-            "tactic2": "Kích Kỳ Nọa Quy"
+            "tactic2": "Kích Kỳ Nọa Quy",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Chia Nhỏ Đánh Nhanh"
+            ]
           },
           {
             "name": "SP Pháp Chính",
+            "raw_name": "SP Pháp Chính",
             "tactic1": "Dưỡng Sức Đợi Chiến",
-            "tactic2": "Không Đánh Mà Thắng"
+            "tactic2": "Không Đánh Mà Thắng",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Mã Đại",
+            "raw_name": "Mã Đại",
             "tactic1": "Ngư Lân Trận",
-            "tactic2": "Đằng Giáp Binh"
+            "tactic2": "Lính Giáp Mây",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Đô Đốc Cung\n20C",
+        "team_name": "Đô Đốc Cung - 20C",
+        "cost": "20C",
         "generals": [
           {
             "name": "Chu Du",
+            "raw_name": "Chu Du",
             "tactic1": "Đoạt Hồn Hiệp Phách",
-            "tactic2": "Thiêu Đốt Doanh Lũy"
+            "tactic2": "Thiêu Đốt Doanh Lũy",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh"
+            ]
           },
           {
             "name": "Lục Tốn",
+            "raw_name": "Lục Tốn",
             "tactic1": "Công Bất Đường Quyên",
-            "tactic2": "Vạn Quân Đoạt Sư"
+            "tactic2": "Vạn Quân Đoạt Sư",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Đánh Bất Ngờ Thắng"
+            ]
           },
           {
             "name": "SP Lữ Mông",
+            "raw_name": "SP Lữ Mông",
             "tactic1": "Bạch Nhị Binh",
-            "tactic2": "Thảo Thuyền Mượn Tên"
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Trương Quan Hoàng \n16C",
+        "team_name": "Trương Quan Hoàng  - 16C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Trương Phi",
+            "raw_name": "Trương Phi",
             "tactic1": "Gió Táp Mưa Sa",
-            "tactic2": "Lính Thanh Châu"
+            "tactic2": "Lính Thanh Châu",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Dĩ Trực Báo Oán"
+            ]
           },
           {
             "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
             "tactic1": "Huy Quân Kết Trận",
-            "tactic2": "Hoành Tảo Thiên Quân"
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "Võ Lực, Tốc 1",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn"
+            ]
           },
           {
             "name": "Hoàng Nguyệt Anh",
+            "raw_name": "Hoàng Nguyệt Anh",
             "tactic1": "Thịnh Khí Linh Địch",
-            "tactic2": "Phong Thỉ Trận"
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "Tốc Độ, Thống Soái",
+            "binh_thu": [
+              "Kế Sách Dụ Địch"
+            ]
           }
         ]
       }
     ]
   },
   {
+    "set_id": "cung_ton_3",
     "set_name": "Cùng tồn 3",
     "description": "40 Lữ Đổng Điêu, Thục Trí Cung, Thái Úy Khiên, Bắc Phạt Thương, Quyền Kỵ",
+    "starter_recommendation": "[Võ Phong Thái Sử Từ]\nGia Cát Khác\nThái Sử Từ\nTả Từ\n\n[Khương Hạ Khác]\nKhương Duy\nHạ Hầu Uyên\nGia Cát Khác",
     "teams": [
       {
-        "team_name": "Thục Trí Cung\n20C",
+        "team_name": "Thục Trí Cung - 20C",
+        "cost": "20C",
         "generals": [
           {
             "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
             "tactic1": "Thái Bình Đạo Pháp",
-            "tactic2": "Thiêu Đốt Doanh Lũy"
+            "tactic2": "Thiêu Đốt Doanh Lũy",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Pháp Chính",
+            "raw_name": "SP Pháp Chính (Cung S)",
             "tactic1": "Nhanh Trí Động Não",
-            "tactic2": "Bạch Nhị Binh"
+            "tactic2": "Bạch Nhị Binh",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
             "tactic1": "Đương Phong Thôi Quyết",
-            "tactic2": "Đồng Lòng Hợp Sức"
+            "tactic2": "Đồng Lòng Hợp Sức",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh"
+            ]
           }
         ]
       },
       {
-        "team_name": "40 Lữ Đổng Điêu\n19C",
+        "team_name": "40 Lữ Đổng Điêu - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Lữ Bố",
+            "raw_name": "Lữ Bố 40th",
             "tactic1": "Huyết Đao Tranh Giành",
-            "tactic2": "Dẫn Huyền Lực Chiến"
+            "tactic2": "Dẫn Huyền Lực Chiến",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Thắng Càng Mạnh"
+            ]
           },
           {
             "name": "Đổng Trác/ SP Đổng Trác",
+            "raw_name": "Đổng Trác/ SP Đổng Trác",
             "tactic1": "Tử Sĩ Tiên Phong",
-            "tactic2": "Nhạn Hành Trận"
+            "tactic2": "Nhạn Hành Trận",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Điêu Thuyền",
+            "raw_name": "SP Điêu Thuyền",
             "tactic1": "Thâm Tàng Nhược Hư",
-            "tactic2": "Cương Nhu Kết Hợp"
+            "tactic2": "Cương Nhu Kết Hợp",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Thái Úy Khiên\n19C",
+        "team_name": "Thái Úy Khiên - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
             "tactic1": "Lửa Cháy Ngùn Ngụt",
-            "tactic2": "Toàn Quân Đồng Lòng"
+            "tactic2": "Toàn Quân Đồng Lòng",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Thích Làm Việc Thiện"
+            ]
           },
           {
             "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
             "tactic1": "Mê Hoặc",
-            "tactic2": "Đằng Giáp Binh"
+            "tactic2": "Lính Giáp Mây",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
             "tactic1": "Dưỡng Sức Đợi Chiến",
-            "tactic2": "Hình Nhất Trận"
+            "tactic2": "Hình Nhất Trận",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Bắc Phạt Thương\n18C",
+        "team_name": "Bắc Phạt Thương - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "SP Gia Cát Lượng",
-            "tactic1": "Thảo Thuyền Mượn Tên",
-            "tactic2": "Biết Mình Biết Ta"
+            "raw_name": "SP Gia Cát Lượng",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Biết Mình Biết Ta",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Quan Hưng",
+            "raw_name": "Quan Hưng",
             "tactic1": "Gió Táp Mưa Sa/ Văn Võ Song Toàn",
-            "tactic2": "Cưỡi Ngựa Nghìn Dặm"
+            "tactic2": "Cưỡi Ngựa Nghìn Dặm",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước"
+            ]
           },
           {
             "name": "Trương Bào",
+            "raw_name": "Trương Bào",
             "tactic1": "Không Đánh Mà Thắng",
-            "tactic2": "Nhân Lợi Chế Quyền"
+            "tactic2": "Nhân Lợi Chế Quyền",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Chẩm Qua Tọa Giáp"
+            ]
           }
         ]
       },
       {
-        "team_name": "Quyền Kỵ\n18C",
+        "team_name": "Quyền Kỵ - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Tôn Quyền",
+            "raw_name": "Tôn Quyền",
             "tactic1": "Nhất Kỵ Đương Thiên",
-            "tactic2": "Bách Kỵ Kiếp Doanh"
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Liền Mạch Một Hơi"
+            ]
           },
           {
             "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
             "tactic1": "Lõa Y Huyết Chiến",
-            "tactic2": "Mau Giành Lợi Thế"
+            "tactic2": "Mau Giành Lợi Thế",
+            "stat_point": "Võ Lực,\nTốc 1",
+            "binh_thu": [
+              "Liền Mạch Một Hơi"
+            ]
           },
           {
             "name": "Chu Thái",
-            "tactic1": "Phong Thỉ Trận",
-            "tactic2": "Hổ Báo Kỵ"
+            "raw_name": "Chu Thái",
+            "tactic1": "Phong Thi Trận",
+            "tactic2": "Hổ Báo Kỵ",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ"
+            ]
           }
         ]
       }
     ]
   },
   {
+    "set_id": "cung_ton_4",
     "set_name": "Cùng tồn 4",
     "description": "Hạch Đạn Trương Cung, Bắc Phạt Khiên, Cam Ninh Ôn Hầu Cung, Ngũ Mưu Cung/Kỵ, Thái Úy Khiên",
+    "starter_recommendation": "[Võ Phong Thái Sử Từ]\nGia Cát Khác\nThái Sử Từ\nTả Từ\n\n[Khương Hạ Khác]\nKhương Duy\nHạ Hầu Uyên\nGia Cát Khác",
     "teams": [
       {
-        "team_name": "Hạch Đạn Trương Phi Cung\n18C",
+        "team_name": "Hạch Đạn Trương Phi Cung - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Chu Thái",
+            "raw_name": "Chu Thái",
             "tactic1": "Tiềm Long Trận",
-            "tactic2": "Thịnh Khí Linh Địch"
+            "tactic2": "Thịnh Khí Linh Địch",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ/\nKế Sách Dụ Địch"
+            ]
           },
           {
             "name": "Trương Phi",
+            "raw_name": "Trương Phi (Chính Lệnh-Cung S)",
             "tactic1": "Gió Táp Mưa Sa/ Hoành Tảo Thiên Quân",
-            "tactic2": "Vô Địch Can Trường"
+            "tactic2": "Vô Địch Can Trường",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Lấy Lùi Làm Tiến"
+            ]
           },
           {
             "name": "SP Chu Tuấn",
+            "raw_name": "SP Chu Tuấn",
             "tactic1": "Vô Đương Phi Quân",
-            "tactic2": "Thái Bình Đạo Pháp/ Thiêu Đốt Doanh Lũy"
+            "tactic2": "Thái Bình Đạo Pháp/ Thiêu Đốt Doanh Lũy",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Lấy Lùi Làm Tiến"
+            ]
           }
         ]
       },
       {
-        "team_name": "Bắc Phạt Khiên\n18C",
+        "team_name": "Bắc Phạt Khiên - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "SP Gia Cát Lượng （Chính Lệnh-Khiên S)",
+            "raw_name": "SP Gia Cát Lượng （Chính Lệnh-Khiên S)",
             "tactic1": "Quân Hổ Vệ",
-            "tactic2": "Dưỡng Sức Đợi Chiến"
+            "tactic2": "Dưỡng Sức Đợi Chiến",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Quan Hưng/ Quan Vũ",
+            "raw_name": "Quan Hưng/ Quan Vũ",
             "tactic1": "Cưỡi Ngựa Nghìn Dặm",
-            "tactic2": "Văn Võ Song Toàn/ Tuyệt Kỳ Cấp Đạo"
+            "tactic2": "Văn Võ Song Toàn/ Tuyệt Kỳ Cấp Đạo",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước"
+            ]
           },
           {
             "name": "Trương Bào",
+            "raw_name": "Trương Bào",
             "tactic1": "Xông Pha Khói Lửa",
-            "tactic2": "Không Đánh Mà Thắng"
+            "tactic2": "Không Đánh Mà Thắng",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Chẩm Qua Tọa Giáp"
+            ]
           }
         ]
       },
       {
-        "team_name": "Ôn Hầu Quần Cung\n19C",
+        "team_name": "Ôn Hầu Quần Cung - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Cam Ninh",
-            "tactic1": "Thảo Thuyền Mượn Tên",
-            "tactic2": "Quân Cẩm Phàm"
+            "raw_name": "Cam Ninh (Quần)",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Quân Cẩm Phàm",
+            "stat_point": "Nửa Trí, nửa Thống",
+            "binh_thu": [
+              "Thích Làm Việc Thiện"
+            ]
           },
           {
             "name": "Lữ Bố",
+            "raw_name": "Lữ Bố 40th",
             "tactic1": "Dẫn Huyền Lực Chiến",
-            "tactic2": "Huyết Đao Tranh Giành"
+            "tactic2": "Huyết Đao Tranh Giành",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Lấy Lùi Làm Tiến"
+            ]
           },
           {
             "name": "Hứa Du",
+            "raw_name": "Hứa Du",
             "tactic1": "Lâm Nguy Cứu Chủ",
-            "tactic2": "Nhạn Hành Trận"
+            "tactic2": "Nhạn Hành Trận",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Ngũ Mưu Bạch Nhị Cung/\n\nHổ Báo Kỵ\n20C",
+        "team_name": "Ngũ Mưu Bạch Nhị Cung/ -  - Hổ Báo Kỵ - 20C",
+        "cost": "20C",
         "generals": [
           {
             "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc (Cung S)",
             "tactic1": "Nhanh Trí Động Não",
-            "tactic2": "Bạch Nhị Cung/ Tinh·Hổ Báo Kỵ"
+            "tactic2": "Bạch Nhị Cung/ Tinh·Hổ Báo Kỵ",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia (Cung S)",
             "tactic1": "Đoạt Hồn Hiệp Phách",
-            "tactic2": "Đương Phong Thôi Quyết"
+            "tactic2": "Đương Phong Thôi Quyết",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh"
+            ]
           },
           {
             "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
             "tactic1": "Cắt Xương Trị Độc",
-            "tactic2": "Thượng Binh Phạt Mưu"
+            "tactic2": "Thượng Binh Phạt Mưu",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Thái Úy Khiên\n19C",
+        "team_name": "Thái Úy Khiên - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
             "tactic1": "Lửa Cháy Ngùn Ngụt",
-            "tactic2": "Toàn Quân Đồng Lòng"
+            "tactic2": "Toàn Quân Đồng Lòng",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Thích Làm Việc Thiện"
+            ]
           },
           {
             "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
             "tactic1": "Mê Hoặc",
-            "tactic2": "Đằng Giáp Binh"
+            "tactic2": "Lính Giáp Mây",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
             "tactic1": "Dưỡng Sức Đợi Chiến",
-            "tactic2": "Hình Nhất Trận"
+            "tactic2": "Hình Nhất Trận",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       }
     ]
   },
   {
+    "set_id": "cung_ton_5",
     "set_name": "Cùng tồn 5",
     "description": "Khảng Khái Cung, Lữ Quách Kiều Cung, Tuân Du Ngũ Mưu, Đào Viên Khiên, Liêu Kiều Thương",
+    "starter_recommendation": "[Võ Phong Thái Sử Từ]\nGia Cát Khác\nThái Sử Từ\nTả Từ\n\n[Khương Hạ Khác]\nKhương Duy\nHạ Hầu Uyên\nGia Cát Khác",
     "teams": [
       {
-        "team_name": "Khảng Khái Cung\n19C",
+        "team_name": "Khảng Khái Cung - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "Cam Ninh",
-            "tactic1": "Thảo Thuyền Mượn Tên",
-            "tactic2": "Quân Cẩm Phàm"
+            "raw_name": "Cam Ninh",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Quân Cẩm Phàm",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Thích Làm Việc Thiện"
+            ]
           },
           {
             "name": "Thái Sử Từ",
+            "raw_name": "Thái Sử Từ",
             "tactic1": "Đương Phong Thôi Quyết",
-            "tactic2": "Thôi Phong Đoạn Nhẫn"
+            "tactic2": "Thôi Phong Đoạn Nhẫn",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Thắng Càng Mạnh"
+            ]
           },
           {
             "name": "SP Lữ Mông",
+            "raw_name": "SP Lữ Mông",
             "tactic1": "Lâm Nguy Cứu Chủ",
-            "tactic2": "Nhạn Hành Trận"
+            "tactic2": "Nhạn Hành Trận",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Lữ Quách Kiều Cung\n17C",
+        "team_name": "Lữ Quách Kiều Cung - 17C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Lữ Bố",
+            "raw_name": "Lữ Bố (Kỹ Năng Quân Sư Điêu Thuyền)",
             "tactic1": "Loan Cung Ẩm Vũ",
-            "tactic2": "Phá Giáp"
+            "tactic2": "Phá Giáp",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Đánh Bất Ngờ Thắng"
+            ]
           },
           {
             "name": "Quách Gia",
+            "raw_name": "Quách Gia (Cung S)",
             "tactic1": "Tam Thế Trận",
-            "tactic2": "Lửa Lan Khắp Chốn"
+            "tactic2": "Lửa Lan Khắp Chốn",
+            "stat_point": "Nửa Trí, nửa Thống",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Tiểu Kiều",
+            "raw_name": "CO Tiểu Kiều",
             "tactic1": "Văn Võ Song Toàn",
-            "tactic2": "Bạch Mã Nghĩa Tòng"
+            "tactic2": "Bạch Mã Nghĩa Tòng",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Lấy Lùi Làm Tiến"
+            ]
           }
         ]
       },
       {
-        "team_name": "Liêu Kiều Thương\n18C",
+        "team_name": "Liêu Kiều Thương - 18C",
+        "cost": "18C",
         "generals": [
           {
             "name": "Đại Kiều",
+            "raw_name": "CO Đại Kiều",
             "tactic1": "Mê Hoặc",
-            "tactic2": "Độc Hành Phó Đấu"
+            "tactic2": "Độc Hành Phó Đấu",
+            "stat_point": "Thống Soái",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Trương Liêu",
+            "raw_name": "Trương Liêu",
             "tactic1": "Mau Giành Lợi Thế",
-            "tactic2": "Bạo Lệ Vô Nhân"
+            "tactic2": "Bạo Lệ Vô Nhân",
+            "stat_point": "Võ Lực, Tốc 1",
+            "binh_thu": [
+              "Không Chiến Sẽ Chết"
+            ]
           },
           {
             "name": "Tả Từ",
+            "raw_name": "Tả Từ",
             "tactic1": "Võ Phong Trận",
-            "tactic2": "Đại Kích Sĩ"
+            "tactic2": "Đại Kích Sĩ",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu"
+            ]
           }
         ]
       },
       {
-        "team_name": "Tuân Du Ngũ Mưu Kỵ\n19C",
+        "team_name": "Tuân Du Ngũ Mưu Kỵ - 19C",
+        "cost": "19C",
         "generals": [
           {
             "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc",
             "tactic1": "Dốc Sức Tính Kế",
-            "tactic2": "Cắt Xương Trị Độc"
+            "tactic2": "Cắt Xương Trị Độc",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia",
             "tactic1": "Đoạt Hồn Hiệp Phách",
-            "tactic2": "Thượng Binh Phạt Mưu"
+            "tactic2": "Thượng Binh Phạt Mưu",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           },
           {
             "name": "Tuân Du",
+            "raw_name": "Tuân Du",
             "tactic1": "Nhanh Trí Động Não",
-            "tactic2": "Thiêu Đốt Doanh Lũy/ Đồng Lòng Hợp Sức"
+            "tactic2": "Thiêu Đốt Doanh Lũy/ Đồng Lòng Hợp Sức",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tam Quân Chi Chúng"
+            ]
           }
         ]
       },
       {
-        "team_name": "Đào Viên Khiên\n20C",
+        "team_name": "Đào Viên Khiên - 20C",
+        "cost": "20C",
         "generals": [
           {
             "name": "Lưu Bị",
+            "raw_name": "Lưu Bị",
             "tactic1": "Hãm Trận Doanh",
-            "tactic2": "Dưỡng Sức Đợi Chiến"
+            "tactic2": "Dưỡng Sức Đợi Chiến",
+            "stat_point": "Trí Lực",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu"
+            ]
           },
           {
             "name": "Quan Vũ",
+            "raw_name": "Quan Vũ (Kỹ Năng Quân Sư Quan Hưng)",
             "tactic1": "Huy Quân Kết Trận",
-            "tactic2": "Uy Mưu Vô Địch"
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước"
+            ]
           },
           {
             "name": "Trương Phi",
+            "raw_name": "Trương Phi",
             "tactic1": "Vô Địch Can Trường",
-            "tactic2": "Gió Táp Mưa Sa"
+            "tactic2": "Gió Táp Mưa Sa",
+            "stat_point": "Võ Lực",
+            "binh_thu": [
+              "Dĩ Trực Báo Oán"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_id": "8_team",
+    "set_name": "Bộ 8 TEAM",
+    "description": "Phương án xuất chiến cùng tồn tại gồm 8 team",
+    "starter_recommendation": "",
+    "teams": [
+      {
+        "team_name": "Team Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Mã Siêu",
+            "raw_name": "SP Mã Siêu",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Mau Giành Lợi Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Càng Mạnh",
+              "Võ Lược",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "SP Hoàng Phổ Tung",
+            "raw_name": "SP Hoàng Phổ Tung",
+            "tactic1": "An Ủi Quân Dân",
+            "tactic2": "Lâm Nguy Cứu Chủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Tốc Chiến",
+              "Cứu Chủ"
+            ]
+          },
+          {
+            "name": "Hứa Du",
+            "raw_name": "Hứa Du",
+            "tactic1": "Giải Phiền Vệ",
+            "tactic2": "Tạm Lánh Sóng Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Diệu Toán",
+              "Xem Bói"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Trình Phổ",
+            "raw_name": "Trình Phổ",
+            "tactic1": "Tiềm Long Trận",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Không Chiến Mà Thắng",
+              "Giáp Sắt",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "SP Quan Vũ",
+            "raw_name": "SP Quãn Vũ",
+            "tactic1": "Trung Dũng Nghĩa Liệt",
+            "tactic2": "Xế Đao Chước Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Chia Nhỏ Đánh Nhanh",
+              "Khép Hở",
+              "Bách Chiến"
+            ]
+          },
+          {
+            "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc",
+            "tactic1": "Không Đánh Mà Thắng",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Dũng Nghĩa"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Lính Giáp Mây",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Cứu Chủ",
+              "Cứu Viện"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hở"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Hãm Trận Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Trương Phi",
+            "raw_name": "Trương Phi",
+            "tactic1": "Vô Địch Can Trường",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Tướng Uy",
+              "Quỷ Mưu"
+            ]
+          },
+          {
+            "name": "SP Viên Thiệu",
+            "raw_name": "SP Viên Thiệu\n(Hiệu Triệu)",
+            "tactic1": "Gió Táp Mưa Sa",
+            "tactic2": "Nằm Gai Nếm Mật",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Sợ Bóng Sợ Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hở"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Cưỡi Ngựa Nghìn Dặm",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Hợp Biến",
+              "Xem Bói"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Cơ Hình Trận",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Thần Cơ",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Tuyệt Kỳ Cấp Đạo",
+            "tactic2": "Đánh Đâu Thắng Đó",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Thần Cơ",
+              "Tướng Uy"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tuân Du",
+            "raw_name": "Tuân Du",
+            "tactic1": "Vạn Quân Đoạt Sư",
+            "tactic2": "Thượng Binh Phạt Mưu",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Tốc Chiến",
+              "Bách Chiến"
+            ]
+          },
+          {
+            "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
+            "tactic1": "Bạch Mã Nghĩa Tòng",
+            "tactic2": "Lửa Đuổi Gió Bay",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Càng Mạnh",
+              "Thắng Trận",
+              "Văn Thao"
+            ]
+          },
+          {
+            "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia",
+            "tactic1": "Dốc Sức Tính Kế",
+            "tactic2": "Ngụy Thư Tương Gian",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Trương Liêu",
+            "raw_name": "Trương Liêu",
+            "tactic1": "Bạo Lệ Vô Nhân",
+            "tactic2": "Quỷ Thần Đình Uy",
+            "stat_point": "",
+            "binh_thu": [
+              "Liền Mạch Một Hơi",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Hạ Hầu Uyên",
+            "raw_name": "Hạ Hầu Uyên",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Liền Mạch Một Hơi",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Vương Nguyên Cơ",
+            "raw_name": "Vương Nguyên Cơ",
+            "tactic1": "Hổ Báo Kỵ",
+            "tactic2": "Thiết Kỵ Khu Trì",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Tốc Chiến"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_id": "7_team",
+    "set_name": "Bộ 7 TEAM",
+    "description": "Phương án xuất chiến cùng tồn tại gồm 7 team",
+    "starter_recommendation": "",
+    "teams": [
+      {
+        "team_name": "Team Team 1-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Lưu Bị",
+            "raw_name": "Lưu Bị",
+            "tactic1": "Không Đánh Mà Thắng",
+            "tactic2": "An Ủi Quân Dân",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điêm Yếu",
+              "Khép Hờ",
+              "Khích Lệ Lòng Quân"
+            ]
+          },
+          {
+            "name": "SP Quan Vũ",
+            "raw_name": "SP Quan Vũ",
+            "tactic1": "Trung Dũng Nghĩa Liệt",
+            "tactic2": "Xế Đao Chước Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Chia Nhỏ Đánh Nhanh",
+              "Khép Hờ",
+              "Bách Chiến"
+            ]
+          },
+          {
+            "name": "Triệu Vân",
+            "raw_name": "Triệu Vân",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dùng Võ Thông Thần",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Nghĩa Dũng",
+              "Thế Phòng Thủ"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Thào Tháo",
+            "tactic1": "Lính Giáp Mây",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Bố Trận Chờ Đợi",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Phong Thi Trận",
+            "tactic2": "Chờ Đợi Xuất Phát",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điêm Yếu",
+              "Tốc Chiến",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Giáp Sắt",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Hổ Cứ Ưng Dương",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Sợ Bóng Sợ Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Cưỡi Ngựa Nghìn Dặm",
+            "tactic2": "Cơ Hình Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Phá Trận Thôi Kiên",
+            "tactic2": "Tuyệt Kỳ Cấp Đạo",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_id": "team_6_ky",
+    "set_name": "Bộ TEAM 6-KỴ",
+    "description": "Phương án xuất chiến cùng tồn tại gồm Team 6-Kỵ",
+    "starter_recommendation": "",
+    "teams": []
+  },
+  {
+    "set_id": "team_7_cung",
+    "set_name": "Bộ TEAM 7-CUNG",
+    "description": "Phương án xuất chiến cùng tồn tại gồm Team 7-Cung",
+    "starter_recommendation": "",
+    "teams": [
+      {
+        "team_name": "Team Team 1-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Lửa Cháy Ngùn Ngụt",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Nghĩa Dũng",
+              "Thế Phòng Thủ"
+            ]
+          },
+          {
+            "name": "Bái Sư Lỗ Túc/Lưu Bị",
+            "raw_name": "Bái Sư Lỗ Túc/Lưu Bị",
+            "tactic1": "Mê Hoặc",
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Bách Chiến",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Lính Giáp Mây",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Thào Tháo",
+            "tactic1": "Dốc Sức Tính Kế",
+            "tactic2": "Cắt Xương Trị Độc",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
+            "tactic1": "Ngụy Thư Tương Gian",
+            "tactic2": "Binh Vô Thường Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Hác Chiêu",
+            "raw_name": "Hác Chiêu",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Lửa Lan Khắp Chốn",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Giáp Sắt",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Hổ Cứ Ưng Dương",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Sợ Bóng Sợ Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Cưỡi Ngựa Nghìn Dặm",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Cơ Hình Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Uy Mưu Vô Địch",
+            "tactic2": "Tuyệt Kỳ Cấp Đạo",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Sĩ Biệt Tam Nhật",
+            "tactic2": "Dụng Võ Thần Thông",
+            "stat_point": "",
+            "binh_thu": [
+              "Tránh Thế Mạnh Của Địch",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "An Ủi Quân Dân",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Cứu Chủ",
+              "Cứu Viện"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Phong Thi Trận",
+            "tactic2": "Cắt Xương Trị Độc",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Sợ Bóng Sợ Gió",
+            "tactic2": "Lửa Lan Khắp Chốn",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Tướng Uy",
+              "Quỷ Mưu"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Cứu Chủ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Lữ Bố",
+            "raw_name": "Lữ Bố",
+            "tactic1": "Nhất Kỵ Đương Thiên",
+            "tactic2": "Quỷ Thần Đình Uy",
+            "stat_point": "",
+            "binh_thu": [
+              "Liền Mạch Một Hơi",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Quách Gia",
+            "raw_name": "Quách Gia",
+            "tactic1": "Thiết Kỵ Khu Trì",
+            "tactic2": "Hoành Qua Dược Mã",
+            "stat_point": "",
+            "binh_thu": [
+              "Kế Sách Dụ Địch",
+              "Cứu Viện",
+              "Cứu Chủ"
+            ]
+          },
+          {
+            "name": "Hoàng Nguyệt Anh",
+            "raw_name": "Hoàng Nguyệt Anh",
+            "tactic1": "Tam Thế Trận",
+            "tactic2": "Hổ Báo Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Bố Trận Chờ Đợi",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Lục Tốn",
+            "raw_name": "Lục Tốn",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Thái Sử Từ",
+            "raw_name": "Thái Sử Từ",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Bạo Lệ Vô Nhân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Võ Lược"
+            ]
+          },
+          {
+            "name": "Lỗ Túc",
+            "raw_name": "Lỗ Túc",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Quân Cẩm Phàm",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Giáp Sắt"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Kế Sách Dụ Địch",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh /Hổ Cứ Ưng Dương",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Giấu Đao",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "set_id": "team_6_thuong",
+    "set_name": "Bộ TEAM 6-THƯƠNG",
+    "description": "Phương án xuất chiến cùng tồn tại gồm Team 6-Thương",
+    "starter_recommendation": "",
+    "teams": [
+      {
+        "team_name": "Team Team 1-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Giáp Sắt"
+            ]
+          },
+          {
+            "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia",
+            "tactic1": "Đánh Bại Quân Địch",
+            "tactic2": "Đương Phong Thôi Quyết",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Giả Nai Trước Địch",
+              "Khép Hờ",
+              "Bách Chiến"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Vào Chỗ Hiểm",
+              "Tướng Uy",
+              "Xem Bói"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "Phong Thi Trận",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Vô Công Mà Thưởng",
+              "Khích Lệ Lòng Quân",
+              "Cứu Chủ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "An Ủi Quân Dân",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Tốc Chiến",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Giáp Sắt",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Hổ Cứ Ưng Dương",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Viên Thiệu",
+            "raw_name": "SP Viên Thiệu",
+            "tactic1": "Nằm Gai Nếm Mật",
+            "tactic2": "Thả Lính Cướp Đoạt",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "SP Chu Tuấn",
+            "raw_name": "SP Chu Tuấn",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Cầm Binh Khí",
+              "Văn Thao"
+            ]
+          },
+          {
+            "name": "Thư Thụ",
+            "raw_name": "Thư Thụ",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Chờ Đợi Xuất Phát",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Cơ Hình Trận",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Phá Trận Thôi Kiên",
+            "tactic2": "Tuyệt Kỳ Cấp Đạo",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Tuân Úc",
+            "raw_name": "SP Tuân Úc",
+            "tactic1": "Dốc Sức Tính Kế",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "SP Quách Gia",
+            "raw_name": "SP Quách Gia",
+            "tactic1": "Đánh Bại Quân Địch",
+            "tactic2": "Đương Phong Thôi Quyết",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Giấu Đao"
+            ]
+          },
+          {
+            "name": "Giả Hủ",
+            "raw_name": "Giả Hủ",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Ngụy Thư Tương Gian",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Thần Cơ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Nghĩa Dũng",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "Lính Giáp Mây",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Vô Công Mà Thưởng",
+              "Khích Lệ Lòng Quân",
+              "Cứu Chủ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Hình Nhất Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Tốc Chiến",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Giáp Sắt",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tảo Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Lục Tốn",
+            "raw_name": "Lục Tốn",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Binh Vô Thường Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "SP Lữ Mông",
+            "raw_name": "SP Lữ Mông",
+            "tactic1": "An Ủi Quân Dân",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Không Chiến Mà Thắng",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lỗ Túc",
+            "raw_name": "Lỗ Túc",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Phong Thị Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Gia Cát Lượng",
+            "raw_name": "SP Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Chờ Đợi Xuất Phát",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Tốc Chiến",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Quan Hưng",
+            "raw_name": "Quan Hưng",
+            "tactic1": "Cưỡi Ngựa Nghìn Dặm",
+            "tactic2": "Vô Địch Can Trường",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Trương Bao",
+            "raw_name": "Trương Bao",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "Phong Thi Trận",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Vô Công Mà Thưởng",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "An Ủi Quân Dân",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Sợ Bóng Sợ Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Thắng Trận",
+              "Văn Thao"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Cứu Viện"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tào Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tôn Quyền",
+            "raw_name": "Tôn Quyền",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Binh Vô Thường Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Lỗ Túc",
+            "raw_name": "Lỗ Túc(S)",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Hình Nhất Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Phòng Bị",
+              "Thế Phòng Thủ"
+            ]
+          },
+          {
+            "name": "SP Chu Du",
+            "raw_name": "SP Chu Du",
+            "tactic1": "Sợ Bóng Sợ Gió /Lửa Đuổi Gió Bay",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Cầm Binh Khí",
+              "Văn Thao"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Hợp Biến"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Cơ Hình Trận",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Thần Cơ"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Tuyệt Kỳ Cấp Đạo",
+            "tactic2": "Đánh Đâu Thắng Đó",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Quỷ Mưu",
+              "Thần Cơ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy(S)",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Lửa Lan Khắp Chốn",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Lưu Bị",
+            "raw_name": "Lưu Bị",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Hãm Trận Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Tuyệt Kỳ Cấp Đạo",
+            "tactic2": "Đánh Đâu Thắng Đó",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "An Ủi Quân Dân",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Vô Công Mà Thưởng",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Gia Cát Lượng",
+            "raw_name": "SP Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Tốc Chiến"
+            ]
+          },
+          {
+            "name": "Quan Hưng",
+            "raw_name": "Quan Hưng",
+            "tactic1": "Cưỡi Ngựa Nghìn Dặm",
+            "tactic2": "Nằm Gai Nếm Mật",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Trương Bào",
+            "raw_name": "Trương Bào",
+            "tactic1": "Uy Mưu Vô Địch",
+            "tactic2": "Lính Thanh Châu",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tào Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Chu Du",
+            "raw_name": "SP Chu Du",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Lục Tốn",
+            "raw_name": "Lục Tốn",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Binh Vô Thường Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Lỗ Túc",
+            "raw_name": "Lỗ Túc(S)",
+            "tactic1": "Vô Đương Phi Quân",
+            "tactic2": "Lửa Đuổi Gió Bay",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Triệu Vân",
+            "raw_name": "Triệu Vân(Quần)",
+            "tactic1": "Thuyền Cỏ Mượn Tên",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Giáp Sắt"
+            ]
+          },
+          {
+            "name": "Thái Sử Từ",
+            "raw_name": "Thái Sử Từ(Quần)",
+            "tactic1": "Bạo Lệ Vô Nhân",
+            "tactic2": "Mau Giành Lợi Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Tà Tử",
+            "raw_name": "Tà Tử",
+            "tactic1": "Võ Phong Trận",
+            "tactic2": "Quân Cẩm Phàm",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khép Hờ",
+              "Tản Tiên"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Nghĩa Dũng",
+              "Thế Phòng Thủ"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "An Ủi Quân Dân",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khép Hờ",
+              "Khích Lệ Lòng Quân"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy(S)",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Đương Phong Thôi Quyết",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Giấu Đao"
+            ]
+          },
+          {
+            "name": "Lưu Bị",
+            "raw_name": "Lưu Bị",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Hãm Trận Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Khép Hờ"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Phá Trận Thôi Kiên",
+            "tactic2": "Tuyệt Kỳ Cấp Đạo",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tào Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Cung",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "SP Viên Thiệu",
+            "raw_name": "SP Viên Thiệu",
+            "tactic1": "Nằm Gai Nếm Mật",
+            "tactic2": "Thả Lính Cướp Đoạt",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "SP Chu Tuấn",
+            "raw_name": "SP Chu Tuấn",
+            "tactic1": "Vô Đương Phi Quân",
+            "tactic2": "Lửa Đuổi Gió Bay",
+            "stat_point": "",
+            "binh_thu": [
+              "Lấy Võ Dẹp Loạn",
+              "Tướng Uy",
+              "Thần Cơ"
+            ]
+          },
+          {
+            "name": "Thư Thụ",
+            "raw_name": "Thư Thụ",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 1-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Lục Tốn",
+            "raw_name": "Lục Tốṇ(S)",
+            "tactic1": "Đương Phong Thôi Quyết",
+            "tactic2": "Binh Vô Thường Thế",
+            "stat_point": "",
+            "binh_thu": [
+              "Kỳ Chính Tương Sinh",
+              "Văn Thao",
+              "Thắng Trận"
+            ]
+          },
+          {
+            "name": "Lỗ Túc",
+            "raw_name": "Lỗ Túc",
+            "tactic1": "Tạm Lánh Sóng Gió",
+            "tactic2": "Phong Thi Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "SP Lữ Mông",
+            "raw_name": "SP Lữ Mông",
+            "tactic1": "Độc Hành Phó Đấu",
+            "tactic2": "Thuyền Cỏ Mượn Tên",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 2-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Tư Mã Ý",
+            "raw_name": "Tư Mã Ý",
+            "tactic1": "Dụng Võ Thần Thông",
+            "tactic2": "Sĩ Biệt Tam Nhật",
+            "stat_point": "",
+            "binh_thu": [
+              "Yêu Lính Thương Dân",
+              "Nghĩa Dũng",
+              "Thế Phòng Thủ"
+            ]
+          },
+          {
+            "name": "Tào Tháo",
+            "raw_name": "Tào Tháo",
+            "tactic1": "Lính Giáp Mây",
+            "tactic2": "Mê Hoặc",
+            "stat_point": "",
+            "binh_thu": [
+              "Gặp Địch Không Loạn",
+              "Khích Lệ Lòng Quân",
+              "Cứu Chủ"
+            ]
+          },
+          {
+            "name": "Mãn Sủng",
+            "raw_name": "Mãn Sủng",
+            "tactic1": "Cắt Xương Trị Độc",
+            "tactic2": "Hình Nhất Trận",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khép Hờ",
+              "Tốc Chiến"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 3-Khiên",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Khương Duy",
+            "raw_name": "Khương Duy",
+            "tactic1": "Đoạt Hồn Hiệp Phách",
+            "tactic2": "Sợ Bóng Sợ Gió",
+            "stat_point": "",
+            "binh_thu": [
+              "Man Dũng Phi Dũng",
+              "Thắng Trận",
+              "Văn Thao"
+            ]
+          },
+          {
+            "name": "Bàng Thống",
+            "raw_name": "Bàng Thống",
+            "tactic1": "Thái Bình Đạo Pháp",
+            "tactic2": "Vô Đương Phi Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Gia Cát Lượng",
+            "raw_name": "Gia Cát Lượng",
+            "tactic1": "Bát Môn Kim Tỏa Trận",
+            "tactic2": "Anh Thành Tự Thủ",
+            "stat_point": "",
+            "binh_thu": [
+              "Tấn Công Điểm Yếu",
+              "Khích Lệ Lòng Quân",
+              "Cứu Viện"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 4-Kỵ",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Chu Thái",
+            "raw_name": "Chu Thái",
+            "tactic1": "Thịnh Khí Linh Địch",
+            "tactic2": "Tây Lương Thiết Kỵ",
+            "stat_point": "",
+            "binh_thu": [
+              "Biết Cách Phòng Thủ",
+              "Thế Phòng Thủ",
+              "Phòng Bị"
+            ]
+          },
+          {
+            "name": "Lăng Thống",
+            "raw_name": "Lăng Thống",
+            "tactic1": "Phá Quân Uy Thắng",
+            "tactic2": "Hoành Tào Thiên Quân",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Tôn Thượng Hương",
+            "raw_name": "Tôn Thượng Hương\n(+13 tốc)",
+            "tactic1": "Lõa Y Huyết Chiến",
+            "tactic2": "Bách Kỵ Kiếp Doanh",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          }
+        ]
+      },
+      {
+        "team_name": "Team Team 5-Thương",
+        "cost": "19C",
+        "generals": [
+          {
+            "name": "Quan Vũ",
+            "raw_name": "Quan Vũ",
+            "tactic1": "Cơ Hình Trận",
+            "tactic2": "Uy Mưu Vô Địch",
+            "stat_point": "",
+            "binh_thu": [
+              "Đánh Sau Trúng Trước",
+              "Quỷ Mưu",
+              "Tướng Uy"
+            ]
+          },
+          {
+            "name": "Ngụy Diên",
+            "raw_name": "Ngụy Diên",
+            "tactic1": "Tuyệt Kỳ Cấp Đạo",
+            "tactic2": "Đánh Đâu Thắng Đó",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
+          },
+          {
+            "name": "Quan Ngân Bình",
+            "raw_name": "Quan Ngân Bình",
+            "tactic1": "Lính Thanh Châu",
+            "tactic2": "Cứ Thủy Đoạn Kiều",
+            "stat_point": "",
+            "binh_thu": [
+              "Thắng Sẽ Càng Mạnh",
+              "Thắng Trận",
+              "Cầm Binh Khí"
+            ]
           }
         ]
       }

@@ -186,6 +186,46 @@ def get_coexisting_portfolios():
 def get_starter_teams():
     return recommender.starter_data
 
+def _load_json_db(filename):
+    path = os.path.join(DB_DIR, filename)
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+@app.get("/api/team-do-uy")
+def get_team_do_uy():
+    """Trả về dữ liệu Team Đô Úy từ Excel."""
+    return _load_json_db("team_do_uy.json")
+
+@app.get("/api/khai-hoang")
+def get_khai_hoang():
+    """Trả về dữ liệu Khai Hoang từ Excel."""
+    return _load_json_db("khai_hoang.json")
+
+@app.get("/api/cai-tao-binh-chung")
+def get_cai_tao():
+    """Trả về dữ liệu Cải Tạo Binh Chủng từ Excel."""
+    return _load_json_db("cai_tao_binh_chung.json")
+
+@app.get("/api/cot-truyen")
+def get_cot_truyen():
+    """Trả về dữ liệu Cốt Truyện từ Excel."""
+    return _load_json_db("cot_truyen.json")
+
+@app.get("/api/meta-teams-by-season/{season}")
+def get_meta_by_season(season: str):
+    """Lọc meta teams theo mùa: PK, Mua4, Mua5, Mùa 4, Mùa 5."""
+    all_teams = recommender.meta_teams
+    s_norm = season.lower().replace(" ", "").replace("ù", "u")
+    filtered = []
+    for t in all_teams:
+        t_season = t.get("season", "PK")
+        t_norm = t_season.lower().replace(" ", "").replace("ù", "u")
+        if t_norm == s_norm:
+            filtered.append(t)
+    return {"season": season, "count": len(filtered), "teams": filtered}
+
 # ─────────────────────────────────────────────
 # IMAGE UPLOAD & OCR
 # ─────────────────────────────────────────────

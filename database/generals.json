@@ -5,17 +5,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Cam Ninh",
+    "inherent_skill": "Kỹ năng tự mang của Cam Ninh",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_chu_du",
@@ -23,17 +25,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Chu Du",
+    "inherent_skill": "Kỹ năng tự mang của Chu Du",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_chu_thai",
@@ -41,18 +45,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "S",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Chịu sát thương cho đồng đội còn tăng sát thương gây ra",
     "inherit_tactic": "Nhất Lực Cự Thủ",
     "role": [
       "team Kỵ Ngô"
     ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
   },
   {
     "id": "ngo_gia_cat_khac",
@@ -60,18 +65,36 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Thi triển Chống Đỡ và nhận đc buff",
     "inherit_tactic": "Nhân Lợi Chế Quyền",
     "role": [
       "khai hoang"
     ],
-    "season": "PK15-Vân Khởi Long Tương"
+    "season": "PK15-Vân Khởi Long Tương",
+    "note": ""
+  },
+  {
+    "id": "ngo_hoang_cai",
+    "name": "Hoàng Cái",
+    "faction": "Ngô",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "C",
+      "Khiên": "S",
+      "Cung": "A",
+      "Thương": "A",
+      "Khí": "C"
+    },
+    "role": [
+      "Hỗn loạn địch",
+      "Thiêu đốt"
+    ]
   },
   {
     "id": "ngo_lang_thong",
@@ -79,35 +102,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Lăng Thống",
+    "inherent_skill": "Kỹ năng tự mang của Lăng Thống",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
-  },
-  {
-    "id": "ngo_lo_tuc",
-    "name": "Lỗ Túc",
-    "faction": "Ngô",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Lỗ Túc",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_luc_khang",
@@ -115,18 +122,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Tăng Kỳ Mưu và gánh vác sát thương cho Chủ tướng",
     "inherit_tactic": "Thừa Thắng Trường Khu",
     "role": [
       "team Ngô"
     ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
   },
   {
     "id": "ngo_luc_ton",
@@ -134,17 +142,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Lục Tốn",
+    "inherent_skill": "Kỹ năng tự mang của Lục Tốn",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_lu_mong",
@@ -152,17 +162,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Lữ Mông",
+    "inherent_skill": "Kỹ năng tự mang của Lữ Mông",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_sp_chu_du",
@@ -170,18 +182,19 @@
     "faction": "Ngô",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Tăng sát thương mưu lược",
     "inherit_tactic": "Lửa Đuổi Gió Bay",
     "role": [
       "team Thương/Cung Ngô"
     ],
-    "season": "PK6-Đại Chiến Xích Bích"
+    "season": "PK6-Đại Chiến Xích Bích",
+    "note": ""
   },
   {
     "id": "ngo_sp_lu_mong",
@@ -189,18 +202,19 @@
     "faction": "Ngô",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Tịnh hóa hiệu ứng tiêu cực và có thể gây ra Kế Tận và Chấn Động",
     "inherit_tactic": "Ích Kì Kim Cổ",
     "role": [
       "team Thương/Cung Ngô"
     ],
-    "season": "PK10-Trận Quan Độ"
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
   },
   {
     "id": "ngo_sp_ton_kien",
@@ -208,18 +222,19 @@
     "faction": "Ngô",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Kéo dài tăng ích của quân ta",
     "inherit_tactic": "Xong Pha Khói Lửa",
     "role": [
       "team Ngô Cung"
     ],
-    "season": "PK20-Khói Lửa Loạn Thế"
+    "season": "PK20-Khói Lửa Loạn Thế",
+    "note": ""
   },
   {
     "id": "ngo_thai_su_tu",
@@ -227,17 +242,39 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Thái Sử Từ",
+    "inherent_skill": "Kỹ năng tự mang của Thái Sử Từ",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "ngo_tieu_kieu",
+    "name": "Tiểu Kiều",
+    "faction": "Ngô",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Tiểu Kiều",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_trinh_pho",
@@ -245,17 +282,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Trình Phổ",
+    "inherent_skill": "Kỹ năng tự mang của Trình Phổ",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_ton_kien",
@@ -263,17 +302,19 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tôn Kiên",
+    "inherent_skill": "Kỹ năng tự mang của Tôn Kiên",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "ngo_ton_quyen",
@@ -281,17 +322,36 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tôn Quyền",
+    "inherent_skill": "Kỹ năng tự mang của Tôn Quyền",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "ngo_ton_sach",
+    "name": "Tôn Sách",
+    "faction": "Ngô",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "A",
+      "Thương": "S",
+      "Khí": "C"
+    },
+    "role": [
+      "Tấn công hồi phục",
+      "Chấn nhiếp"
+    ]
   },
   {
     "id": "ngo_ton_thuong_huong",
@@ -299,17 +359,56 @@
     "faction": "Ngô",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tôn Thượng Hương",
+    "inherent_skill": "Kỹ năng tự mang của Tôn Thượng Hương",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "ngo_dai_kieu",
+    "name": "Đại Kiều",
+    "faction": "Ngô",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Đại Kiều",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_bang_duc",
+    "name": "Bàng Đức",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "S",
+      "Thương": "B",
+      "Khí": "C"
+    },
+    "role": [
+      "Xóa trạng thái có lợi của địch",
+      "Sát thương vật lý"
+    ]
   },
   {
     "id": "nguy_chung_hoi",
@@ -317,17 +416,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Chung Hội",
+    "inherent_skill": "Kỹ năng tự mang của Chung Hội",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_chan_co",
@@ -335,35 +436,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Chân Cơ",
+    "inherent_skill": "Kỹ năng tự mang của Chân Cơ",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
-  },
-  {
-    "id": "nguy_gia_hu",
-    "name": "Giả Hủ",
-    "faction": "Ngụy",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Giả Hủ",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_hac_chieu",
@@ -371,17 +456,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Hác Chiêu",
+    "inherent_skill": "Kỹ năng tự mang của Hác Chiêu",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_ha_hau_uyen",
@@ -389,17 +476,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Hạ Hầu Uyên",
+    "inherent_skill": "Kỹ năng tự mang của Hạ Hầu Uyên",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_ha_hau_don",
@@ -407,17 +496,36 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Hạ Hầu Đôn",
+    "inherent_skill": "Kỹ năng tự mang của Hạ Hầu Đôn",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_hua_chu",
+    "name": "Hứa Chử",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "S",
+      "Cung": "C",
+      "Thương": "S",
+      "Khí": "C"
+    },
+    "role": [
+      "Bộc phát sát thương đơn mục tiêu",
+      "Phá trận"
+    ]
   },
   {
     "id": "nguy_man_sung",
@@ -425,18 +533,35 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Trị liều cho tướng quân ta",
     "inherit_tactic": "Phá Quân Uy Thắng",
     "role": [
       "team Khiên Ngụy"
     ],
-    "season": "PK6-Đại Chiến Xích Bích"
+    "season": "PK6-Đại Chiến Xích Bích",
+    "note": ""
+  },
+  {
+    "id": "nguy_nhac_tien",
+    "name": "Nhạc Tiến",
+    "faction": "Ngụy",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "A",
+      "Thương": "S",
+      "Khí": "B"
+    },
+    "role": [
+      "Sát thương chủ động 100%"
+    ]
   },
   {
     "id": "nguy_quach_gia",
@@ -444,17 +569,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Quách Gia",
+    "inherent_skill": "Kỹ năng tự mang của Quách Gia",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_sp_bang_duc",
@@ -462,18 +589,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Sau khi Tích Uy cường hóa tấn công thường",
     "inherit_tactic": "Trung Dũng Nghĩa Liệt",
     "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK14-Trận Tương Phàn"
+    "season": "PK14-Trận Tương Phàn",
+    "note": ""
   },
   {
     "id": "nguy_sp_hua_chu",
@@ -481,18 +609,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Khi quân ta chịu tấn công thường bản thân tạo sát thương cho quân địch",
     "inherit_tactic": "Vạn Quân Đoạt Sư",
     "role": [
       "team Khiên"
     ],
-    "season": "PK18-Trận Đồng Quan"
+    "season": "PK18-Trận Đồng Quan",
+    "note": ""
   },
   {
     "id": "nguy_sp_luu_diep",
@@ -500,18 +629,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Lấy trộn trí lực và tạo ra chữa trị",
     "inherit_tactic": "Nhân Lợi Chế Quyền",
     "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK15-Vân Khởi Long Tương"
+    "season": "PK15-Vân Khởi Long Tương",
+    "note": ""
   },
   {
     "id": "nguy_sp_quach_gia",
@@ -519,18 +649,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "S",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Khi quân ra Phát động chiến pháp chủ động và đột kích, bản thân gây ra sát thương mưu lược",
     "inherit_tactic": "Tiên Thành Kỳ Lự",
     "role": [
       "team Kỵ Ngụy"
     ],
-    "season": "PK12-Anh Hùng Tập Kết"
+    "season": "PK12-Anh Hùng Tập Kết",
+    "note": ""
   },
   {
     "id": "nguy_sp_tuan_uc",
@@ -538,18 +669,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "S",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Nhận trạng thái Cảnh Giác",
     "inherit_tactic": "Dốc Sức Tính Kế",
     "role": [
       "team Kỵ Ngụy"
     ],
-    "season": "PK12-Anh Hùng Tập Kết"
+    "season": "PK12-Anh Hùng Tập Kết",
+    "note": ""
   },
   {
     "id": "nguy_sp_tao_chan",
@@ -557,18 +689,19 @@
     "faction": "Ngụy",
     "cost": 7,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Tăng sát thương phải chịu của quân địch",
     "inherit_tactic": "Thượng Binh Phạt Mưu",
     "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK18-Trận Đồng Quan"
+    "season": "PK18-Trận Đồng Quan",
+    "note": ""
   },
   {
     "id": "nguy_trinh_duc",
@@ -576,17 +709,36 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Trình Dục",
+    "inherent_skill": "Kỹ năng tự mang của Trình Dục",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_truong_cap",
+    "name": "Trương Cáp",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "S",
+      "Cung": "A",
+      "Thương": "S",
+      "Khí": "B"
+    },
+    "role": [
+      "Đại Kích Sĩ",
+      "Sát thương binh chủng"
+    ]
   },
   {
     "id": "nguy_truong_lieu",
@@ -594,17 +746,39 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Trương Liêu",
+    "inherent_skill": "Kỹ năng tự mang của Trương Liêu",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_truong_xuan_hoa",
+    "name": "Trương Xuân Hoa",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây giảm thuộc tính và tạo ra sát thương mưu lược",
+    "inherit_tactic": "Vận Trù Quyết Toán",
+    "role": [
+      "cost 3, khai khoang ổn"
+    ],
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
   },
   {
     "id": "nguy_tuan_du",
@@ -612,18 +786,36 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "S",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Xóa hiệu ứng tăng ích và tăng tỷ lệ cp phát động quân ta",
     "inherit_tactic": "Vận Trù Quyết Toán",
     "role": [
       "team Kỵ Ngụy(đi với Giả Hủ, Trình Dục)"
     ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
+  },
+  {
+    "id": "nguy_tao_nhan",
+    "name": "Tào Nhân",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "S",
+      "Cung": "B",
+      "Thương": "S",
+      "Khí": "A"
+    },
+    "role": [
+      "Khiêu khích toàn bộ địch",
+      "Tăng Thống soái và Động sát"
+    ]
   },
   {
     "id": "nguy_tao_phi",
@@ -631,17 +823,36 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tào Phi",
+    "inherent_skill": "Kỹ năng tự mang của Tào Phi",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_tao_thuan",
+    "name": "Tào Thuần",
+    "faction": "Ngụy",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "B",
+      "Cung": "C",
+      "Thương": "B",
+      "Khí": "C"
+    },
+    "role": [
+      "Hổ Báo Kỵ",
+      "Tăng tỷ lệ đột kích"
+    ]
   },
   {
     "id": "nguy_tao_thao",
@@ -649,17 +860,19 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tào Tháo",
+    "inherent_skill": "Kỹ năng tự mang của Tào Tháo",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "nguy_tu_ma_y",
@@ -667,17 +880,35 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Tư Mã Ý",
+    "inherent_skill": "Kỹ năng tự mang của Tư Mã Ý",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_tu_hoang",
+    "name": "Từ Hoảng",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "S",
+      "Cung": "B",
+      "Thương": "S",
+      "Khí": "A"
+    },
+    "role": [
+      "Tích lũy tăng 75% sát thương"
+    ]
   },
   {
     "id": "nguy_vuong_nguyen_co",
@@ -685,18 +916,53 @@
     "faction": "Ngụy",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Tăng sát thương cho tướng bên ta, còn tạo ra trị liệu",
     "inherit_tactic": "Mau Giành Lợi Thế",
     "role": [
       "team đột kích, kế thừa chiến pháp"
     ],
-    "season": "PK10-Trận Quan Độ"
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
+  },
+  {
+    "id": "nguy_vuong_song",
+    "name": "Vương Song",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "S",
+      "Cung": "B",
+      "Thương": "S",
+      "Khí": "C"
+    },
+    "role": [
+      "Tước khí địch",
+      "Sát thương khủng"
+    ]
+  },
+  {
+    "id": "nguy_dien_vi",
+    "name": "Điển Vi",
+    "faction": "Ngụy",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "C",
+      "Khiên": "S",
+      "Cung": "C",
+      "Thương": "A",
+      "Khí": "C"
+    },
+    "role": [
+      "Đỡ đòn cho chủ tướng",
+      "Phản kích"
+    ]
   },
   {
     "id": "quan_cao_lam",
@@ -704,18 +970,39 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Gây sát thương binh đao và thêm trạng thái cấm trị liệu",
     "inherit_tactic": "Thừa Thắng Trường Khu",
     "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
+  },
+  {
+    "id": "quan_chu_thieu",
+    "name": "Chu Thiệu",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Chu Thiệu",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_chu_tuan",
@@ -723,17 +1010,19 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Chu Tuấn",
+    "inherent_skill": "Kỹ năng tự mang của Chu Tuấn",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_chuc_dung",
@@ -741,17 +1030,33 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Kỵ": "S",
+      "Khiên": "B",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thương": "B",
+      "Khí": "C"
     },
-    "inherent_skill": "Kỹ năng riêng của Chúc Dung",
     "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
+      "Hồi phục quân",
+      "Sát thương thường"
+    ]
+  },
+  {
+    "id": "quan_cong_ton_toan",
+    "name": "Công Tôn Toản",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "C",
+      "Cung": "S",
+      "Thương": "B",
+      "Khí": "C"
+    },
+    "role": [
+      "Bạch Mã Nghĩa Tòng",
+      "Tiên phong tốc chiến"
+    ]
   },
   {
     "id": "quan_duong_di",
@@ -759,18 +1064,59 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Trộm thuộc tính và có xác suất tạo sát thương Mưu Lược",
     "inherit_tactic": "Trân Vu Chí Thiện",
     "role": [
       "team Cung"
     ],
-    "season": "PK18-Trận Đồng Quan"
+    "season": "PK18-Trận Đồng Quan",
+    "note": ""
+  },
+  {
+    "id": "quan_duong_ky",
+    "name": "Dương Kỳ",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Dương Kỳ",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "nguy_gia_hu",
+    "name": "Giả Hủ",
+    "faction": "Ngụy",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Thần Cơ Mạc Trắc",
+    "inherit_tactic": "Ngụy Thư Tương Gian",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_hoa_da",
@@ -778,17 +1124,39 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Hoa Đà",
+    "inherent_skill": "Kỹ năng tự mang của Hoa Đà",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_hoang_phu_hoanh",
+    "name": "Hoàng Phủ Hoành",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Hoàng Phủ Hoành",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_hua_du",
@@ -796,17 +1164,19 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Hứa Du",
+    "inherent_skill": "Kỹ năng tự mang của Hứa Du",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_khuc_nghia",
@@ -814,18 +1184,76 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Lính Cung tiến cấp thành Tử Sĩ Tiên Phong ko sợ chết",
     "inherit_tactic": "Tử Sĩ Tiên Phong",
     "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK13-Chinh Chiến Bốn Mùa"
+    "season": "PK13-Chinh Chiến Bốn Mùa",
+    "note": ""
+  },
+  {
+    "id": "quan_lieu_tam",
+    "name": "Liễu Tẩm",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Liễu Tẩm",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_ly_nho",
+    "name": "Lý Nho",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "B",
+      "Cung": "A",
+      "Thương": "C",
+      "Khí": "C"
+    },
+    "role": [
+      "Nhiễm độc",
+      "Trừ chỉ số Thống soái"
+    ]
+  },
+  {
+    "id": "ngo_lo_tuc",
+    "name": "Lỗ Túc",
+    "faction": "Ngô",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tế Bần Đốc Hữu",
+    "inherit_tactic": "Kỳ Kế Lương Mưu",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
   },
   {
     "id": "quan_lu_bo",
@@ -833,35 +1261,36 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Kỹ năng riêng của Lữ Bố",
+    "inherent_skill": "Kỹ năng tự mang của Lữ Bố",
+    "inherit_tactic": "",
     "role": [
       "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
   },
   {
-    "id": "quan_lu_linh_y",
-    "name": "Lữ Linh Ỷ",
+    "id": "quan_lu_linh_khoi",
+    "name": "Lữ Linh Khởi",
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
+      "Kỵ": "S",
+      "Khiên": "B",
+      "Cung": "S",
       "Thương": "A",
-      "Khí": "B"
+      "Khí": "C"
     },
-    "inherent_skill": "Kỹ năng riêng của Lữ Linh Ỷ",
     "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
+      "Tăng tỷ lệ kích hoạt chiến pháp",
+      "Sát thương bùng nổ"
+    ]
   },
   {
     "id": "quan_ma_quan",
@@ -869,1016 +1298,19 @@
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
     },
     "inherent_skill": "Dễ nhận thưởng bậc cao hơn khi xuất sứ",
     "inherit_tactic": "Tư Duy Sáng Tạo",
     "role": [
       "Đi sứ"
     ],
-    "season": "PK20-Khói Lửa Loạn Thế"
-  },
-  {
-    "id": "quan_ngot_dot_cot",
-    "name": "Ngột Đột Cốt",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Ngột Đột Cốt",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_nhac_tien",
-    "name": "Nhạc Tiến",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Nhạc Tiến",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_quan_binh",
-    "name": "Quan Bình",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Quan Bình",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_quan_hung",
-    "name": "Quan Hưng",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Nhận trạng thái Làm Phản và gây ra sát thương binh đao",
-    "inherit_tactic": "Nhanh Chân Tranh Đất",
-    "role": [
-      "team Thương Thục"
-    ],
-    "season": "PK10-Trận Quan Độ"
-  },
-  {
-    "id": "quan_sp_chu_tuan",
-    "name": "SP Chu Tuấn",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Giảm đi sát thương quân địch và gây ra Đào Phản",
-    "inherit_tactic": "Mau Giành Lợi Thế",
-    "role": [
-      "team Cung Quần"
-    ],
-    "season": "PK10-Trận Quan Độ"
-  },
-  {
-    "id": "quan_sp_hoang_pho_tung",
-    "name": "SP Hoàng Phổ Tung",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Thi triển giảm thương và có sác suất tăng buff",
-    "inherit_tactic": "Chỉnh Đốn Quân Ngũ",
-    "role": [
-      "team Thương"
-    ],
-    "season": "PK13-Chinh Chiến Bốn Mùa"
-  },
-  {
-    "id": "quan_sp_hoang_trung",
-    "name": "SP Hoàng Trung",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của SP Hoàng Trung",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_sp_lo_truc",
-    "name": "SP Lô Trực",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của SP Lô Trực",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_sp_truong_bao",
-    "name": "SP Trương Bảo",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Ảnh hưởng thuộc tính và kèm theo hiệu quả bất lợi",
-    "inherit_tactic": "Gió Táp Mưa Sa",
-    "role": [
-      "team Khiên Giác"
-    ],
-    "season": "PK13-Chinh Chiến Bốn Mùa"
-  },
-  {
-    "id": "quan_sp_truong_luong",
-    "name": "SP Trương Lương",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Tăng thống soái hoặc giảm sát thương phịu phải của CP chủ động và đột kích",
-    "inherit_tactic": "Gió Táp Mưa Sa",
-    "role": [
-      "team Khiên Giác"
-    ],
-    "season": "PK13-Chinh Chiến Bốn Mùa"
-  },
-  {
-    "id": "quan_sp_vien_thieu",
-    "name": "SP Viên Thiệu",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây sát thương binh đao và Giao Binh khí đồng thời tặng sát thương phải chịu",
-    "inherit_tactic": "Cơ Hình Trận",
-    "role": [
-      "team Cung Quần"
-    ],
-    "season": "PK9-Bắc Định Trung Nguyên"
-  },
-  {
-    "id": "quan_sp_dieu_thuyen",
-    "name": "SP Điêu Thuyền",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của SP Điêu Thuyền",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_sp_dong_trach",
-    "name": "SP Đổng Trách",
-    "faction": "Quần",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của SP Đổng Trách",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_thai_ung",
-    "name": "Thái Ung",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Tăng sản lượng Gỗ",
-    "inherit_tactic": "Kinh Thuật Chính Yếu",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK9-Bắc Định Trung Nguyên"
-  },
-  {
-    "id": "quan_thai_van_co",
-    "name": "Thái Văn Cơ",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Thái Văn Cơ",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_thu_thu",
-    "name": "Thư Thụ",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Tăng ra số hiệp quân đồng minh gây ra trạng thái tiêu cực",
-    "inherit_tactic": "Uy Mưu Vô Địch",
-    "role": [
-      "team Cung/Khiên Quần"
-    ],
-    "season": "PK9-Bắc Định Trung Nguyên"
-  },
-  {
-    "id": "quan_trau_thi",
-    "name": "Trâu Thị",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Lấy trộm thuộc tính của quân địch",
-    "inherit_tactic": "Tiên Thành Kỳ Lự",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK12-Anh Hùng Tập Kết"
-  },
-  {
-    "id": "quan_truong_bao",
-    "name": "Trương Bào",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Nhận trạng thái Chống Đỡ và gây ra sát thương binh đao",
-    "inherit_tactic": "Nhanh Chân Tranh Đất",
-    "role": [
-      "team Thương Thục"
-    ],
-    "season": "PK10-Trận Quan Độ"
-  },
-  {
-    "id": "quan_truong_giac",
-    "name": "Trương Giác",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Trương Giác",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_truong_nhuong",
-    "name": "Trương Nhượng",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây ra sát thương Mưu Lược",
-    "inherit_tactic": "Dốc Sức Tính Kế",
-    "role": [
-      "team giảm thuộc tính"
-    ],
-    "season": "PK12-Anh Hùng Tập Kết"
-  },
-  {
-    "id": "quan_truong_xuan_hoa",
-    "name": "Trương Xuân Hoa",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây giảm thuộc tính và tạo ra sát thương mưu lược",
-    "inherit_tactic": "Vận Trù Quyết Toán",
-    "role": [
-      "cost 3, khai khoang ổn"
-    ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
-  },
-  {
-    "id": "quan_ta_tu",
-    "name": "Tả Từ",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Tả Từ",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_tu_hoang",
-    "name": "Từ Hoảng",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Từ Hoảng",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_vien_thuat",
-    "name": "Viên Thuật",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Có được Ngọc Tỉ, tăng Hội tâm và tỷ lệ Kỳ mưu",
-    "inherit_tactic": "Hình Cơ Quân Lược",
-    "role": [
-      "team Cung"
-    ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
-  },
-  {
-    "id": "quan_vu_cat",
-    "name": "Vũ Cát",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Vũ Cát",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_vuong_di",
-    "name": "Vương Dị",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Vương Dị",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_vuong_song",
-    "name": "Vương Song",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây ra sát thương binh đao, khiến cho địch tăng sát thương được chịu và kế tận",
-    "inherit_tactic": "Phá Quân Uy Thắng",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK6-Đại Chiến Xích Bích"
-  },
-  {
-    "id": "quan_y_tich",
-    "name": "Y Tịch",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Tăng sát thương duy trì và hiệu quả chữa",
-    "inherit_tactic": "Thời Cơ Chiến Thắng",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK15-Vân Khởi Long Tương"
-  },
-  {
-    "id": "quan_dieu_thuyen",
-    "name": "Điêu Thuyền",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Điêu Thuyền",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_diem_vi",
-    "name": "Điểm Vi",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Điểm Vi",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "quan_doa_tu_dai_vuong",
-    "name": "Đóa Tư Đại Vương",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Thi triển trạng thái kịch độc",
-    "inherit_tactic": "Thời Cơ Chiến Thắng",
-    "role": [
-      "team Kỵ Quần"
-    ],
-    "season": "PK15-Vân Khởi Long Tương"
-  },
-  {
-    "id": "quan_dong_bach",
-    "name": "Đổng Bạch",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Có thể gây ra trạng thái Phản Kích và Cấp Cứu",
-    "inherit_tactic": "Ích Kì Kim Cổ",
-    "role": [
-      "team phản kích, kế thừa chiến pháp"
-    ],
-    "season": "PK10-Trận Quan Độ"
-  },
-  {
-    "id": "quan_dong_trac",
-    "name": "Đổng Trác",
-    "faction": "Quần",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Đổng Trác",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_bang_thong",
-    "name": "Bàng Thống",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Bàng Thống",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_gia_cat_luong",
-    "name": "Gia Cát Lượng",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Gia Cát Lượng",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_hoang_nguyet_anh",
-    "name": "Hoàng Nguyệt Anh",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Hoàng Nguyệt Anh",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_khuong_duy",
-    "name": "Khương Duy",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây sát thương và giảm thuộc tính",
-    "inherit_tactic": "Hình Cơ Quân Lược",
-    "role": [
-      "team Cung Thục"
-    ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
-  },
-  {
-    "id": "thuc_luu_bi",
-    "name": "Lưu Bị",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Lưu Bị",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_ma_sieu",
-    "name": "Mã Siêu",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Mã Siêu",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_ma_dai",
-    "name": "Mã Đại",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Mã Đại",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_nghiem_nhan",
-    "name": "Nghiêm Nhan",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Nhận quan sát kỹ và có thể khiến Chủ tướng Kế tận",
-    "inherit_tactic": "Nhất Lực Cự Thủ",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK 4-Quần Hùng Chiếm Giữ"
-  },
-  {
-    "id": "thuc_nguy_dien",
-    "name": "Ngụy Diên",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Giảm chuẩn bị hiệp và tăng sát thương chiến pháp chủ động",
-    "inherit_tactic": "Uy Mưu Vô Địch",
-    "role": [
-      "team Khiên Thục"
-    ],
-    "season": "PK9-Bắc Định Trung Nguyên"
-  },
-  {
-    "id": "thuc_phap_chinh",
-    "name": "Pháp Chính",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Pháp Chính",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_quan_ngan_binh",
-    "name": "Quan Ngân Bình",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây ra sát thương binh đao và có tỷ lệ gây ra khống chế",
-    "inherit_tactic": "Cơ Hình Trận",
-    "role": [
-      "team Thương Thục"
-    ],
-    "season": "PK9-Bắc Định Trung Nguyên"
-  },
-  {
-    "id": "thuc_quan_vu",
-    "name": "Quan Vũ",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Quan Vũ",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_sp_gia_cat_luong",
-    "name": "SP Gia Cát Lượng",
-    "faction": "Thục",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Tăng xác suất phát động chiến pháp chủ động tự mang cho 1 tướng bên quân ta",
-    "inherit_tactic": "Lửa Đuổi Gió Bay",
-    "role": [
-      "team Thương/Cung Thục"
-    ],
-    "season": "PK6-Đại Chiến Xích Bích"
-  },
-  {
-    "id": "thuc_sp_hoang_nguyet_anh",
-    "name": "SP Hoàng Nguyệt Anh",
-    "faction": "Thục",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Sát thương bản thân phải chịu giảm và tạo ra trị liệu",
-    "inherit_tactic": "Công Bất Đường Quyên",
-    "role": [
-      "Chủ lực / Hỗ trợ chiến thuật"
-    ],
-    "season": "PK20-Khói Lửa Loạn Thế"
-  },
-  {
-    "id": "thuc_sp_ma_sieu",
-    "name": "SP Mã Siêu",
-    "faction": "Thục",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Nhận Nhìn Thấu và phát động thêm tấn công thường",
-    "inherit_tactic": "Vạn Quân Đoạt Sư",
-    "role": [
-      "team Thương"
-    ],
-    "season": "PK18-Trận Đồng Quan"
-  },
-  {
-    "id": "thuc_sp_phap_chinh",
-    "name": "SP Pháp Chính",
-    "faction": "Thục",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của SP Pháp Chính",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_sp_quan_vu",
-    "name": "SP Quan Vũ",
-    "faction": "Thục",
-    "cost": 7,
-    "troop": {
-      "Kỵ": "S",
-      "Khiên": "A",
-      "Cung": "S",
-      "Thương": "S",
-      "Khí": "A"
-    },
-    "inherent_skill": "Gây ra trạng thái Thủy Công và hiệu quả đính kèm",
-    "inherit_tactic": "Trung Dũng Nghĩa Liệt",
-    "role": [
-      "team Thương"
-    ],
-    "season": "PK14-Trận Tương Phàn"
-  },
-  {
-    "id": "thuc_trieu_van",
-    "name": "Triệu Vân",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Triệu Vân",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_truong_phi",
-    "name": "Trương Phi",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Trương Phi",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_truong_tinh_thai",
-    "name": "Trương Tinh Thái",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "A",
-      "Khiên": "A",
-      "Cung": "A",
-      "Thương": "A",
-      "Khí": "B"
-    },
-    "inherent_skill": "Kỹ năng riêng của Trương Tinh Thái",
-    "role": [
-      "Tướng chủ lực / Hỗ trợ trong Meta"
-    ],
-    "season": "PK"
-  },
-  {
-    "id": "thuc_hoang_trung",
-    "name": "Hoàng Trung",
-    "faction": "Thục",
-    "cost": 6,
-    "troop": {
-      "Kỵ": "B",
-      "Khiên": "S",
-      "Cung": "S",
-      "Thương": "A",
-      "Khí": "C"
-    },
-    "inherent_skill": "Bách Bộ Xuyên Dương",
-    "role": [
-      "Sát thương vật lý bạo kích",
-      "Cung thủ chủ lực"
-    ],
-    "season": "PK"
+    "season": "PK20-Khói Lửa Loạn Thế",
+    "note": ""
   },
   {
     "id": "quan_manh_hoach",
@@ -1886,56 +1318,547 @@
     "faction": "Quần",
     "cost": 7,
     "troop": {
-      "Kỵ": "A",
-      "Khiên": "S",
-      "Cung": "C",
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "B",
       "Thương": "A",
       "Khí": "C"
     },
-    "inherent_skill": "Nam Man Cự Thú",
     "role": [
-      "Tăng sát thương binh đao",
-      "Đội hình Nam Man"
-    ],
-    "season": "PK"
+      "Tấn công toàn thể",
+      "Tăng sát thương đội"
+    ]
   },
   {
-    "id": "ngo_dai_kieu",
-    "name": "Đại Kiều",
-    "faction": "Ngô",
+    "id": "quan_moc_loc",
+    "name": "Mộc Lộc Đại Vương",
+    "faction": "Quần",
     "cost": 5,
     "troop": {
-      "Kỵ": "B",
-      "Khiên": "B",
-      "Cung": "A",
-      "Thương": "C",
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "C",
+      "Thương": "B",
       "Khí": "C"
     },
-    "inherent_skill": "Quốc Sắc",
     "role": [
-      "Hồi phục trị liệu",
-      "Mị lực hỗ trợ"
-    ],
-    "season": "PK"
+      "Tượng Binh",
+      "Trì hoãn sát thương"
+    ]
   },
   {
-    "id": "quan_dien_phong",
-    "name": "Điền Phong",
+    "id": "quan_ngot_dot_cot",
+    "name": "Ngột Đột Cốt",
     "faction": "Quần",
     "cost": 6,
     "troop": {
-      "Kỵ": "C",
-      "Khiên": "S",
+      "Ky": "A",
+      "Khien": "A",
       "Cung": "A",
-      "Thương": "C",
-      "Khí": "S"
+      "Thuong": "A",
+      "Khi": "B"
     },
-    "inherent_skill": "Cơ Trí Trầm Ổn",
+    "inherent_skill": "Kỹ năng tự mang của Ngột Đột Cốt",
+    "inherit_tactic": "",
     "role": [
-      "Khống chế hỗn loạn",
-      "Hỗ trợ mưu lược"
+      "Tướng chủ lực / Hỗ trợ trong Meta"
     ],
-    "season": "PK"
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_nhan_luong",
+    "name": "Nhan Lương",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "A",
+      "Cung": "C",
+      "Thương": "S",
+      "Khí": "C"
+    },
+    "role": [
+      "Khống chế",
+      "Sát thương vật lý"
+    ]
+  },
+  {
+    "id": "quan_quan_binh",
+    "name": "Quan Bình",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Quan Bình",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_chu_tuan",
+    "name": "SP Chu Tuấn",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Giảm đi sát thương quân địch và gây ra Đào Phản",
+    "inherit_tactic": "Mau Giành Lợi Thế",
+    "role": [
+      "team Cung Quần"
+    ],
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_hoang_pho_tung",
+    "name": "SP Hoàng Phổ Tung",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Thi triển giảm thương và có sác suất tăng buff",
+    "inherit_tactic": "Chỉnh Đốn Quân Ngũ",
+    "role": [
+      "team Thương"
+    ],
+    "season": "PK13-Chinh Chiến Bốn Mùa",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_hoang_trung",
+    "name": "SP Hoàng Trung",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Hoàng Trung",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_lo_truc",
+    "name": "SP Lô Trực",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Lô Trực",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_truong_bao",
+    "name": "SP Trương Bảo",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Ảnh hưởng thuộc tính và kèm theo hiệu quả bất lợi",
+    "inherit_tactic": "Gió Táp Mưa Sa",
+    "role": [
+      "team Khiên Giác"
+    ],
+    "season": "PK13-Chinh Chiến Bốn Mùa",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_truong_luong",
+    "name": "SP Trương Lương",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tăng thống soái hoặc giảm sát thương phịu phải của CP chủ động và đột kích",
+    "inherit_tactic": "Gió Táp Mưa Sa",
+    "role": [
+      "team Khiên Giác"
+    ],
+    "season": "PK13-Chinh Chiến Bốn Mùa",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_vien_thieu",
+    "name": "SP Viên Thiẹu",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Viên Thiẹu",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_vien_thieu",
+    "name": "SP Viên Thiệu",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây sát thương binh đao và Giao Binh khí đồng thời tặng sát thương phải chịu",
+    "inherit_tactic": "Cơ Hình Trận",
+    "role": [
+      "team Cung Quần"
+    ],
+    "season": "PK9-Bắc Định Trung Nguyên",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_dieu_thuyen",
+    "name": "SP Điêu Thuyền",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Điêu Thuyền",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_dong_trac",
+    "name": "SP Đổng Trác",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Đổng Trác",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_sp_dong_trach",
+    "name": "SP Đổng Trách",
+    "faction": "Quần",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Đổng Trách",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_thai_ung",
+    "name": "Thái Ung",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tăng sản lượng Gỗ",
+    "inherit_tactic": "Kinh Thuật Chính Yếu",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK9-Bắc Định Trung Nguyên",
+    "note": ""
+  },
+  {
+    "id": "quan_thai_van_co",
+    "name": "Thái Văn Cơ",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Thái Văn Cơ",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_thu_thu",
+    "name": "Thư Thụ",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tăng ra số hiệp quân đồng minh gây ra trạng thái tiêu cực",
+    "inherit_tactic": "Uy Mưu Vô Địch",
+    "role": [
+      "team Cung/Khiên Quần"
+    ],
+    "season": "PK9-Bắc Định Trung Nguyên",
+    "note": ""
+  },
+  {
+    "id": "quan_tieu_chi",
+    "name": "Tiêu Chỉ",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Tiêu Chỉ",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_trau_thi",
+    "name": "Trâu Thị",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Lấy trộm thuộc tính của quân địch",
+    "inherit_tactic": "Tiên Thành Kỳ Lự",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK12-Anh Hùng Tập Kết",
+    "note": ""
+  },
+  {
+    "id": "quan_truong_bao",
+    "name": "Trương Bao",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trương Bao",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_truong_giac",
+    "name": "Trương Giác",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trương Giác",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_truong_nhuong",
+    "name": "Trương Nhượng",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây ra sát thương Mưu Lược",
+    "inherit_tactic": "Dốc Sức Tính Kế",
+    "role": [
+      "team giảm thuộc tính"
+    ],
+    "season": "PK12-Anh Hùng Tập Kết",
+    "note": ""
+  },
+  {
+    "id": "quan_tran_cung",
+    "name": "Trần Cung",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trần Cung",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_tran_duc",
+    "name": "Trần Dực",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trần Dực",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_to_tin",
+    "name": "Tô Tín",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Tô Tín",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_ta_tu",
+    "name": "Tả Từ",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "C",
+      "Khiên": "C",
+      "Cung": "C",
+      "Thương": "C",
+      "Khí": "C"
+    },
+    "role": [
+      "Né đòn toàn đội",
+      "Hồi phục"
+    ]
   },
   {
     "id": "quan_vien_thieu",
@@ -1947,13 +1870,670 @@
       "Khiên": "A",
       "Cung": "S",
       "Thương": "B",
-      "Khí": "S"
+      "Khí": "A"
     },
-    "inherent_skill": "Lũy Thạch Nghênh Địch",
     "role": [
-      "Tăng giáp toàn đội",
+      "Tăng giáp cả đội",
       "Sát thương đốt cháy"
+    ]
+  },
+  {
+    "id": "quan_vien_thuat",
+    "name": "Viên Thuật",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Có được Ngọc Tỉ, tăng Hội tâm và tỷ lệ Kỳ mưu",
+    "inherit_tactic": "Hình Cơ Quân Lược",
+    "role": [
+      "team Cung"
     ],
-    "season": "PK"
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
+  },
+  {
+    "id": "quan_vu_cat",
+    "name": "Vu Cát",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "C",
+      "Khiên": "C",
+      "Cung": "B",
+      "Thương": "C",
+      "Khí": "C"
+    },
+    "role": [
+      "Sát thương nước độc 5 hiệp"
+    ]
+  },
+  {
+    "id": "quan_van_su",
+    "name": "Văn Sú",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "B",
+      "Cung": "B",
+      "Thương": "S",
+      "Khí": "C"
+    },
+    "role": [
+      "Sát thương vật lý",
+      "Giảm giáp đối phương"
+    ]
+  },
+  {
+    "id": "quan_vuong_di",
+    "name": "Vương Dị",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Vương Dị",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_y_tich",
+    "name": "Y Tịch",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tăng sát thương duy trì và hiệu quả chữa",
+    "inherit_tactic": "Thời Cơ Chiến Thắng",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK15-Vân Khởi Long Tương",
+    "note": ""
+  },
+  {
+    "id": "quan_dieu_thuyen",
+    "name": "Điêu Thuyền",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Điêu Thuyền",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "quan_dien_phong",
+    "name": "Điền Phong",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "C",
+      "Khiên": "S",
+      "Cung": "A",
+      "Thương": "C",
+      "Khí": "A"
+    },
+    "role": [
+      "Hỗn loạn",
+      "Phòng ngự"
+    ]
+  },
+  {
+    "id": "quan_doa_tu",
+    "name": "Đóa Tư Đại Vương",
+    "faction": "Quần",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "A",
+      "Khiên": "A",
+      "Cung": "S",
+      "Thương": "B",
+      "Khí": "C"
+    },
+    "role": [
+      "Độc tuyền sát thương mưu lược"
+    ]
+  },
+  {
+    "id": "quan_dong_bach",
+    "name": "Đổng Bạch",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Có thể gây ra trạng thái Phản Kích và Cấp Cứu",
+    "inherit_tactic": "Ích Kì Kim Cổ",
+    "role": [
+      "team phản kích, kế thừa chiến pháp"
+    ],
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
+  },
+  {
+    "id": "quan_dong_trac",
+    "name": "Đổng Trác",
+    "faction": "Quần",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Đổng Trác",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_bang_thong",
+    "name": "Bàng Thống",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Bàng Thống",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_gia_cat_luong",
+    "name": "Gia Cát Lượng",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Gia Cát Lượng",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_hoang_nguyet_anh",
+    "name": "Hoàng Nguyệt Anh",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Hoàng Nguyệt Anh",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_hoang_trung",
+    "name": "Hoàng Trung",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Kỵ": "B",
+      "Khiên": "A",
+      "Cung": "S",
+      "Thương": "A",
+      "Khí": "C"
+    },
+    "role": [
+      "Tăng tỷ lệ bạo kích 25%",
+      "Sát thương diện rộng"
+    ]
+  },
+  {
+    "id": "thuc_khuong_duy",
+    "name": "Khương Duy",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây sát thương và giảm thuộc tính",
+    "inherit_tactic": "Hình Cơ Quân Lược",
+    "role": [
+      "team Cung Thục"
+    ],
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
+  },
+  {
+    "id": "thuc_luu_bi",
+    "name": "Lưu Bị",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Lưu Bị",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_ma_sieu",
+    "name": "Mã Siêu",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Mã Siêu",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_ma_dai",
+    "name": "Mã Đại",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Mã Đại",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_nghiem_nhan",
+    "name": "Nghiêm Nhan",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Nhận quan sát kỹ và có thể khiến Chủ tướng Kế tận",
+    "inherit_tactic": "Nhất Lực Cự Thủ",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK 4-Quần Hùng Chiếm Giữ",
+    "note": ""
+  },
+  {
+    "id": "thuc_nguy_dien",
+    "name": "Ngụy Diên",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Giảm chuẩn bị hiệp và tăng sát thương chiến pháp chủ động",
+    "inherit_tactic": "Uy Mưu Vô Địch",
+    "role": [
+      "team Khiên Thục"
+    ],
+    "season": "PK9-Bắc Định Trung Nguyên",
+    "note": ""
+  },
+  {
+    "id": "thuc_phap_chinh",
+    "name": "Pháp Chính",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Pháp Chính",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_quan_hung",
+    "name": "Quan Hưng",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Nhận trạng thái Làm Phản và gây ra sát thương binh đao",
+    "inherit_tactic": "Nhanh Chân Tranh Đất",
+    "role": [
+      "team Thương Thục"
+    ],
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
+  },
+  {
+    "id": "thuc_quan_ngan_binh",
+    "name": "Quan Ngân Bình",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây ra sát thương binh đao và có tỷ lệ gây ra khống chế",
+    "inherit_tactic": "Cơ Hình Trận",
+    "role": [
+      "team Thương Thục"
+    ],
+    "season": "PK9-Bắc Định Trung Nguyên",
+    "note": ""
+  },
+  {
+    "id": "thuc_quan_vu",
+    "name": "Quan Vũ",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Quan Vũ",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_sp_gia_cat_luong",
+    "name": "SP Gia Cát Lượng",
+    "faction": "Thục",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Tăng xác suất phát động chiến pháp chủ động tự mang cho 1 tướng bên quân ta",
+    "inherit_tactic": "Lửa Đuổi Gió Bay",
+    "role": [
+      "team Thương/Cung Thục"
+    ],
+    "season": "PK6-Đại Chiến Xích Bích",
+    "note": ""
+  },
+  {
+    "id": "thuc_sp_hoang_nguyet_anh",
+    "name": "SP Hoàng Nguyệt Anh",
+    "faction": "Thục",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Sát thương bản thân phải chịu giảm và tạo ra trị liệu",
+    "inherit_tactic": "Công Bất Đường Quyên",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK20-Khói Lửa Loạn Thế",
+    "note": ""
+  },
+  {
+    "id": "thuc_sp_ma_sieu",
+    "name": "SP Mã Siêu",
+    "faction": "Thục",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Nhận Nhìn Thấu và phát động thêm tấn công thường",
+    "inherit_tactic": "Vạn Quân Đoạt Sư",
+    "role": [
+      "team Thương"
+    ],
+    "season": "PK18-Trận Đồng Quan",
+    "note": ""
+  },
+  {
+    "id": "thuc_sp_phap_chinh",
+    "name": "SP Pháp Chính",
+    "faction": "Thục",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của SP Pháp Chính",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_sp_quan_vu",
+    "name": "SP Quan Vũ",
+    "faction": "Thục",
+    "cost": 7,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Gây ra trạng thái Thủy Công và hiệu quả đính kèm",
+    "inherit_tactic": "Trung Dũng Nghĩa Liệt",
+    "role": [
+      "team Thương"
+    ],
+    "season": "PK14-Trận Tương Phàn",
+    "note": ""
+  },
+  {
+    "id": "thuc_trieu_van",
+    "name": "Triệu Vân",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Triệu Vân",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_truong_bao",
+    "name": "Trương Bào",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Nhận trạng thái Chống Đỡ và gây ra sát thương binh đao",
+    "inherit_tactic": "Nhanh Chân Tranh Đất",
+    "role": [
+      "team Thương Thục"
+    ],
+    "season": "PK10-Trận Quan Độ",
+    "note": ""
+  },
+  {
+    "id": "thuc_truong_phi",
+    "name": "Trương Phi",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trương Phi",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_truong_tinh_thai",
+    "name": "Trương Tinh Thái",
+    "faction": "Thục",
+    "cost": 6,
+    "troop": {
+      "Ky": "A",
+      "Khien": "A",
+      "Cung": "A",
+      "Thuong": "A",
+      "Khi": "B"
+    },
+    "inherent_skill": "Kỹ năng tự mang của Trương Tinh Thái",
+    "inherit_tactic": "",
+    "role": [
+      "Tướng chủ lực / Hỗ trợ trong Meta"
+    ],
+    "season": "PK",
+    "note": ""
+  },
+  {
+    "id": "thuc_tu_thu",
+    "name": "Từ Thứ",
+    "faction": "Thục",
+    "cost": 5,
+    "troop": {
+      "Kỵ": "S",
+      "Khiên": "B",
+      "Cung": "A",
+      "Thương": "B",
+      "Khí": "C"
+    },
+    "role": [
+      "Đốt cháy, nhiễm độc, hỗn loạn"
+    ]
   }
 ]

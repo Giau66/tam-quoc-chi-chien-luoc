@@ -1,0 +1,506 @@
+[
+  {
+    "id": "team_do_uy_01",
+    "troop": "Thương",
+    "tier": "T1",
+    "note": "Chạm: đội hình tốc độ chậm.\nTránh: Hoàng Mã Thương (SP Hoàng Phổ Tung) có độ tiến bậc cao, đội hình có hiệu quả Giao Binh Khí mạnh, như đội Nhạn Hồng Thương hoặc Hổ Thần Cung mang kỹ năng [Thịnh Khí Linh Địch]",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Mã Siêu",
+        "raw_name": "SP Mã Siêu",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Tấn Công Điểm Yếu",
+          "Tốc Chiến",
+          "Khép Hờ"
+        ]
+      },
+      {
+        "name": "Chu Thiệu",
+        "raw_name": "Chu Thiệu",
+        "cp1": "Vạn Quân Đoạt Sư",
+        "cp2": "Kế Hay Mưu Giỏi",
+        "binh_thu": [
+          "Yêu Lính Thương Dân",
+          "Thế Phòng Thủ",
+          "Phòng Bị"
+        ]
+      },
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du",
+        "cp1": "Giải Phiền Vệ",
+        "cp2": "Lâm Nguy Cứu Chủ/\nCắt Xương Trị Độc",
+        "binh_thu": [
+          "Yêu Lính Thương Dân",
+          "Thế Phòng Thủ",
+          "Phòng Bị"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_02",
+    "troop": "Kỵ",
+    "tier": "T1",
+    "note": "Thiên Phú Chọn [Khách Quý Chật Nhà]. \nChạm: Khiên Thái Úy, Khiên Pháp Quan, Khiên Tam Tiên\nTránh: Quần Cung, Nhận Hồng Thương",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Dương Kỳ",
+        "raw_name": "Dương Kỳ",
+        "cp1": "Dốc Sức Tính Kế",
+        "cp2": "Cắt Xương Trị Độc/\nAnh Thành Tự Thủ",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Giả Hủ",
+        "raw_name": "Giả Hủ",
+        "cp1": "Nhanh Trí Động Não",
+        "cp2": "Thiêu Đốt Doanh Lũy",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Tuân Du",
+        "raw_name": "Tuân Du",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Thượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_03",
+    "troop": "Kỵ",
+    "tier": "T1",
+    "note": "Chạm: đội hình chậm như Trương Giác Khiên\nTránh: Hoàng Mã Thương full tiến bậc, cũng như Ngô Kỵ, Quyền Kỵ, Lữ Quách Kiều có sức bùng nổ cao",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Tuân Úc",
+        "raw_name": "SP Tuân Úc",
+        "cp1": "Dốc Sức Tính Kế",
+        "cp2": "Cắt Xương Trị Độc",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Quách Gia",
+        "raw_name": "SP Quách Gia",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Đương Phong Thôi Quyết",
+        "binh_thu": [
+          "Kỳ Chính Tương Sinh",
+          "Giấu Đao",
+          "Văn Thao"
+        ]
+      },
+      {
+        "name": "Thẩm Hằng",
+        "raw_name": "Thẩm Hằng",
+        "cp1": "Nhanh Trí Động Não",
+        "cp2": "Thượng Binh Phạt Mưu",
+        "binh_thu": [
+          "Binh Hành Quỷ Đạo/\nNhìn Rõ Mồn Một",
+          "Tinh Chuẩn/\nRèn Luyện",
+          "Thiện Chiến/\nDẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_04",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Chạm: Hầu hết các Đội quân binh đao (bao gồm Pháp Quan Thuẫn, Ngô Nữ Cung, Bắc Phạt Thương)\nTránh: Các đội hình có Trí Lực cao và khả năng bùng nổ mạnh, như Thục Trí Cung, Ngũ Mưu Kỵ, Trương Giác Khiên",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Lô Trực",
+        "raw_name": "SP Lô Trực",
+        "cp1": "Cương Nhu Kết Hợp",
+        "cp2": "Nhạn Hành Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Chiến Đấu Trường Kỳ",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Tiêu Chỉ",
+        "raw_name": "Tiêu Chỉ",
+        "cp1": "Tử Sĩ Tiên Phong",
+        "cp2": "Nhân Lợi Chế Quyền",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Chiến Đấu Trường Kỳ",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "SP Điêu Thuyền",
+        "raw_name": "SP Điêu Thuyền",
+        "cp1": "Thâm Tàng Nhược Hư/\nHợp Quân Tụ Chúng",
+        "cp2": "Đồng Lòng Hợp Sức",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Chiến Đấu Trường Kỳ",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_05",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Thiên Phú Chọn  [Trăm Phát Trăm Trúng] (nâng độ ăn ý lính Cung lên S), [Khách Quý Chật Nhà] (kích hoạt Duyên Phận Thục Trí).\nChạm:đội tốc công tần suất cao như Ngô Kỵ, Quyền Kỵ, đội khắc chế Binh Chủng như Pháp Quan Khiên",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Gia Cát Lượng",
+        "raw_name": "Gia Cát Lượng",
+        "cp1": "Thuyền Cỏ Mượn Tên",
+        "cp2": "Nhạn Hình Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Chu Thiệu",
+        "raw_name": "Chu Thiệu",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thừa Địch Bất Ngu/\nĐoạt Hồn Hiệp Phách",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Sắc Bén",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Bàng Thống",
+        "raw_name": "Bàng Thống",
+        "cp1": "Thái Bình Đạo Pháp",
+        "cp2": "Sĩ Biệt Tam Nhật/\nThiêu Đốt Doanh Lũy",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Quy Thuận",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_06",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Chạm: Ngũ Mưu Kỵ, Thục Trí Cung, Cung Rào Cản Ngựa\nTránh: đội hình có ít đòn Tấn công thường, không bị ảnh hưởng bởi Chế Giễu, có nhiều lớp Chống Đỡ",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Hoàng Phủ Hoành",
+        "raw_name": "Hoàng Phủ Hoành (Cung cấp S)",
+        "cp1": "Tinh·Ngư Lân Trận",
+        "cp2": "Lâm Nguy Cứu Chủ",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      },
+      {
+        "name": "Tôn Thượng Hương",
+        "raw_name": "Tôn Thượng Hương",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Phá Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Thắng mà càng mạnh",
+          "Thắng Chiến",
+          "Tàng Đao"
+        ]
+      },
+      {
+        "name": "Đại Kiều",
+        "raw_name": "CO Đại Kiều",
+        "cp1": "Mê Hoặc",
+        "cp2": "Thuyền Cỏ Mượn Tên",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_07",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Chạm: Hoàng Mã Thương, Khảng Khải Cung",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Chu Du",
+        "raw_name": "Chu Du",
+        "cp1": "Đoạt Hồn Hiệp Phách",
+        "cp2": "Phong Trợ Hỏa Thế",
+        "binh_thu": [
+          "Thắng Càng Mạnh",
+          "Thắng Trận",
+          "Văn Thao"
+        ]
+      },
+      {
+        "name": "Lữ Mông",
+        "raw_name": "Lữ Mông",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Toàn Quân Đồng Lòng",
+        "binh_thu": [
+          "Kỳ Chính Tương Sinh",
+          "Văn Thao",
+          "Giấu Đao"
+        ]
+      },
+      {
+        "name": "Tô Tín",
+        "raw_name": "Tô Tín",
+        "cp1": "Nhạn Hành Trận",
+        "cp2": "Thuyền Cỏ Mượn Tên",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_08",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Chạm: đội hình dựa vào thuộc tính để chiến đấu như Hoàng Mã Thương, Ngũ Mưu Thần\nTránh: Pháp Quan Khiên, Ngô Kỵ có sức bùng nổ cao",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Hứa Du",
+        "raw_name": "Hứa Du",
+        "cp1": "Quân Cẩm Phàm",
+        "cp2": "Lâm Nguy Cứu Chủ",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Lữ Bố",
+        "raw_name": "Lữ Bố",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Đánh Bất Ngờ Thắng",
+          "Tinh Chuẩn",
+          "Thiện Chiến/Trì Trọng"
+        ]
+      },
+      {
+        "name": "Liễu Tẩm",
+        "raw_name": "Liễu Tẩm",
+        "cp1": "Nhạn Hành Trận",
+        "cp2": "Thiêu Đốt Doanh Lũy/\nThuyền Cỏ Mượn Tên",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_09",
+    "troop": "Cung",
+    "tier": "T1",
+    "note": "Chạm: Hoàng Mã Thương, Kỳ Lân Cung, Ngũ Mưu Kỵ\nTránh: đội hình lính Khiên phổ biến như Pháp Quan Khiên",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Cam Ninh",
+        "raw_name": "Cam Ninh",
+        "cp1": "Thuyền Cỏ Mượn Tên",
+        "cp2": "Quân Cẩm Phàm",
+        "binh_thu": [
+          "Thích Làm Việc Thiện",
+          "Chiến Đấu Trường Kỳ",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Thái Sử Từ",
+        "raw_name": "Thái Sử Từ",
+        "cp1": "Đương Phong Thôi Quyết",
+        "cp2": "Thôi Phong Đoạn Nhẫn",
+        "binh_thu": [
+          "Thắng Càng Mạnh",
+          "Võ Lược",
+          "Cầm Binh Khí"
+        ]
+      },
+      {
+        "name": "Liễu Tẩm",
+        "raw_name": "Liễu Tẩm",
+        "cp1": "Lâm Nguy Cứu Chủ",
+        "cp2": "Nhạn Hành Trận",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_10",
+    "troop": "Khiên",
+    "tier": "T1",
+    "note": "Chạm: đội binh đao như Quần Cung, Hổ Thần Cung, Rào Cản Ngựa Cung, Khảng Khải Cung\nTránh:Thái Úy Khiên có hiệu ứng Đốt Cháy, Đô Đốc Cung nước Ngô",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Chu Thiệu",
+        "raw_name": "Chu Thiệu",
+        "cp1": "Võ Phong Trận",
+        "cp2": "Lính Giáp Mây",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Trương Giác",
+        "raw_name": "Trương Giác",
+        "cp1": "Thái Bình Đạo Pháp",
+        "cp2": "Sĩ Biệt Tam Nhật",
+        "binh_thu": [
+          "Tam Quân Chi Chúng/\nLấy Võ Dẹp Loạn",
+          "Quy Thuận/\nQuỷ Mưu",
+          "Chiến Đấu Trường Kỳ/\nTướng Uy"
+        ]
+      },
+      {
+        "name": "Tả Từ",
+        "raw_name": "Tả Từ",
+        "cp1": "Dốc Sức Tính Kế",
+        "cp2": "Cắt Xương Trị Độc",
+        "binh_thu": [
+          "Tấn Công Điểm Yếu",
+          "Tốc Chiến",
+          "Khép Hờ"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_11",
+    "troop": "Khiên",
+    "tier": "T1",
+    "note": "Chạm: hầu hết đội sát thương binh đao\nTránh: đội hình như Quyền Kỵ, Hoàng Mã Thương mang [Đương Phong Thôi Quyết], đội đột kích bộc phát như Ngô Kỵ, Liêu Cơ Kỵ",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "SP Quan Vũ",
+        "raw_name": "SP Quan Vũ (Khiên S)",
+        "cp1": "Lấy Ít Đánh Nhiều",
+        "cp2": "Kích Kỳ Nọa Quy/\nGió Táp Mưa Sa",
+        "binh_thu": [
+          "Chia Nhỏ Đánh Nhanh",
+          "Bách Chiến",
+          "Khép Hờ"
+        ]
+      },
+      {
+        "name": "SP Pháp Chính",
+        "raw_name": "SP Pháp Chính",
+        "cp1": "Dưỡng Sức Đợi Chiến",
+        "cp2": "Không Đánh Mà Thắng",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      },
+      {
+        "name": "Hoàng Phủ Hoành",
+        "raw_name": "Hoàng Phủ Hoành",
+        "cp1": "Mê Hoặc",
+        "cp2": "Ngư Lân Trận/\nLính Giáp Mây",
+        "binh_thu": [
+          "Tam Quân Chi Chúng",
+          "Dẫn Quân",
+          "Rèn Luyện"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "team_do_uy_12",
+    "troop": "Khiên",
+    "tier": "T1",
+    "note": "Chạm: [Ôn Hầu Cung] [Khảng Khái Cung]\nTránh: đội hình sát thương mưu lược có sức duy trì cao",
+    "season": "PK",
+    "generals": [
+      {
+        "name": "Quan Vũ",
+        "raw_name": "Quan Vũ (Khiên S)",
+        "cp1": "Cưỡi Ngựa Nghìn Dặm",
+        "cp2": "Tuyệt Kỳ Cấp Đạo",
+        "binh_thu": [
+          "Lấy Võ Dẹp Loạn",
+          "Quỷ Mưu",
+          "Tướng Uy"
+        ]
+      },
+      {
+        "name": "Trần Dực",
+        "raw_name": "Trần Dực",
+        "cp1": "Kế Hay Mưu Giỏi",
+        "cp2": "Hãm Trận Doanh",
+        "binh_thu": [
+          "Hành Động Theo Thời",
+          "Rèn Luyện",
+          "Dẫn Quân"
+        ]
+      },
+      {
+        "name": "Trương Phi",
+        "raw_name": "Trương Phi",
+        "cp1": "Thịnh Khí Linh Địch",
+        "cp2": "Hoành Tảo Thiên Quân",
+        "binh_thu": [
+          "Dĩ Trực Báo Oán",
+          "Tinh Chuẩn",
+          "Thiện Chiến"
+        ]
+      }
+    ]
+  }
+]

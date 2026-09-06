@@ -222,6 +222,10 @@ TACTIC_SUBSTITUTE_GUIDE = {
 GEN_ALIASES = {
     "lục tốṇ": "Lục Tốn",
     "giả hư": "Giả Hủ",
+    "gia hu": "Giả Hủ",
+    "giả hu": "Giả Hủ",
+    "gia ho": "Giả Hủ",
+    "giả hủ": "Giả Hủ",
     "thào tháo": "Tào Tháo",
     "lăm thống": "Lăng Thống",
     "sp quãn vũ": "SP Quan Vũ",
@@ -238,14 +242,29 @@ GEN_ALIASES = {
     "trương tinh thái": "Trương Tinh Thái",
     "co đại kiều": "Đại Kiều",
     "co tiểu kiều": "Tiểu Kiều",
-    "lữ linh khởi": "Lữ Linh Ỷ",
+    "lữ linh khởi": "Lữ Linh Khởi",
+    "lữ linh ỷ": "Lữ Linh Khởi",
+    "lu linh y": "Lữ Linh Khởi",
+    "lu linh khoi": "Lữ Linh Khởi",
     "thái sử từ": "Thái Sử Từ",
     "thai su tu": "Thái Sử Từ",
+    "thái sừ tử": "Thái Sử Từ",
     "chu thái": "Chu Thái",
     "chu thai": "Chu Thái",
     "cam ninh": "Cam Ninh",
     "tôn thượng hương": "Tôn Thượng Hương",
-    "ton thuong huong": "Tôn Thượng Hương"
+    "ton thuong huong": "Tôn Thượng Hương",
+    "tôn thương hương": "Tôn Thượng Hương",
+    "tà tử": "Tả Từ",
+    "ta tu": "Tả Từ",
+    "tả từ": "Tả Từ",
+    "điểm vi": "Điển Vi",
+    "điển vi": "Điển Vi",
+    "dien vi": "Điển Vi",
+    "vũ cát": "Vu Cát",
+    "vu cát": "Vu Cát",
+    "vu cat": "Vu Cát",
+    "sp viên thiẹu": "SP Viên Thiệu"
 }
 
 # ─────────────────────────────────────────────────────────────
@@ -389,23 +408,56 @@ class TeamRecommender:
         return name_clean
 
     def normalize_owned_generals(self, owned_generals: List[str]) -> Set[str]:
-        """Convert list of names or IDs to set of canonical general IDs."""
+        """Convert list of names or IDs to set of canonical general IDs and name variations."""
         normalized = set()
+        CROSS_ID_MAP = {
+            "Giả Hủ": ["nguy_gia_hu", "quan_gia_hu"],
+            "Lỗ Túc": ["ngo_lo_tuc", "quan_lo_tuc"],
+            "Tả Từ": ["quan_ta_tu"],
+            "Thái Sử Từ": ["ngo_thai_su_tu", "quan_thai_su_tu"],
+            "Tôn Thượng Hương": ["ngo_ton_thuong_huong", "quan_ton_thuong_huong"],
+            "Điển Vi": ["nguy_dien_vi", "quan_diem_vi"],
+            "Từ Hoảng": ["nguy_tu_hoang", "quan_tu_hoang"],
+            "Nhạc Tiến": ["nguy_nhac_tien", "quan_nhac_tien"],
+            "Lữ Linh Khởi": ["quan_lu_linh_khoi", "quan_lu_linh_y"],
+        }
         for item in owned_generals:
+            if not item:
+                continue
             item_clean = item.strip()
             item_lower = item_clean.lower()
             canon_name = self.canonical_general(item_clean)
-            
+            norm = remove_accents(item_clean)
+
+            # Always add raw, lower, norm, canon
+            normalized.add(item_clean)
+            normalized.add(item_lower)
+            normalized.add(norm)
+            if canon_name:
+                normalized.add(canon_name)
+                normalized.add(canon_name.lower())
+                normalized.add(remove_accents(canon_name))
+                if canon_name in CROSS_ID_MAP:
+                    normalized.update(CROSS_ID_MAP[canon_name])
+
             if item_clean in self.general_map:
                 normalized.add(item_clean)
+                gen_name = self.general_map[item_clean].get("name", "")
+                if gen_name:
+                    normalized.add(gen_name)
+                    normalized.add(gen_name.lower())
+                    if gen_name in CROSS_ID_MAP:
+                        normalized.update(CROSS_ID_MAP[gen_name])
             elif canon_name.lower() in self.general_name_map:
-                normalized.add(self.general_name_map[canon_name.lower()]["id"])
+                gid = self.general_name_map[canon_name.lower()]["id"]
+                normalized.add(gid)
             elif item_lower in self.general_name_map:
-                normalized.add(self.general_name_map[item_lower]["id"])
-            else:
-                norm = remove_accents(item_clean)
-                if norm in self.general_norm_map:
-                    normalized.add(self.general_norm_map[norm]["id"])
+                gid = self.general_name_map[item_lower]["id"]
+                normalized.add(gid)
+            elif norm in self.general_norm_map:
+                gid = self.general_norm_map[norm]["id"]
+                normalized.add(gid)
+
         return normalized
 
     def normalize_owned_tactics(self, owned_tactics: List[str]) -> Set[str]:
@@ -498,11 +550,19 @@ class TeamRecommender:
             pos = gen_spec["position"]
             bis_tactics = [self.canonical_tactic(b) for b in gen_spec.get("bis_tactics", [])]
 
-            # Check general ownership
+            # Check general ownership comprehensively
             active_gen = self.general_map.get(target_gen_id)
-            is_owned = False
+            target_canon = self.canonical_general(target_name)
+            target_norm = remove_accents(target_name)
+            target_lower = target_name.strip().lower()
 
-            if target_gen_id in owned_gen_ids:
+            is_owned = False
+            if (target_gen_id in owned_gen_ids or
+                target_name in owned_gen_ids or
+                target_canon in owned_gen_ids or
+                target_norm in owned_gen_ids or
+                target_lower in owned_gen_ids or
+                (active_gen and (active_gen.get("id") in owned_gen_ids or active_gen.get("name") in owned_gen_ids))):
                 is_owned = True
                 pure_owned_count += 1
                 used_generals.append(target_gen_id)
@@ -638,8 +698,8 @@ class TeamRecommender:
 
             eval_res = self.evaluate_team(team, owned_gen_ids, owned_tactic_names)
 
-            # FILTER: By default, ONLY recommend teams where user owns AT LEAST 2 generals!
-            if min_score > 15 and eval_res["owned_gen_count"] < 2:
+            # FILTER: Must own at least 1 general in the team to recommend
+            if eval_res["owned_gen_count"] < 1:
                 continue
 
             if eval_res["overall_score"] >= min_score:
@@ -742,7 +802,13 @@ class TeamRecommender:
                         "options": early_options,
                         "is_owned": early_owned
                     },
-                    "cp_lv20": lv20_tactics
+                    "tactics_before_lv20": {
+                        "name": cp_early_name,
+                        "options": early_options,
+                        "is_owned": early_owned
+                    },
+                    "cp_lv20": lv20_tactics,
+                    "tactics_after_lv20": lv20_tactics
                 })
 
             total_gens = len(team_gens)
@@ -767,6 +833,7 @@ class TeamRecommender:
                 "troop": st.get("troop"),
                 "troop_lv20": st.get("troop_lv20", st.get("troop")),
                 "note": st.get("note", ""),
+                "starter_note": st.get("note", ""),
                 "total_generals": total_gens,
                 "owned_generals_count": owned_count,
                 "gen_percentage": round(gen_pct),
