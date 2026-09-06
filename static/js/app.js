@@ -904,8 +904,17 @@ function renderTeamCard(evalRes) {
                 </div>
 
                 ${(slot.binh_thu && slot.binh_thu.length > 0) ? `
-                  <div class="slot-binh-thu" style="font-size: 0.76rem; color: #f3cf7a; margin-top: 0.45rem; padding: 2px 6px; background: rgba(212,175,55,0.08); border-radius: 4px; border: 1px dashed rgba(212,175,55,0.25);">
-                    📖 <strong>Binh thư:</strong> ${slot.binh_thu.join(' • ')}
+                  <div class="slot-binh-thu-box" style="margin-top: 0.6rem; padding: 6px 8px; background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.25); border-radius: 6px;">
+                    <div style="font-size: 0.72rem; color: #fbbf24; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                      <span>📜 BINH THƯ CHUẨN:</span>
+                    </div>
+                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                      ${slot.binh_thu.map((bt, btIdx) => `
+                        <span class="binh-thu-pill" style="font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; background: ${btIdx === 0 ? 'rgba(217, 119, 6, 0.25)' : 'rgba(255, 255, 255, 0.05)'}; color: ${btIdx === 0 ? '#fde68a' : '#cbd5e1'}; border: 1px solid ${btIdx === 0 ? 'rgba(245, 158, 11, 0.4)' : 'rgba(255, 255, 255, 0.1)'}; font-weight: ${btIdx === 0 ? '700' : '500'};">
+                          ${btIdx === 0 ? '★ ' : ''}${bt}
+                        </span>
+                      `).join('')}
+                    </div>
                   </div>
                 ` : ''}
               </div>
@@ -1043,7 +1052,10 @@ function copyTeamLineup(teamId) {
 
   (team.generals || []).forEach(g => {
     text += `${g.position}: ${g.name}\n`;
-    text += `  - Chiến pháp BIS: ${(g.bis_tactics || []).join(', ')}\n`;
+    text += `  - Chiến pháp: ${(g.bis_tactics || []).join(', ')}\n`;
+    if (g.binh_thu && g.binh_thu.length > 0) {
+      text += `  - Binh thư: ${g.binh_thu.join(' - ')}\n`;
+    }
     if (g.sub_tactics && g.sub_tactics.length > 0) {
       text += `  - Chiến pháp thay thế: ${g.sub_tactics.join(', ')}\n`;
     }
@@ -1513,6 +1525,21 @@ function renderFactionTeamCard(team) {
                     `;
                   }).join('')}
                 </div>
+
+                ${(g.binh_thu && g.binh_thu.length > 0) ? `
+                  <div class="slot-binh-thu-box" style="margin-top: 0.6rem; padding: 6px 8px; background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.25); border-radius: 6px;">
+                    <div style="font-size: 0.72rem; color: #fbbf24; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                      <span>📜 BINH THƯ CHUẨN:</span>
+                    </div>
+                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                      ${g.binh_thu.map((bt, btIdx) => `
+                        <span class="binh-thu-pill" style="font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; background: ${btIdx === 0 ? 'rgba(217, 119, 6, 0.25)' : 'rgba(255, 255, 255, 0.05)'}; color: ${btIdx === 0 ? '#fde68a' : '#cbd5e1'}; border: 1px solid ${btIdx === 0 ? 'rgba(245, 158, 11, 0.4)' : 'rgba(255, 255, 255, 0.1)'}; font-weight: ${btIdx === 0 ? '700' : '500'};">
+                          ${btIdx === 0 ? '★ ' : ''}${bt}
+                        </span>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : ''}
               </div>
             `;
           }).join('')}
