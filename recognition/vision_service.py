@@ -267,11 +267,19 @@ class VisionService:
         """
         Unified image recognition pipeline:
         1. Tries Gemini Vision if API key provided.
-        2. Falls back to local RapidOCR offline engine.
+        2. Falls back to local RapidOCR offline engine if no API key.
         """
         if api_key and len(api_key.strip()) > 10:
             res = self.recognize_with_gemini(image_path, api_key.strip())
-            if res.get("success") and (res.get("generals") or res.get("tactics")):
+            if res.get("success"):
+                return res
+            # If Gemini returned an authentication / quota error, don't stall for minutes in slow OCR
+            err_str = str(res.get("error", ""))
+            if any(code in err_str for code in ["401", "403", "429"]):
+                try:
+                    print(f"[VisionService] Gemini API auth/quota error: {err_str}")
+                except Exception:
+                    pass
                 return res
 
         return self.recognize_with_local_ocr(image_path)
@@ -580,17 +588,34 @@ Quy tắc nhận diện:
                 }
             }
 
-            models = ["gemini-2.0-flash", "gemini-1.5-flash"]
+            models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-2.5-flash"]
             resp = None
+            last_err = ""
             for m in models:
+                # Approach A: Modern x-goog-api-key header (required for Auth keys starting with AQ...)
                 try:
-                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={api_key}"
-                    r = requests.post(url, headers=headers, json=payload, timeout=20)
+                    headers_auth = {"Content-Type": "application/json", "x-goog-api-key": api_key}
+                    url_hdr = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
+                    r = requests.post(url_hdr, headers=headers_auth, json=payload, timeout=20)
                     if r.status_code == 200:
                         resp = r
                         break
-                except Exception:
-                    continue
+                    else:
+                        last_err = f"{r.status_code}: {r.text[:120]}"
+                except Exception as ex:
+                    last_err = str(ex)
+
+                # Approach B: Legacy URL query ?key= (for older AIza standard keys)
+                try:
+                    url_param = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={api_key}"
+                    r = requests.post(url_param, headers={"Content-Type": "application/json"}, json=payload, timeout=20)
+                    if r.status_code == 200:
+                        resp = r
+                        break
+                    else:
+                        last_err = f"{r.status_code}: {r.text[:120]}"
+                except Exception as ex:
+                    last_err = str(ex)
 
             if resp is not None and resp.status_code == 200:
                 data = resp.json()
@@ -609,6 +634,6 @@ Quy tắc nhận diện:
                     "source": "gemini_vision"
                 }
             else:
-                return {"success": False, "error": f"Lỗi Gemini Vision: {resp.status_code if resp else 'Không phản hồi'}", "generals": [], "tactics": []}
+                return {"success": False, "error": f"Lỗi Gemini Vision: {resp.status_code if resp else last_err}", "generals": [], "tactics": []}
         except Exception as e:
             return {"success": False, "error": str(e), "generals": [], "tactics": []}
